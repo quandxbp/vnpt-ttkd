@@ -1,7 +1,7 @@
 import cx_Oracle
 from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
-cx_Oracle.init_oracle_client(lib_dir="instantclient_19_8")
+cx_Oracle.init_oracle_client(lib_dir=str(BASE_DIR) + "/instantclient_19_8")
 
 class ORACLE_DB:
     def __init__(self, kwargs):
