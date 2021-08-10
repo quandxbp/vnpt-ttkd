@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        
+    </head>
+
+    <body>
+        <section class="container">
+            <div class="row">
+                <div class="col-xs-12 col-lg-12 text-center bg-light p-5">
+                    <h1 class="mb-3">Cung cấp địa điểm hiện tại của bạn</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-lg-12 text-center p-5">
+                    <div id="location-info" class="alert alert-info" role="alert">
+                        ● Hãy bật <b>GPS</b> ở trong phần <b>Cài Đặt</b> của thiết bị.
+                    </div>
+                    <div id="location-success" class="alert alert-success d-none" role="alert">
+                        ● Cảm ơn bạn đã cung cấp vị trí hiện tại cho chúng tôi!
+                    </div>
+                    <div id="location-danger" class="alert alert-danger d-none" role="alert">
+                        ● Bạn cần cho phép ứng dụng cung cấp vị trí hiện tại phầm mềm!
+                    </div>
+                    <div id="location-warning" class="alert alert-warning d-none" role="alert">
+                        <b>Truy cập vị trí</b> bị từ chối hoặc <b>định vị GPS</b> trên thiết bị của bạn chưa được kích hoạt.<br/>
+                        ● Quay trở lại Zalo và thao tác <b>Xác nhận vị trí</b>.<br/>
+                        ● Hãy bật <b>định vị GPS</b> ở trong phần Cài Đặt của thiết bị.
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="bottom: 0;">
+                <div class="col-xs-12 col-lg-12 text-center bg-light p-5">
+                    <h5 class="mb-3">Ban chỉ đạo phòng chống Covid-19 tỉnh Bình Phước</h5>
+                    <div >
+                        Powered by ✩ VNPT Bình Phước ✩
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
+
+    <script>
+        let checkin = new URLSearchParams(window.location.search).get("checkin");
+        
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function(position) {
+                if(position.coords.latitude == null){
+                    document.getElementById("location-info").classList.add("d-none");
+                    document.getElementById("location-warning").classList.remove("d-none");
+                } else {
+                    document.getElementById("location-info").classList.add("d-none");
+                    document.getElementById("location-success").classList.remove("d-none");
+                    const xhttp = new XMLHttpRequest();
+                    var params = { 
+                        'zuser_id': "{{ zuser_id }}",
+                        'latitude': position.coords.latitude,
+                        'longitude': position.coords.longitude,
+                        'checkin': checkin
+                    };
+                    xhttp.open("GET", `/location_confirm?zuser_id=${params['zuser_id']}&latitude=${params['latitude']}&longitude=${params['longitude']}&checkin=${params['checkin']}`);
+                    xhttp.send();
+                }
+            }, function(error) {
+                document.getElementById("location-info").classList.add("d-none");
+                document.getElementById("location-warning").classList.remove("d-none");
+            }, {enableHighAccuracy : true});
+        } else {
+            document.getElementById("location-info").classList.add("d-none");
+            document.getElementById("location-danger").classList.remove("d-none");
+        }
+    </script>
+
+</html>

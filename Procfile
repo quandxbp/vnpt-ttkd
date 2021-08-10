@@ -1,0 +1,1 @@
+web: gunicorn oa_zalo.wsgi
