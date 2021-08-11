@@ -17,9 +17,12 @@ class ORACLE_SERVICE:
         stmt = """SELECT COUNT(*) FROM ZALO_CUSTOMER_USERS WHERE ZALO_ID = :zuser_id"""
         return self.service.query(stmt, {'zuser_id': zuser_id})[0][0]
 
-    def insert_zalo_user(self, rows):
-        self.service.insert_multiple(
-            table='ZALO_CUSTOMER_USERS',
-            columns=['ZALO_ID', 'NAME', 'PHONE', 'CREATEAT'],
-            rows=rows
-            )
+    def insert_zalo_user(self, zuser_id, data):
+        if not self.check_existed_zalo_id(zuser_id):
+            self.service.insert_multiple(
+                table='ZALO_CUSTOMER_USERS',
+                columns=['ZALO_ID', 'NAME', 'PHONE', 'CREATEAT'],
+                rows=data
+                )
+        return True
+            

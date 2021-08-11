@@ -1,7 +1,20 @@
-import cx_Oracle
 from pathlib import Path
+
+import cx_Oracle
+import os
+import sys
+
 BASE_DIR = Path(__file__).resolve().parent.parent
-cx_Oracle.init_oracle_client(lib_dir=str(BASE_DIR) + "/instantclient_19_8")
+
+try:
+    if sys.platform.startswith("darwin"):
+        cx_Oracle.init_oracle_client(lib_dir=str(BASE_DIR) + "/instantclient_19_8")
+    elif sys.platform.startswith("win32"):
+        # Hard-code
+        lib_dir=r"C:\inetpub\wwwroot\vnpt-ttkd\instantclient_19_11"
+        cx_Oracle.init_oracle_client(lib_dir=lib_dir)
+except Exception as err:
+    sys.exit(1)
 
 class ORACLE_DB:
     def __init__(self, kwargs):

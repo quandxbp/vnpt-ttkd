@@ -22,6 +22,11 @@ def location(request, zuser_id):
     }
     return HttpResponse(template.render(context, request))
 
+def regist_payment(request):
+    template = loader.get_template('zalo_base/regist_payment.html')
+    context = {}
+    return HttpResponse(template.render(context, request))
+
 @api_view(['GET','POST'])
 def site(request):
     message = f"Request method {request.method} is not allowed!"

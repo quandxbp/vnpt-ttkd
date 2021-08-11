@@ -1,4 +1,5 @@
 import requests
+from django.contrib.staticfiles.storage import staticfiles_storage
 
 class ZaloSDK:
 
@@ -6,6 +7,8 @@ class ZaloSDK:
         self.base_url = 'https://openapi.zalo.me/v2.0/oa'
         self.access_token = access_token
         self.headers = self.get_headers()
+        # self.default_banner = staticfiles_storage.url('images/vnpt-logo.png')
+        self.default_banner = 'https://vnpt.com.vn/Media/Images/09082021/Resize-Web-VD149s-gian-cach-1920x650-2.jpg?w=1920&mode=crop'
 
     def get_headers(self):
         return {
@@ -118,7 +121,7 @@ class ZaloSDK:
                         "elements": [{
                             "title": kwargs.get('title', 'Chưa xác định'),
                             "subtitle": kwargs.get('subtitle', 'Chưa xác định'),
-                            "image_url": kwargs.get('image_url', 'https://i.imgur.com/TVVyxKY.png'),
+                            "image_url": kwargs.get('image_url', self.default_banner),
                         }]
                     }
                 }
@@ -128,11 +131,11 @@ class ZaloSDK:
         response = requests.post(url, json=body, headers=self.headers)
         return self._process_response(response)
 
-    def get_user_profile(self, user_id):
+    def get_user_info(self, user_id):
         url = '%s/getprofile?data={"user_id":%s}' % (self.base_url, user_id)
         response = self._process_response(requests.get(url, headers=self.headers))
-        if user_response['success']:
-            zalo_response = user_response.get('zalo_response')
+        if response['success']:
+            zalo_response = response.get('zalo_response')
             shared_info = zalo_response['data'].get('shared_info')
             return shared_info
         return {}

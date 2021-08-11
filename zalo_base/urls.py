@@ -7,6 +7,7 @@ urlpatterns = [
     path('', views.index, name='index'),
     path('message', views.message, name='message'),
     path('site', views.site, name='site'),
+    path('dang-ky-khach-hang', views.regist_payment, name='regist_payment'),
     path('location/<str:zuser_id>', views.location, name='location'),
     path('location_confirm', views.location_confirm, name='location_confirm'),
     path('declare_confirm', views.declare_confirm, name='declare_confirm'),
