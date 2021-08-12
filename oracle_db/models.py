@@ -36,7 +36,7 @@ class ORACLE_DB:
         cursor.executemany(f"insert into {table} ({columns_str}) values ({insert_idx})", rows)
         self.conn.commit()
         cursor.close()
-    
+
     # def search(self, table):
     #     query = f"""SELECT * FROM {table} WHERE """
 

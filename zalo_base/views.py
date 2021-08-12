@@ -15,92 +15,42 @@ def index(request):
     context = {}
     return HttpResponse(template.render(context, request))
 
-def location(request, zuser_id):
-    template = loader.get_template('zalo_base/location.html')
-    context = {
-        'zuser_id': zuser_id
-    }
-    return HttpResponse(template.render(context, request))
-
 def regist_payment(request):
     template = loader.get_template('zalo_base/regist_payment.html')
     context = {}
     return HttpResponse(template.render(context, request))
 
-@api_view(['GET','POST'])
-def site(request):
-    message = f"Request method {request.method} is not allowed!"
-    if (request.method == 'POST'):
-        datas = json.loads(request.body)
-        if datas.get('site'):
-            result = ZaloService().set_site(datas.get('site'))
-            return JsonResponse(result)
-    elif (request.method == 'GET'):
-        result = ZaloService().get_site()
-        return JsonResponse({
-            'production_site': "https://kiemdich.binhphuoc.gov.vn",
-            'current_site': result,
-        })
-    return JsonResponse({
-        'success': 0, 
-        'message': message
-        })
+def page_404(request):
+    template = loader.get_template('zalo_base/404.html')
+    context = {}
+    return HttpResponse(template.render(context, request))
 
 @api_view(['POST'])
-def message(request):
+def submit_regist_payment(request):
     message = f"Request method {request.method} is not allowed!"
     if (request.method == 'POST'):
+        message = f"Data is not valid"
         datas = json.loads(request.body)
-        if datas.get('zuser_id'):
-            result = ZaloService().post_message(datas.get('zuser_id') ,datas.get('message', False))
+        if datas.get('user_id'):
+            result = ZaloService().submit_regist_payment(datas)
             return JsonResponse(result)
-        elif datas.get('messages'):
-            result = ZaloService().post_multiple_message(datas.get('messages'))
-            return JsonResponse(result)
-        message = 'Zalo User ID is not provided'
     return JsonResponse({
         'success': 0, 
         'message': message
         })
 
 @api_view(['GET'])
-def location_confirm(request):
+def get_client_by_user_id(request):
     message = f"Request method {request.method} is not allowed!"
     if (request.method == 'GET'):
+        message = f"Data is not valid"
         datas = request.GET
-        if datas.get('zuser_id'):
-            result = ZaloService().send_confirm_location_message(datas.get('zuser_id') ,datas)
+        if datas.get('user_id'):
+            result = ZaloService().get_client_by_user_id(datas.get('user_id'))
             return JsonResponse(result)
-        message = 'Zalo User ID is not provided'
     return JsonResponse({
         'success': 0, 
         'message': message
-        })
-
-@api_view(['POST'])
-def declare_confirm(request):
-    message = f"Request method {request.method} is not allowed!"
-    if (request.method == 'POST'):
-        datas = json.loads(request.body)
-        if datas.get('zuser_id'):
-            result = ZaloService().send_confirm_message(datas.get('zuser_id') ,datas)
-            return JsonResponse(result)
-        message = 'Zalo User ID is not provided'
-    return JsonResponse({
-        'success': 0, 
-        'message': message
-        })
-
-@api_view(['GET'])
-def checkpoint_confirm(request):
-    if (request.method == 'GET'):
-        datas = request.GET
-        if datas.get('phone'):
-            result = ZaloService().send_confirm_at_checkpoint(datas.get('phone'))
-            return JsonResponse(result)
-    return JsonResponse({
-        'success': 0, 
-        'message': f"Request method {request.method} is not allowed!"
         })
 
 @api_view(['POST'])
@@ -123,4 +73,29 @@ def follow_hook(request):
         'message': f"Request method {request.method} is not allowed!"
         })
 
+@api_view(['GET'])
+def get_client_by_user_id(request):
+    message = f"Request method {request.method} is not allowed!"
+    if (request.method == 'GET'):
+        message = f"Data is not valid"
+        datas = request.GET
+        if datas.get('user_id'):
+            result = ZaloService().get_client_by_user_id(datas.get('user_id'))
+            return JsonResponse(result)
+    return JsonResponse({
+        'success': 0, 
+        'message': message
+        })
 
+@api_view(['GET'])
+def test(request):
+    message = f"Request method {request.method} is not allowed!"
+    if (request.method == 'GET'):
+        datas = request.GET
+        OracleService = ZaloService().get_oracle_service()
+        result = OracleService.get_payment_debt("6046163127961711684")
+        return JsonResponse(dict(result=result))
+    return JsonResponse({
+        'success': 0, 
+        'message': message
+        })

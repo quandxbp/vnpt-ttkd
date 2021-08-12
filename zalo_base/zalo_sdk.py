@@ -149,7 +149,7 @@ class ZaloSDK:
                 "user_id": user_id
             },
             "message": {
-                "text": kwargs.get('text',"QR Code thông tin cá nhân"),
+                "text": kwargs.get('text',"QR Code thanh toán cước qua VNPT Pay"),
                 "attachment": {
                     "type": "template",
                     "payload": {

@@ -14,15 +14,68 @@ class ORACLE_SERVICE:
         return read_json(BASE_DIR / 'config.json')
     
     def check_existed_zalo_id(self, zuser_id):
-        stmt = """SELECT COUNT(*) FROM ZALO_CUSTOMER_USERS WHERE ZALO_ID = :zuser_id"""
+        stmt = f"""SELECT COUNT(*) FROM ZALO_CUSTOMER_USERS WHERE ZALO_ID = :zuser_id"""
         return self.service.query(stmt, {'zuser_id': zuser_id})[0][0]
 
+    def check_existed_zalo_id_regist_bill(self, zuser_id):
+        stmt = f"""SELECT COUNT(*) FROM zalo_customer_register_bill WHERE ZALO_ID = :zuser_id"""
+        return self.service.query(stmt, {'zuser_id': zuser_id})[0][0]
+
+    def check_existed_client_by_phone(self, phone):
+        phone = f"%{phone}"
+        stmt = """SELECT COUNT(*) FROM VKHACHHANG WHERE MA_TB LIKE :phone OR DIENTHOAI LIKE :phone OR SO_DT LIKE :phone OR SDT_LIENHE LIKE :phone"""
+        return self.service.query(stmt, {'phone': phone})[0][0]
+
+    def get_client_by_user_id(self, zuser_id):
+        stmt = """SELECT PHONE FROM ZALO_CUSTOMER_USERS WHERE ZALO_ID = :zuser_id"""
+        phone = self.service.query(stmt, {'zuser_id': zuser_id})[0][0]
+        if phone:
+            is_existed = self.check_existed_client_by_phone(phone)
+            return { 
+                'phone': phone,
+                'is_existed': is_existed 
+            }
+        return {}
+    
+    def get_client_by_payment_code(self, phone, payment_code):
+        phone = f"%{phone}"
+        stmt = """SELECT COUNT(*) FROM VKHACHHANG WHERE MA_TT = :payment_code AND MA_TB LIKE :phone OR DIENTHOAI LIKE :phone OR SO_DT LIKE :phone OR SDT_LIENHE LIKE :phone"""
+        return self.service.query(stmt, {'phone': phone, 'payment_code': payment_code})[0][0]
+
+    def get_client_regist_bill_by_user_id(self, zuser_id):
+        stmt = """SELECT COUNT(*) FROM ZALO_CUSTOMER_REGISTER_BILL WHERE ZALO_ID = :zuser_id"""
+        return self.service.query(stmt, {'zuser_id': zuser_id})[0][0]
+    
     def insert_zalo_user(self, zuser_id, data):
         if not self.check_existed_zalo_id(zuser_id):
             self.service.insert_multiple(
                 table='ZALO_CUSTOMER_USERS',
                 columns=['ZALO_ID', 'NAME', 'PHONE', 'CREATEAT'],
                 rows=data
-                )
+                ) 
         return True
+    
+    def insert_regist_bill(self, zuser_id, data):
+        self.service.insert_multiple(
+            table='zalo_customer_register_bill',
+            columns=['ZALO_ID', 'MA_TT', 'CREATEAT', 'UPDATEAT', 'DISABLED'],
+            rows=data
+            )
+        return True
+
+    def get_payment_debt(self, zuser_id):
+        stmt = """select 
+            nam,
+            thang,
+            ten_tt, 
+            diachi_tt,
+            tong_pt,
+            qrcode,
+            ma_tt
+        from bcss_bpc.hddt_20210701@link_bpcsxkd
+        where ma_tt in (
+            select ma_tt
+            from misdata.zalo_customer_register_bill a where a.zalo_id = :zuser_id)"""
+        res = self.service.query(stmt, {'zuser_id': zuser_id})
+        return res[0] if res else []
             

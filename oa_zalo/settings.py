@@ -79,14 +79,21 @@ WSGI_APPLICATION = 'oa_zalo.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'd92gqrulu3io93',
+#         'HOST': 'ec2-35-168-145-180.compute-1.amazonaws.com',
+#         'PORT': 5432,
+#         'USER': 'bptdfkejxfcoti',
+#         'PASSWORD': '56c2b3006f1e34179f30c54ed607e24c12e4824e3424d8c6c3231f290ca0b9bb'
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'd92gqrulu3io93',
-        'HOST': 'ec2-35-168-145-180.compute-1.amazonaws.com',
-        'PORT': 5432,
-        'USER': 'bptdfkejxfcoti',
-        'PASSWORD': '56c2b3006f1e34179f30c54ed607e24c12e4824e3424d8c6c3231f290ca0b9bb'
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'sqlite.db'),
     }
 }
 

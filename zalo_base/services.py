@@ -38,6 +38,30 @@ class ZaloService:
 • Số điện thoại: {info.get('phone', 'Chưa xác định')}
 • Địa chỉ: {address}"""         
         return message
+    
+    def get_oracle_service(self):
+        return OracleService
+
+    def get_client_by_user_id(self, user_id):
+        return OracleService.get_client_by_user_id(user_id)
+
+    def submit_regist_payment(self, datas):
+        user_id = datas.get('user_id')
+        user_phone = datas.get('user_phone')
+        payment_code = datas.get('payment_code')
+
+        if OracleService.get_client_by_payment_code(user_phone, payment_code):
+            now = datetime.datetime.now()
+            insert_data = [(user_id, datas.get('payment_code'), now ,now, 0)]
+            OracleService.insert_regist_bill(user_id, insert_data)
+            message = "Cảm ơn bạn đã đăng ký thông tin"
+            return self.z_sdk.post_message(user_id, message=message)
+        else:
+            return {
+                'success': 0,
+                'message': 'Không tìm thấy thông tin'
+            }
+        
         
     def action_by_event(self, event_name, datas):
         # Users follow OA 
@@ -46,7 +70,8 @@ class ZaloService:
             user_info = self.z_sdk.get_user_info(user_id)
             
             if user_info:
-                message = self._get_user_detail_message(user_info)
+                # message = self._get_user_detail_message(user_info)
+                message = "Cảm ơn bạn đã cung cấp thông tin cho VNPT Bình Phước"
                 return self.z_sdk.post_message(user_id, message=message)
             else:
                 title = "Cung cấp thông tin cá nhân"
@@ -79,17 +104,48 @@ class ZaloService:
         if event_name == "user_send_text":
             user_id = datas['sender']['id']
             message = datas['message']['text']
+            info = self.z_sdk.get_user_info(user_id)
             
-            if '#dangkythongtin' in message:
-                user_profile = self.z_sdk.get_user_profile(user_id)
-            
-                if user_profile:
-                    message = self._get_user_detail_message(user_profile)
+            if not info:
+                title = "Cung cấp thông tin cá nhân"
+                subtitle = "Hãy cung cấp thông tin cá nhân để có thể sử dụng các dịch vụ, tiện ích của Vinaphone trên ứng dụng Zalo"
+                return self.z_sdk.request_user_info(user_id, title=title, subtitle=subtitle)
+            else:
+                if '#dangkythongtin' in message:
+                    # message = self._get_user_detail_message(user_info)
+                    phone = parse_phone(info.get('phone'))
+
+                    data = [(user_id, info.get('name', 'Chưa xác định'), phone, datetime.datetime.now())]
+                    OracleService.insert_zalo_user(user_id, data)
+                    message = "Cảm ơn bạn đã cung cấp thông tin cho VNPT Bình Phước"
                     return self.z_sdk.post_message(user_id, message=message)
-                else:
-                    title = "Cung cấp thông tin cá nhân"
-                    subtitle = "Hãy cung cấp thông tin cá nhân để có thể sử dụng các dịch vụ, tiện ích của Vinaphone trên ứng dụng Zalo"
-                    return self.z_sdk.request_user_info(user_id, title=title, subtitle=subtitle)
+
+                if '#tracuucuoc' in message:
+                    is_existed = OracleService.get_client_regist_bill_by_user_id(user_id)
+                    if is_existed:
+                        data = OracleService.get_payment_debt(user_id)
+                        dt = f"{data[0]}/{data[1]}"
+                        name = data[2]
+                        address = data[3]
+                        money = data[4]
+                        qrcode_url = generate_qrcode(data[5])
+
+                        text = "QR Code thanh toán cước qua VNPT Pay"
+                        self.z_sdk.send_attachment_message(
+                            user_id,
+                            text=text, 
+                            url=qrcode_url
+                        )
+                        message = f"""Thông tin tra cứu Dịch vụ Vinaphone tháng {dt}
+• Tên khách hàng: {name}
+• Địa chỉ: {address}
+• Tổng cộng tiền thanh toán: {money}"""
+                        return self.z_sdk.post_message(user_id, message=message)
+                    else:
+                        message = "Bạn chưa cung cấp thông tin để tra cứu cước, vui lòng vào mục Đăng ký mã khách hàng để khai báo thêm thông tin."
+                        return self.z_sdk.post_message(user_id, message=message)
+                    
+            
             
 
     

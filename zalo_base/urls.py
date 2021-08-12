@@ -5,12 +5,10 @@ from . import views
 
 urlpatterns = [
     path('', views.index, name='index'),
-    path('message', views.message, name='message'),
-    path('site', views.site, name='site'),
+    path('404', views.page_404, name='page_404'),
     path('dang-ky-khach-hang', views.regist_payment, name='regist_payment'),
-    path('location/<str:zuser_id>', views.location, name='location'),
-    path('location_confirm', views.location_confirm, name='location_confirm'),
-    path('declare_confirm', views.declare_confirm, name='declare_confirm'),
-    path('checkpoint_confirm', views.checkpoint_confirm, name='checkpoint_confirm'),
-    path('follow_hook', views.follow_hook, name='follow_hook')
+    path('submit_regist_payment', views.submit_regist_payment, name='submit_regist_payment'),
+    path('get_client_by_user_id', views.get_client_by_user_id, name='get_client_by_user_id'),
+    path('follow_hook', views.follow_hook, name='follow_hook'),
+    path('test', views.test, name='test'),
 ]
