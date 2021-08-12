@@ -22,7 +22,7 @@
         </header>
 
         <!-- <main id="main-content" class="d-none"> -->
-        <main id="main-content" >
+        <main id="main-content" class='d-none' >
             <section class="container-fluid">
                 <div class="row">
                     <div class="col-xs-12 col-lg-12 text-center bg-light p-5">
@@ -76,6 +76,7 @@
                 contentType: "application/json",
                 success: function (result) {
                     if (result) {
+                        $('#main-content').removeClass('d-none');
                         userPhone = result.phone
                     } else {
                         $('.alert-danger').removeClass('d-none');
@@ -85,25 +86,8 @@
             });
         },
         function error(err) {
-            // window.location.href = '/404';
+            window.location.href = '/404';
             // BPC-01-049988
-            userId = "6046163127961711684";
-            $.ajax({
-                type: 'GET',
-                url: '/get_client_by_user_id',
-                data: {
-                    user_id: userId,
-                },
-                contentType: "application/json",
-                success: function (result) {
-                    if (result) {
-                        userPhone = result.phone
-                    } else {
-                        $('.alert-danger').removeClass('d-none');
-                        $('#message').text('Số thuê bao bạn cung cấp cho chúng tôi không phải là số thuê bao đăng ký sử dụng. Liên hệ số hotline <b>02713888999</b> để biết thêm thông tin chi tiết.')
-                    }
-                }
-            });
         });
 
         $("#submitInfo").on('click', function() {
