@@ -83,6 +83,5 @@ class ORACLE_SERVICE:
         where ma_tt in (
             select ma_tt
             from misdata.zalo_customer_register_bill a where a.zalo_id = :zuser_id)"""
-        res = self.service.query(stmt, {'zuser_id': zuser_id})
-        return res[0] if res else []
+        return self.service.query(stmt, {'zuser_id': zuser_id})
             

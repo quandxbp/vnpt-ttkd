@@ -128,27 +128,32 @@ class ZaloService:
 
                 if '#tracuucuoc' in message:
                     is_existed = OracleService.get_client_regist_bill_by_user_id(user_id)
-                    print(is_existed)
                     if is_existed:
-                        data = OracleService.get_payment_debt(user_id)
-                        if data and len(data):
-                            dt = f"{data[1]}/{data[0]}"
-                            name = data[2]
-                            address = data[3]
-                            money = f'{data[4]:,} đ'
-                            qrcode_url = generate_qrcode(data[5])
+                        debts = OracleService.get_payment_debt(user_id)
+                        if debts and len(debts):
+                            for data in debts:
+                                if data and len(data):
+                                    dt = f"{data[1]}/{data[0]}"
+                                    name = data[2]
+                                    address = data[3]
+                                    money = f'{data[4]:,} đ'
+                                    qrcode_url = generate_qrcode(data[5])
 
-                            message = f"""Thông tin tra cứu Dịch vụ Vinaphone tháng {dt}
-    • Tên khách hàng: {name}
-    • Địa chỉ: {address}
-    • Tổng cộng tiền thanh toán: {money}"""
-                            self.z_sdk.post_message(user_id, message=message)
-                            text = "QR Code thanh toán cước. Bạn có thể quét mã trực tiếp hoặc tải về máy về sử dụng chức năng quét QR code thông qua ứng dụng VNPT Pay"
-                            return self.z_sdk.send_attachment_message(
-                                user_id,
-                                text=text, 
-                                url=qrcode_url
-                            )
+                                    message = f"""Thông tin tra cứu Dịch vụ Vinaphone tháng {dt}
+• Tên khách hàng: {name}
+• Địa chỉ: {address}
+• Tổng cộng tiền thanh toán: {money}"""
+                                    self.z_sdk.post_message(user_id, message=message)
+                                    text = "QR Code thanh toán cước. Bạn có thể quét mã trực tiếp hoặc tải về máy về sử dụng chức năng quét QR code thông qua ứng dụng VNPT Pay"
+                                    self.z_sdk.send_attachment_message(
+                                        user_id,
+                                        text=text, 
+                                        url=qrcode_url
+                                    )
+                            return {
+                                'success': 1,
+                                'message': 'Đã gửi thông tin'
+                            }
                         else:
                             message = "Không thể tìm thấy thông tin tra cứu cước"
                             return self.z_sdk.post_message(user_id, message=message)

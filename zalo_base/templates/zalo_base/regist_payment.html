@@ -29,6 +29,29 @@
                         <h1 class="mb-3">Dịch vụ Trung tâm kinh doanh - VNPT Bình Phước</h1>
                     </div>
                 </div>
+
+                <div class="row d-none" id="table">
+                    <div class="alert alert-success text-center" role="alert">
+                        Chúng tôi tìm thấy nhiều hơn một kết quả, hãy chọn đúng <strong>Mã thanh toán</strong> được liệt kê bên dưới và nhập lại vào ô <strong>"Nhập mã thanh toán"</strong> để cập nhật thông tin chính xác
+                    </div>
+                    <div class="text-center">
+                        <p class="text-success">Chọn nhanh bằng cách nhấn vào dòng bạn muốn và nhấn nút <strong>Xác nhận</strong></p>
+                    </div>
+                    <table class="table mt-3" >
+                        <thead>
+                          <tr style="font-size: 14px; text-align: center;">
+                            <th scope="col"><strong>Mã TT</strong></th>
+                            <th scope="col">Thuê bao</th>
+                            <th scope="col">Địa chỉ</th>
+                            <th scope="col">SĐT</th>
+                          </tr>
+                        </thead>
+                        <tbody id="contents" style="font-size: 13px">
+                        </tbody>
+                    </table>
+                    
+                </div>
+
                 <div class="row mt-3">
                     <div class="col-12 text-center">
                         <label for="basic-url">Nhập mã thanh toán/ Mã thuê bao</label>
@@ -43,24 +66,6 @@
         </main>
 
         <div class="container-fluid message mt-5">
-            <div class="row d-none" id="table">
-                <div class="alert alert-success text-center" role="alert">
-                    Chúng tôi tìm thấy nhiều hơn một kết quả, hãy chọn đúng <strong>Mã thanh toán</strong> được liệt kê bên dưới và nhập lại vào ô <strong>"Nhập mã thanh toán"</strong> để cập nhật thông tin chính xác
-                </div>
-                <table class="table mt-3" >
-                    <thead>
-                      <tr style="font-size: 14px; text-align: center;">
-                        <th scope="col"><strong>Mã TT</strong></th>
-                        <th scope="col">Thuê bao</th>
-                        <th scope="col">Địa chỉ</th>
-                        <th scope="col">SĐT</th>
-                      </tr>
-                    </thead>
-                    <tbody id="contents" style="font-size: 13px">
-                    </tbody>
-                </table>
-                
-            </div>
 
             <div class="row mt-5">
                 <div class="col-12">
@@ -107,11 +112,11 @@
             });
         },
         function error(err) {
-            window.location.href = '/404';
+            // window.location.href = '/404';
             // BPC-01-049988
-            // $('#main-content').removeClass('d-none');
-            // userId = '6046163127961711684';
-            // userPhone = '13187379';
+            $('#main-content').removeClass('d-none');
+            userId = '6046163127961711684';
+            userPhone = '13187379';
         });
 
         $("#submitInfo").on('click', function() {
@@ -133,8 +138,8 @@
                             $('.alert-danger').addClass('d-none');
                             $('#contents').text('');
                             result.clients.forEach(c => {
-                                let content = `<tr>
-                                    <td>${c[0]}</td>
+                                let content = `<tr class="paymentLine">
+                                    <td class="paymentCodeResult">${c[0]}</td>
                                     <td>${c[1]}</td>
                                     <td>${c[3]}</td>
                                     <td>${c[6] || c[7]}</td>
@@ -145,7 +150,7 @@
                         }
                         else {
                             isFinal = false;
-                            $("#table").addClass('d-none');
+                            $("#main-content").addClass('d-none');
                             $('.alert-danger').addClass('d-none');
                             $('.alert-success').removeClass('d-none');
                         }
@@ -158,6 +163,11 @@
                     }
                 }
             });
+        });
+
+        $(document).on('click', '.paymentLine', function(ev) {
+            let val = $(this).find('.paymentCodeResult').text();
+            $("#paymentCode").val(val);
         });
         
     </script>
