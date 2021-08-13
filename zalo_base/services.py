@@ -142,9 +142,10 @@ class ZaloService:
                                     message = f"""Thông tin tra cứu Dịch vụ Vinaphone tháng {dt}
 • Tên khách hàng: {name}
 • Địa chỉ: {address}
-• Tổng cộng tiền thanh toán: {money}"""
+• Tổng cộng tiền thanh toán: {money}
+Bạn có thể quét mã trực tiếp hoặc tải về máy về sử dụng chức năng quét QR code thông qua ứng dụng VNPT Pay"""
+                                    text = "QR Code thanh toán cước."
                                     self.z_sdk.post_message(user_id, message=message)
-                                    text = "QR Code thanh toán cước. Bạn có thể quét mã trực tiếp hoặc tải về máy về sử dụng chức năng quét QR code thông qua ứng dụng VNPT Pay"
                                     self.z_sdk.send_attachment_message(
                                         user_id,
                                         text=text, 
