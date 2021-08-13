@@ -131,20 +131,24 @@ class ZaloService:
                     if is_existed:
                         debts = OracleService.get_payment_debt(user_id)
                         if debts and len(debts):
-                            for data in debts:
+                            message = " "
+                            for idx,data in enumerate(debts):
                                 if data and len(data):
                                     dt = f"{data[1]}/{data[0]}"
                                     name = data[2]
                                     address = data[3]
                                     money = f'{data[4]:,} đ'
                                     qrcode_url = generate_qrcode(data[5])
+                                    payment_code = data[6]
 
-                                    message = f"""Thông tin tra cứu Dịch vụ Vinaphone tháng {dt}
+                                    message += f"""VNPT thông báo cước dịch vụ của khách hàng là:
+• Mã thanh toán: {payment_code}
 • Tên khách hàng: {name}
 • Địa chỉ: {address}
+• Hoá đơn tháng: {dt}
 • Tổng cộng tiền thanh toán: {money}
 Bạn có thể quét mã trực tiếp hoặc tải về máy về sử dụng chức năng quét QR code thông qua ứng dụng VNPT Pay"""
-                                    text = "QR Code thanh toán cước."
+                                    text = f"QR Code với mã thanh toán {payment_code} - tổng giá trị hoá đơn {money}"
                                     self.z_sdk.post_message(user_id, message=message)
                                     self.z_sdk.send_attachment_message(
                                         user_id,
