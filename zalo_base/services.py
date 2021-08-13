@@ -57,7 +57,7 @@ class ZaloService:
             regist_code = clients[0][0]
             insert_data = [(user_id, regist_code, now ,now, 0)]
             OracleService.insert_regist_bill(user_id, insert_data)
-            message = "Cảm ơn bạn đã đăng ký thông tin"
+            message = "Cảm ơn bạn đã đăng ký thông tin, bây giờ bạn có thể sử dụng các dịch vụ của VNPT trên Zalo"
             return self.z_sdk.post_message(user_id, message=message)
         elif len(clients) > 1: 
             return {
@@ -79,8 +79,7 @@ class ZaloService:
             user_info = self.z_sdk.get_user_info(user_id)
             
             if user_info:
-                # message = self._get_user_detail_message(user_info)
-                message = "Cảm ơn bạn đã cung cấp thông tin cho VNPT Bình Phước"
+                message = self._get_user_detail_message(user_info)
                 return self.z_sdk.post_message(user_id, message=message)
             else:
                 title = "Cung cấp thông tin cá nhân"
@@ -121,35 +120,38 @@ class ZaloService:
                 return self.z_sdk.request_user_info(user_id, title=title, subtitle=subtitle)
             else:
                 if '#dangkythongtin' in message:
-                    # message = self._get_user_detail_message(user_info)
                     phone = parse_phone(info.get('phone'))
-
                     data = [(user_id, info.get('name', 'Chưa xác định'), phone, datetime.datetime.now())]
                     OracleService.insert_zalo_user(user_id, data)
-                    message = "Cảm ơn bạn đã cung cấp thông tin cho VNPT Bình Phước"
+                    message = self._get_user_detail_message(user_info)
                     return self.z_sdk.post_message(user_id, message=message)
 
                 if '#tracuucuoc' in message:
                     is_existed = OracleService.get_client_regist_bill_by_user_id(user_id)
+                    print(is_existed)
                     if is_existed:
                         data = OracleService.get_payment_debt(user_id)
-                        dt = f"{data[1]/{data[0]}}"
-                        name = data[2]
-                        address = data[3]
-                        money = f'{data[4]:,} đ'
-                        qrcode_url = generate_qrcode(data[5])
+                        if data and len(data):
+                            dt = f"{data[1]/{data[0]}}"
+                            name = data[2]
+                            address = data[3]
+                            money = f'{data[4]:,} đ'
+                            qrcode_url = generate_qrcode(data[5])
 
-                        message = f"""Thông tin tra cứu Dịch vụ Vinaphone tháng {dt}
-• Tên khách hàng: {name}
-• Địa chỉ: {address}
-• Tổng cộng tiền thanh toán: {money}"""
-                        self.z_sdk.post_message(user_id, message=message)
-                        text = "QR Code thanh toán cước. Bạn có thể quét mã trực tiếp hoặc tải về máy về sử dụng chức năng quét QR code thông qua ứng dụng VNPT Pay"
-                        return self.z_sdk.send_attachment_message(
-                            user_id,
-                            text=text, 
-                            url=qrcode_url
-                        ) 
+                            message = f"""Thông tin tra cứu Dịch vụ Vinaphone tháng {dt}
+    • Tên khách hàng: {name}
+    • Địa chỉ: {address}
+    • Tổng cộng tiền thanh toán: {money}"""
+                            self.z_sdk.post_message(user_id, message=message)
+                            text = "QR Code thanh toán cước. Bạn có thể quét mã trực tiếp hoặc tải về máy về sử dụng chức năng quét QR code thông qua ứng dụng VNPT Pay"
+                            return self.z_sdk.send_attachment_message(
+                                user_id,
+                                text=text, 
+                                url=qrcode_url
+                            )
+                        else:
+                            message = "Không thể tìm thấy thông tin tra cứu cước"
+                            return self.z_sdk.post_message(user_id, message=message)
                     else:
                         message = "Bạn chưa cung cấp thông tin để tra cứu cước, vui lòng vào mục Đăng ký mã khách hàng để khai báo thêm thông tin."
                         return self.z_sdk.post_message(user_id, message=message)
