@@ -132,7 +132,7 @@ class ZaloService:
                     if is_existed:
                         data = OracleService.get_payment_debt(user_id)
                         if data and len(data):
-                            dt = f"{data[1]/{data[0]}}"
+                            dt = f"{data[1]}/{data[0]}"
                             name = data[2]
                             address = data[3]
                             money = f'{data[4]:,} đ'
