@@ -31,7 +31,7 @@
                 </div>
                 <div class="row mt-3">
                     <div class="col-12 text-center">
-                        <label for="basic-url">Nhập mã thanh toán</label>
+                        <label for="basic-url">Nhập mã thanh toán/ Mã thuê bao</label>
                         <div class="input-group mb-3 text-center">
                             <input type="text" class="form-control" id="paymentCode" 
                             placeholder="" >
@@ -43,7 +43,26 @@
         </main>
 
         <div class="container-fluid message mt-5">
-            <div class="row">
+            <div class="row d-none" id="table">
+                <div class="alert alert-success text-center" role="alert">
+                    Chúng tôi tìm thấy nhiều hơn một kết quả, hãy chọn đúng <strong>Mã thanh toán</strong> được liệt kê bên dưới và nhập lại vào ô <strong>"Nhập mã thanh toán"</strong> để cập nhật thông tin chính xác
+                </div>
+                <table class="table mt-3" >
+                    <thead>
+                      <tr style="font-size: 14px; text-align: center;">
+                        <th scope="col"><strong>Mã TT</strong></th>
+                        <th scope="col">Thuê bao</th>
+                        <th scope="col">Địa chỉ</th>
+                        <th scope="col">SĐT</th>
+                      </tr>
+                    </thead>
+                    <tbody id="contents" style="font-size: 13px">
+                    </tbody>
+                </table>
+                
+            </div>
+
+            <div class="row mt-5">
                 <div class="col-12">
                     <div class="alert alert-success text-center d-none" role="alert">
                         Bạn đã đăng ký thành công, hãy quay trở về Zalo để tiếp tục thao tác
@@ -62,6 +81,8 @@
     <script type="text/javascript">
         let userId = false;
         let userPhone = false;
+        let isFinal = false;
+
         ZaloExtensions.getContext({"oaId": '895596865423073839'},
         function success(thread_context) {
             $("#main-content").removeClass('d-none');
@@ -88,6 +109,9 @@
         function error(err) {
             window.location.href = '/404';
             // BPC-01-049988
+            // $('#main-content').removeClass('d-none');
+            // userId = '6046163127961711684';
+            // userPhone = '13187379';
         });
 
         $("#submitInfo").on('click', function() {
@@ -99,13 +123,33 @@
                     user_id: userId,
                     user_phone: userPhone,
                     payment_code: paymentCode,
+                    is_final: isFinal,
                 }),
                 contentType: "application/json",
                 success: function (result) {
                     if (result.success) {
-                        $('.alert-danger').addClass('d-none');
-                        $('.alert-success').removeClass('d-none');
+                        if (result.clients) {
+                            $("#table").removeClass('d-none');
+                            result.clients.forEach(c => {
+                                let content = `<tr>
+                                    <td>${c[0]}</td>
+                                    <td>${c[1]}</td>
+                                    <td>${c[3]}</td>
+                                    <td>${c[6] || c[7]}</td>
+                                </tr>`;
+                                $('#contents').append(content);
+                            });
+                            isFinal = true;
+                        }
+                        else {
+                            isFinal = false;
+                            $("#table").addClass('d-none');
+                            $('.alert-danger').addClass('d-none');
+                            $('.alert-success').removeClass('d-none');
+                        }
                     } else {
+                        isFinal = false;
+                        $("#table").addClass('d-none');
                         $('.alert-success').addClass('d-none');
                         $('.alert-danger').removeClass('d-none');
                         $('#message').text('Không tìm thấy Mã Thanh Toán trùng với số điện thoại mà bạn đăng ký, xin hãy thử lại');

@@ -49,13 +49,22 @@ class ZaloService:
         user_id = datas.get('user_id')
         user_phone = datas.get('user_phone')
         payment_code = datas.get('payment_code')
-
-        if OracleService.get_client_by_payment_code(user_phone, payment_code):
+        is_final = datas.get('is_final')
+        
+        clients = OracleService.get_client_by_payment_code(user_phone, payment_code)
+        if len(clients) == 1 or (is_final and len(clients) >= 1):
             now = datetime.datetime.now()
-            insert_data = [(user_id, datas.get('payment_code'), now ,now, 0)]
+            regist_code = clients[0][0]
+            insert_data = [(user_id, regist_code, now ,now, 0)]
             OracleService.insert_regist_bill(user_id, insert_data)
             message = "Cảm ơn bạn đã đăng ký thông tin"
             return self.z_sdk.post_message(user_id, message=message)
+        elif len(clients) > 1: 
+            return {
+                'success': 1,
+                'clients': clients,
+                'message': "Đính kèm thông tin khách hàng"
+            }
         else:
             return {
                 'success': 0,
@@ -127,20 +136,20 @@ class ZaloService:
                         dt = f"{data[0]}/{data[1]}"
                         name = data[2]
                         address = data[3]
-                        money = data[4]
+                        money = f'{data[4]:,} đ'
                         qrcode_url = generate_qrcode(data[5])
 
-                        text = "QR Code thanh toán cước qua VNPT Pay"
-                        self.z_sdk.send_attachment_message(
-                            user_id,
-                            text=text, 
-                            url=qrcode_url
-                        )
                         message = f"""Thông tin tra cứu Dịch vụ Vinaphone tháng {dt}
 • Tên khách hàng: {name}
 • Địa chỉ: {address}
 • Tổng cộng tiền thanh toán: {money}"""
-                        return self.z_sdk.post_message(user_id, message=message)
+                        self.z_sdk.post_message(user_id, message=message)
+                        text = "QR Code thanh toán cước qua VNPT Pay"
+                        return self.z_sdk.send_attachment_message(
+                            user_id,
+                            text=text, 
+                            url=qrcode_url
+                        ) 
                     else:
                         message = "Bạn chưa cung cấp thông tin để tra cứu cước, vui lòng vào mục Đăng ký mã khách hàng để khai báo thêm thông tin."
                         return self.z_sdk.post_message(user_id, message=message)

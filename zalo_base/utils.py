@@ -17,4 +17,4 @@ def parse_phone(phone):
 
 def generate_qrcode(qr_code):
     qr_code = qr_code.replace(' ', '%20')
-    return f"https://chart.googleapis.com/chart?cht=qr&chs=500x500&chl={qr_code}&chld=H"
+    return f"https://chart.googleapis.com/chart?cht=qr&chs=350x350&chl={qr_code}&chld=H"

@@ -39,8 +39,15 @@ class ORACLE_SERVICE:
     
     def get_client_by_payment_code(self, phone, payment_code):
         phone = f"%{phone}"
-        stmt = """SELECT COUNT(*) FROM VKHACHHANG WHERE MA_TT = :payment_code AND MA_TB LIKE :phone OR DIENTHOAI LIKE :phone OR SO_DT LIKE :phone OR SDT_LIENHE LIKE :phone"""
-        return self.service.query(stmt, {'phone': phone, 'payment_code': payment_code})[0][0]
+        stmt = """
+        select distinct * from misdata.vKhachhang kh
+            where (kh.ma_tt = :payment_code or kh.ma_tb = :payment_code)
+                and (kh.ma_tb LIKE :phone
+                    or kh.dienthoai LIKE :phone
+                    or kh.so_dt LIKE :phone
+                    or kh.sdt_lienhe LIKE :phone)
+"""
+        return self.service.query(stmt, {'phone': phone, 'payment_code': payment_code})
 
     def get_client_regist_bill_by_user_id(self, zuser_id):
         stmt = """SELECT COUNT(*) FROM ZALO_CUSTOMER_REGISTER_BILL WHERE ZALO_ID = :zuser_id"""
