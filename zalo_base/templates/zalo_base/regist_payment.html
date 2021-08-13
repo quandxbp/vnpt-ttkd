@@ -130,6 +130,8 @@
                     if (result.success) {
                         if (result.clients) {
                             $("#table").removeClass('d-none');
+                            $('.alert-danger').addClass('d-none');
+                            $('#contents').text('');
                             result.clients.forEach(c => {
                                 let content = `<tr>
                                     <td>${c[0]}</td>

@@ -133,7 +133,7 @@ class ZaloService:
                     is_existed = OracleService.get_client_regist_bill_by_user_id(user_id)
                     if is_existed:
                         data = OracleService.get_payment_debt(user_id)
-                        dt = f"{data[0]}/{data[1]}"
+                        dt = f"{data[1]/{data[0]}}"
                         name = data[2]
                         address = data[3]
                         money = f'{data[4]:,} đ'
@@ -144,7 +144,7 @@ class ZaloService:
 • Địa chỉ: {address}
 • Tổng cộng tiền thanh toán: {money}"""
                         self.z_sdk.post_message(user_id, message=message)
-                        text = "QR Code thanh toán cước qua VNPT Pay"
+                        text = "QR Code thanh toán cước. Bạn có thể quét mã trực tiếp hoặc tải về máy về sử dụng chức năng quét QR code thông qua ứng dụng VNPT Pay"
                         return self.z_sdk.send_attachment_message(
                             user_id,
                             text=text, 
