@@ -15,6 +15,11 @@ def index(request):
     context = {}
     return HttpResponse(template.render(context, request))
 
+def ccos(request):
+    template = loader.get_template('zalo_base/ccos_manage.html')
+    context = {}
+    return HttpResponse(template.render(context, request))
+
 def regist_payment(request):
     template = loader.get_template('zalo_base/regist_payment.html')
     context = {}
