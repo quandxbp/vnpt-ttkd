@@ -33,6 +33,7 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
+    'ccos.apps.CcosConfig',
     'oracle_db.apps.OracleDbConfig',
     'zalo_base.apps.ZaloBaseConfig',
     'rest_framework',

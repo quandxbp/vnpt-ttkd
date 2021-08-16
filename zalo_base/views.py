@@ -7,6 +7,7 @@ from rest_framework import status
 from rest_framework.decorators import api_view
  
 from .services import ZaloService
+from ccos.services import process_content
 
 import json
 
@@ -90,6 +91,24 @@ def get_client_by_user_id(request):
     return JsonResponse({
         'success': 0, 
         'message': message
+        })
+
+@api_view(['GET', 'POST'])
+def ccos_request(request):
+    message = f"Request method {request.method} is not allowed!"
+    if (request.method == 'GET'):
+        message = f"Data is not valid"
+        datas = request.GET
+        if datas.get('user_id'):
+            result = ZaloService().get_client_by_user_id(datas.get('user_id'))
+            return JsonResponse(result)
+    elif request.method == 'POST':
+        datas = json.loads(request.body)
+        if datas.get('state'):
+            process_content(datas.get('state'), datas)
+    return JsonResponse({
+            'success': 0, 
+            'message': message
         })
 
 @api_view(['GET'])

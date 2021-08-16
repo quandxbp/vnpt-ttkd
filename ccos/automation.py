@@ -20,22 +20,7 @@ def store_config(driver):
         'session_id': driver.session_id,
         'url': driver.command_executor._url
     }
-    store_json(BASE_DIR / 'config.json', datas)
-
-# The main process calls this function to create the driver instance.
-def createDriverInstance():
-    # http://outboundccos.vnpt.vn/Views/KhachHang/HoTroDangKY_KMCB_TT.aspx
-    options = Options()
-    options.add_argument('--disable-infobars')
-    # driver = webdriver.Chrome(executable_path=ChromeDriverManager("84.0.4147.30").install(), chrome_options=options, port=9515)
-    driver = webdriver.Chrome(executable_path=ChromeDriverManager().install(), chrome_options=options, port=9515)
-    driver.get(WEB_URL)
-    
-    store_config(driver)
-    return {
-        'success': 1, 
-        'message': f"Success"
-    }
+    store_json(BASE_DIR / 'ccos_config.json', datas)
 
 # Called by the second process only.
 def getCurrentDriver():
@@ -50,12 +35,35 @@ def getCurrentDriver():
 
     return driver
 
-def otp_code(datas):
-    if not datas.get('otp'):
-        return {
-            'success': 0, 
-            'message': f"Please provide OTP"
-        }
+# The main process calls this function to create the driver instance.
+def createDriverInstance():
+    # http://outboundccos.vnpt.vn/Views/KhachHang/HoTroDangKY_KMCB_TT.aspx
+    options = Options()
+    options.add_argument('--disable-infobars')
+    # driver = webdriver.Chrome(executable_path=ChromeDriverManager("84.0.4147.30").install(), chrome_options=options, port=9515)
+    driver = webdriver.Chrome(executable_path=ChromeDriverManager().install(), chrome_options=options, port=9515)
+    driver.get(WEB_URL)
+    
+    store_config(driver)
+
+def closeDriverInstance():
+    driver = getCurrentDriver()
+    driver.quit()
+
+def signin_ccos(username, password):
+    driver = getCurrentDriver()
+
+    username_input = driver.find_element_by_id("txtUsername")
+    pw_input = driver.find_element_by_id("txtPassword")
+    submit_btn = driver.find_element_by_name("btnLogin")
+
+    username_input.clear()
+    username_input.send_keys(username)
+    pw_input.clear()
+    pw_input.send_keys(password)
+    submit_btn.click()
+
+def send_otp(otp):
     driver = getCurrentDriver()
 
     otp_input = driver.find_element_by_id("txtOtp")
@@ -64,41 +72,6 @@ def otp_code(datas):
 
     # VD-149 < 120k ( TB 3 m)
     # D60 < 100k ( TB 3 m)
-    return {
-        'success': 1, 
-        'message': f"Success"
-    }
-
-def signin_ccos(datas):
-    if not datas.get('username') or not datas.get('password'):
-        return {
-            'success': 0, 
-            'message': f"Please provide username and password"
-        }
-    driver = getCurrentDriver()
-
-    username_input = driver.find_element_by_id("txtUsername")
-    pw_input = driver.find_element_by_id("txtPassword")
-    submit_btn = driver.find_element_by_name("btnLogin")
-
-    username_input.clear()
-    username_input.send_keys(datas.get('username'))
-    pw_input.clear()
-    pw_input.send_keys(datas.get('password'))
-    submit_btn.click()
-    
-    return {
-        'success': 1, 
-        'message': f"Success"
-    }
-
-def close_ccos():
-    driver = getCurrentDriver()
-    driver.quit()
-    return {
-        'success': 1, 
-        'message': f"Success"
-    }
 
 def regist_phone_package(phone, package):
     driver = getCurrentDriver()
