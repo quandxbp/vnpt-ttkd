@@ -94,18 +94,19 @@ def get_client_by_user_id(request):
         })
 
 @api_view(['GET', 'POST'])
-def ccos_request(request):
+def api_ccos(request):
     message = f"Request method {request.method} is not allowed!"
     if (request.method == 'GET'):
         message = f"Data is not valid"
         datas = request.GET
-        if datas.get('user_id'):
-            result = ZaloService().get_client_by_user_id(datas.get('user_id'))
+        if datas.get('state'):
+            result = process_content(datas.get('state'), datas)
             return JsonResponse(result)
     elif request.method == 'POST':
         datas = json.loads(request.body)
         if datas.get('state'):
-            process_content(datas.get('state'), datas)
+            result = process_content(datas.get('state'), datas)
+            return JsonResponse(result)
     return JsonResponse({
             'success': 0, 
             'message': message

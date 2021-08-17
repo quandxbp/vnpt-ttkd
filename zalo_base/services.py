@@ -4,6 +4,7 @@ from .models import ZaloUser
 from .zalo_sdk import ZaloSDK
 
 from oracle_db.oracle_service import ORACLE_SERVICE
+from ccos.services import regist_phone
 from django.contrib.staticfiles.storage import staticfiles_storage
 from django.conf import settings
 
@@ -165,6 +166,24 @@ Bạn có thể quét mã trực tiếp hoặc tải về máy về sử dụng 
                     else:
                         message = "Bạn chưa cung cấp thông tin để tra cứu cước, vui lòng vào mục Đăng ký mã khách hàng để khai báo thêm thông tin."
                         return self.z_sdk.post_message(user_id, message=message)
+                
+                if '#goicuoc' in message:
+                    splitted_data = message.split('_')
+
+                    try:
+                        phone = splitted_data[1]
+                        package = splitted_data[2]
+                        result = regist_phone(phone, package)
+                        message = result.get('message', """Không đúng cú pháp đăng ký 
+- Liên hệ: Quân Bùi - 0835 401 439 để hỗ trợ xử lỗi""")
+                    except Exception as err:
+                        message = f"""Không đúng cú pháp đăng ký hoặc có lỗi hệ thông khi thực thi
+- Lỗi : {str(err)}
+- Liên hệ: Quân Bùi - 0835 401 439 để thông báo lỗi."""
+                    return self.z_sdk.post_message(user_id, message=message) 
+                    
+                
+
                     
             
             

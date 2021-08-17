@@ -3,8 +3,8 @@ from .automation import *
 def process_content(state, datas):
     try:
         if state == 'system':
-            is_turn_on = datas('is_turn_on')
-            if is_turn_on:
+            is_open = datas.get('is_open')
+            if is_open:
                 createDriverInstance()
             else:
                 closeDriverInstance()
@@ -15,6 +15,11 @@ def process_content(state, datas):
         if state == 'otp':
             otp = datas.get('otp')
             send_otp(otp)
+        if state == 'connection':
+            return {
+                'success': 1,
+                'is_alive': check_connection()
+            }
         return {
             'success': 1,
             'message': 'Success'
@@ -24,3 +29,6 @@ def process_content(state, datas):
             'success': 0,
             'message': str(err)
         }
+
+def regist_phone(phone, package):
+    return regist_phone_package(phone, package)

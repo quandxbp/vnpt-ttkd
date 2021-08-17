@@ -22,38 +22,43 @@
         <section class="container">
             <div class="row">
                 <div class="col-12 col-lg-12 text-center p-3">
-                    <button type="button" id="openSystem" data-value="open"
-                    class="btn btn-success mr-5 systemBtn">Mở hệ thống ảo</button>
-                    <button type="button" id="closeSystem" data-value="close"
-                    class="btn btn-danger ml-5 systemBtn">Tắt hệ thống ảo</button>
+                    <button type="button" id="openSystem" data-open="1" data-state="system"
+                    class="btn btn-success mr-5 requestBtn">Mở hệ thống ảo</button>
+                    <button type="button" id="closeSystem" data-open="0" data-state="system"
+                    class="btn btn-danger ml-5 requestBtn">Tắt hệ thống ảo</button>
                 </div>
 
+                <!-- <div class="col-12 col-lg-6 text-center p-3">
+                    Trạng thái hệ thống: <span class="badge badge-pill badge-info p-2 mb-1" id="systemStatus">Đang tắt</span>
+                </div> -->
+
                 <div class="col-12 col-lg-12">
-                    <form class="p-3">
+                    <div class="p-3">
                         <div class="form-group">
-                          <label for="email">Tài khoản:</label>
-                          <input type="email" class="form-control" placeholder="Tài khoản CCOS" id="username">
+                          <label for="username">Tài khoản:</label>
+                          <input type="text" class="form-control" placeholder="Tài khoản CCOS" id="username">
                         </div>
                         <div class="form-group">
                           <label for="pwd">Mật khẩu:</label>
                           <input type="password" class="form-control" placeholder="Mật khẩu CCOS" id="pwd">
                         </div>
                         <div class="d-block text-center">
-                            <button type="submit" id="signin" class="btn btn-primary">Đăng nhập</button>
+                            <button type="submit" id="signin" data-state="signin"
+                            class="btn btn-primary requestBtn">Đăng nhập</button>
                         </div>
                         
-                    </form>
+                    </div>
                 </div>
                 <div class="col-12 col-lg-12">
-                    <form class="p-3">
+                    <div class="p-3">
                         <div class="form-group">
-                          <label for="email">Mã OTP:</label>
-                          <input type="email" class="form-control" placeholder="OTP" id="otp">
+                          <label for="otp">Mã OTP:</label>
+                          <input type="text" class="form-control" placeholder="OTP" id="otp">
                         </div>
                         <div class="d-block text-center">
-                            <button id="sendOtp" type="submit" class="btn btn-primary">Gửi OTP</button>
+                            <button id="sendOtp" type="submit" class="btn btn-primary requestBtn">Gửi OTP</button>
                         </div>
-                    </form>
+                    </div>
                 </div>
             </div>
             <div class="row">
@@ -69,10 +74,56 @@
 
     <script>
 
-    $('.systemBtn').click(function(ev) {
-        let value = $(this).data('value');
-        console.log(value);
+    $('.requestBtn').click(function(ev) {
+        let state = $(this).data('state');
+        let data = {'state': state};
+
+        if (state == 'signin') {
+            data.username = $("#username").val();
+            data.password = $("#pwd").val();
+        } else if (state == 'system') {
+            data.is_open = $(this).data('open');
+        } else if (state == 'otp') {
+            data.otp = $("#otp").val();
+        }
+
+        $.ajax({
+            type: 'POST',
+            url: '/api/ccos',
+            data: JSON.stringify(data),
+            contentType: "application/json",
+            success: function (result) {
+                console.log(result);
+            },
+            error: function(error) {
+                console.log(err);
+            }
+        });
     });
+
+    // $(document).ready(function() {
+    //     setInterval(function() {
+    //         $.ajax({
+    //             type: "GET",
+    //             url: "/api/ccos",
+    //             data: {
+    //                 state: 'connection',
+    //             },
+    //             contentType: "application/json",
+    //             success: function(result){
+    //                 console.log(result);
+    //                 if (result.is_alive)
+    //                     $("#systemStatus").text('Đang hoạt động');
+    //                 else 
+    //                     $("#systemStatus").text('Đang tắt');
+    //             },
+    //             error: function(error) {
+    //                 console.log(error);
+    //                 $("#systemStatus").text('Đang tắt');
+    //             }
+    //         });
+    //     }, 5000);
+    // });
 
     </script>
 </html>
