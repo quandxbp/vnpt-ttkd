@@ -13,5 +13,6 @@ urlpatterns = [
 
     path('ccos', views.ccos, name='ccos'),
     path('api/ccos', views.api_ccos, name='api_ccos'),
+    path('api/message', views.message, name='message'),
     path('test', views.test, name='test'),
 ]

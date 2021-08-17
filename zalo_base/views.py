@@ -112,6 +112,20 @@ def api_ccos(request):
             'message': message
         })
 
+@api_view(['POST'])
+def message(request):
+    message = f"Request method {request.method} is not allowed!"
+    if request.method == 'POST':
+        datas = json.loads(request.body)
+        if datas.get('user_id') and datas.get('message'):
+            result = ZaloService().send_message(datas.get('user_id'), datas.get('message'))
+            return JsonResponse(result)
+        message = f"Missing params in sending request"
+    return JsonResponse({
+            'success': 0, 
+            'message': message
+        })
+
 @api_view(['GET'])
 def test(request):
     message = f"Request method {request.method} is not allowed!"

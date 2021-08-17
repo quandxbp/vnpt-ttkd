@@ -45,6 +45,9 @@ class ZaloService:
 
     def get_client_by_user_id(self, user_id):
         return OracleService.get_client_by_user_id(user_id)
+    
+    def send_message(self, user_id, message):
+        return self.z_sdk.post_message(user_id, message=message)
 
     def submit_regist_payment(self, datas):
         user_id = datas.get('user_id')
