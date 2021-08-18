@@ -176,14 +176,18 @@ Bạn có thể quét mã trực tiếp hoặc tải về máy về sử dụng 
                     try:
                         phone = splitted_data[1]
                         package = splitted_data[2]
+
+                        self.z_sdk.post_message(user_id, message="Đang tiến hành đăng ký, vui lòng đợi ...")
                         result = regist_phone(phone, package)
                         message = result.get('message', """Không đúng cú pháp đăng ký 
 - Liên hệ: Quân Bùi - 0835 401 439 để hỗ trợ xử lỗi""")
+                        return self.z_sdk.post_message(user_id, message=message)
                     except Exception as err:
                         message = f"""Không đúng cú pháp đăng ký hoặc có lỗi hệ thông khi thực thi
 - Lỗi : {str(err)}
 - Liên hệ: Quân Bùi - 0835 401 439 để thông báo lỗi."""
-                    return self.z_sdk.post_message(user_id, message=message) 
+                        return self.z_sdk.post_message(user_id, message=message)
+                     
         return {
             'success': 1,
             'message': 'Success'
