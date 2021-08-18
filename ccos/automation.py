@@ -16,7 +16,7 @@ import os
 import sys
 import time
 
-from .utils import store_json, read_json
+from utils import store_json, read_json
 from pathlib import Path
 
 # admin_bpc_vnp2 / Vnpt@123456
@@ -102,7 +102,7 @@ def regist_phone_package(phone, package):
     # driver = getCurrentDriver()
     # FOR TESTING
     chrome_options = wd.ChromeOptions()
-    chrome_options.add_argument("--headless")
+    # chrome_options.add_argument("--headless")
     chrome_options.add_argument('--user-agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36"')
     driver = wd.Chrome(executable_path=CHROME_PATH, options=chrome_options)
 
@@ -187,14 +187,14 @@ def regist_phone_package(phone, package):
         alert.accept()
         time.sleep(3)
 
-        driver.quit()
         if len(driver.find_elements_by_id('Content_lblError')) > 0:
             errorContent = driver.find_element_by_id('Content_lblError').text
+            driver.quit()
             return {
                 'success': 0,
                 'message': errorContent
             }
-        
+        driver.quit()
         return {
             'success': 1,
             'message': f"Đăng ký thành công số điện thoại {phone} với gói cước {package}"
@@ -202,7 +202,4 @@ def regist_phone_package(phone, package):
     # get_attribute('value')
     # VD-149 < 120k ( TB 3 m)
     # D60 < 100k ( TB 3 m)
-
-    
-
 
