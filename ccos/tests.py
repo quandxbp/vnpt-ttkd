@@ -1,8 +1,10 @@
-from selenium import webdriver
+from seleniumwire import webdriver
 from selenium.webdriver.chrome.options import Options
-from selenium.webdriver.support.ui import Select
+from selenium.webdriver.support.ui import Select, WebDriverWait
 from selenium.webdriver.common.alert import Alert
-from selenium.common.exceptions import NoSuchElementException        
+from selenium.common.exceptions import NoSuchElementException
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.common.exceptions import TimeoutException   
 
 from multiprocessing import Process
 from webdriver_manager import driver
@@ -104,5 +106,20 @@ def regist_phone_package(phone, package):
     # VD-149 < 120k ( TB 3 m)
     # D60 < 100k ( TB 3 m)
 
-result = regist_phone_package('0835401439', 'VD149')
-print(result)
+import os
+import sys
+
+if sys.platform.startswith("darwin"):
+    CHROME_PATH = f"{str(BASE_DIR)}/chromedriver"
+elif sys.platform.startswith("win32"):
+    CHROME_PATH = f"{str(BASE_DIR)}/chromedriver.exe"
+
+def createDriverInstance():
+    chrome_options = webdriver.ChromeOptions()
+    # chrome_options.add_argument("--headless")
+    driver = webdriver.Chrome(executable_path=CHROME_PATH, options=chrome_options)
+    driver.get(WEB_URL)
+    
+    for request in driver.requests:
+        print(request.headers.get('Cookie'))
+

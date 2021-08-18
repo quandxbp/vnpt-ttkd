@@ -170,8 +170,8 @@ Bạn có thể quét mã trực tiếp hoặc tải về máy về sử dụng 
                         message = "Bạn chưa cung cấp thông tin để tra cứu cước, vui lòng vào mục Đăng ký mã khách hàng để khai báo thêm thông tin."
                         return self.z_sdk.post_message(user_id, message=message)
                 
-                if 'ccos' in message:
-                    splitted_data = message.split('_')
+                if '$ccos' in message:
+                    splitted_data = message.split('-')
 
                     try:
                         phone = splitted_data[1]
