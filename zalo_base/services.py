@@ -170,7 +170,7 @@ Bạn có thể quét mã trực tiếp hoặc tải về máy về sử dụng 
                         message = "Bạn chưa cung cấp thông tin để tra cứu cước, vui lòng vào mục Đăng ký mã khách hàng để khai báo thêm thông tin."
                         return self.z_sdk.post_message(user_id, message=message)
                 
-                if '#goicuoc' in message:
+                if 'ccos' in message:
                     splitted_data = message.split('_')
 
                     try:
@@ -184,6 +184,10 @@ Bạn có thể quét mã trực tiếp hoặc tải về máy về sử dụng 
 - Lỗi : {str(err)}
 - Liên hệ: Quân Bùi - 0835 401 439 để thông báo lỗi."""
                     return self.z_sdk.post_message(user_id, message=message) 
+        return {
+            'success': 1,
+            'message': 'Success'
+        }
                     
                 
 

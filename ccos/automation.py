@@ -39,8 +39,7 @@ def store_config(driver):
 def getCurrentDriver():
     infor = read_json(BASE_DIR / 'ccos_config.json')
     chrome_options = webdriver.ChromeOptions()
-    chrome_options.add_argument("--headless")
-    chrome_options.add_argument('--user-agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36"')
+    # chrome_options.add_argument("--headless")
     chrome_options.add_argument("--disable-infobars")
     chrome_options.add_argument("--enable-file-cookies")
     capabilities = chrome_options.to_capabilities()
@@ -53,7 +52,7 @@ def getCurrentDriver():
 # The main process calls this function to create the driver instance.
 def createDriverInstance():
     chrome_options = webdriver.ChromeOptions()
-    chrome_options.add_argument("--headless")
+    # chrome_options.add_argument("--headless")
     chrome_options.add_argument('--user-agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36"')
     driver = webdriver.Chrome(executable_path=f"{str(BASE_DIR)}/chromedriver", options=chrome_options)
     driver.get(WEB_URL)
@@ -85,6 +84,7 @@ def send_otp(otp):
     driver.find_element_by_id("btnProcess").click()
 
 def regist_phone_package(phone, package):
+    print(1)
     driver = getCurrentDriver()
     # FOR TESTING
     # chrome_options = webdriver.ChromeOptions()
@@ -109,7 +109,7 @@ def regist_phone_package(phone, package):
         time.sleep(3)
         if 'HoTroDangKY_KMCB_TT' not in driver.current_url:
             return False
-    
+    package = package.upper()
     if package not in AVAILABLE_PACKAGES:
         return {
             'success': 0,
