@@ -38,10 +38,12 @@ def store_config(driver):
 # Called by the second process only.
 def getCurrentDriver():
     infor = read_json(BASE_DIR / 'ccos_config.json')
-    options = Options()
-    options.add_argument("--disable-infobars")
-    options.add_argument("--enable-file-cookies")
-    capabilities = options.to_capabilities()
+    chrome_options = webdriver.ChromeOptions()
+    chrome_options.add_argument("--headless")
+    chrome_options.add_argument('--user-agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36"')
+    chrome_options.add_argument("--disable-infobars")
+    chrome_options.add_argument("--enable-file-cookies")
+    capabilities = chrome_options.to_capabilities()
     driver = webdriver.Remote(command_executor=infor['url'], desired_capabilities=capabilities)
     driver.close()
     driver.session_id = infor['session_id']
@@ -50,12 +52,10 @@ def getCurrentDriver():
 
 # The main process calls this function to create the driver instance.
 def createDriverInstance():
-    # http://outboundccos.vnpt.vn/Views/KhachHang/HoTroDangKY_KMCB_TT.aspx
-    options = Options()
-    options.add_argument('--disable-infobars')
-    options.add_argument("--headless")
-    # driver = webdriver.Chrome(executable_path=ChromeDriverManager("84.0.4147.30").install(), chrome_options=options, port=9515)
-    driver = webdriver.Chrome(executable_path=ChromeDriverManager().install(), chrome_options=options, port=9515)
+    chrome_options = webdriver.ChromeOptions()
+    chrome_options.add_argument("--headless")
+    chrome_options.add_argument('--user-agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36"')
+    driver = webdriver.Chrome(executable_path=f"{str(BASE_DIR)}/chromedriver", options=chrome_options)
     driver.get(WEB_URL)
     
     store_config(driver)
