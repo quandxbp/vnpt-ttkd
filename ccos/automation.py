@@ -11,15 +11,22 @@ from webdriver_manager import driver
 
 from webdriver_manager.chrome import ChromeDriverManager
 
-from pathlib import Path
-# Admin@123456
-from .utils import store_json, read_json
+import os
+import sys
 import time
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
+from .utils import store_json, read_json
+from pathlib import Path
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 WEB_URL = 'http://outboundccos.vnpt.vn/Views/KhachHang/HoTroDangKY_KMCB_TT.aspx'
 AVAILABLE_PACKAGES = ['VD149', 'D60G']
+
+
+if sys.platform.startswith("darwin"):
+    CHROME_PATH = f"{str(BASE_DIR)}/chromedriver"
+elif sys.platform.startswith("win32"):
+    CHROME_PATH = f"{str(BASE_DIR)}/chromedriver.exe"
 
 def check_connection():
     try:
@@ -53,7 +60,7 @@ def getCurrentDriver():
 def createDriverInstance():
     chrome_options = webdriver.ChromeOptions()
     # chrome_options.add_argument("--headless")
-    driver = webdriver.Chrome(executable_path=f"{str(BASE_DIR)}/chromedriver", options=chrome_options)
+    driver = webdriver.Chrome(executable_path=CHROME_PATH, options=chrome_options)
     driver.get(WEB_URL)
     
     store_config(driver)
