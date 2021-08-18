@@ -84,7 +84,6 @@ def send_otp(otp):
     driver.find_element_by_id("btnProcess").click()
 
 def regist_phone_package(phone, package):
-    print(1)
     driver = getCurrentDriver()
     # FOR TESTING
     # chrome_options = webdriver.ChromeOptions()
