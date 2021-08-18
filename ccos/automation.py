@@ -16,7 +16,7 @@ import os
 import sys
 import time
 
-from utils import store_json, read_json
+from .utils import store_json, read_json
 from pathlib import Path
 
 # admin_bpc_vnp2 / Vnpt@123456
