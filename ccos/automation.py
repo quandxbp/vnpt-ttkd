@@ -49,9 +49,9 @@ def getCurrentDriver():
     # chrome_options.add_argument("--headless")
     chrome_options.add_argument("--disable-infobars")
     chrome_options.add_argument("--enable-file-cookies")
+    chrome_options.add_argument('--user-agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36"')
     capabilities = chrome_options.to_capabilities()
     driver = webdriver.Remote(command_executor=infor['url'], desired_capabilities=capabilities)
-    driver.close()
     driver.session_id = infor['session_id']
 
     return driver
@@ -81,7 +81,6 @@ def signin_ccos(username, password):
     pw_input.clear()
     pw_input.send_keys(password)
     submit_btn.click()
-    driver.close()
 
 def send_otp(otp):
     driver = getCurrentDriver()
@@ -89,9 +88,15 @@ def send_otp(otp):
     otp_input = driver.find_element_by_id("txtOtp")
     otp_input.send_keys(otp)
     driver.find_element_by_id("btnProcess").click()
-    driver.close()
 
 def regist_phone_package(phone, package):
+    driver = getCurrentDriver()
+    return {
+        'success': 1,
+        'message': f"Đăng ký thành công số điện thoại {phone} với gói cước {package}"
+    }
+
+def a(phone, package):
     driver = getCurrentDriver()
     # FOR TESTING
     # chrome_options = webdriver.ChromeOptions()
@@ -115,14 +120,12 @@ def regist_phone_package(phone, package):
         driver.get(WEB_URL)
         time.sleep(3)
         if 'HoTroDangKY_KMCB_TT' not in driver.current_url:
-            driver.close()
             return {
                 'success': 0,
                 'message': f"""Cần mở lại hệ thống ảo."""
             }
     package = package.upper()
     if package not in AVAILABLE_PACKAGES:
-        driver.close()
         return {
             'success': 0,
             'message': f"""Gói {package} hiện tại không được hỗ trợ"""
@@ -144,7 +147,6 @@ def regist_phone_package(phone, package):
         alert = Alert(driver)
         alert_text = alert.text
         alert.accept()
-        driver.close()
         return {
             'success': 0,
             'message': alert_text
@@ -158,13 +160,11 @@ def regist_phone_package(phone, package):
         total = float(T1_value) + float(T2_value) + float(T3_value)
 
         if package == 'VD149' and total < 120000:
-            driver.close()
             return {
                 'success': 0,
                 'message': f"""Thuê báo có tổng tiêu dùng TKC 3 tháng gần nhất nhỏ hơn 120.000 đ. Tháng T-1: {T1_value}đ; Tháng T-2: {T2_value} đ; Tháng T-2: {T3_value} đ"""
             }
         elif package == 'D60G' and total < 100000:
-            driver.close()
             return {
                 'success': 0,
                 'message': f"""Thuê báo có tổng tiêu dùng TKC 3 tháng gần nhất nhỏ hơn 100.000 đ. Tháng T-1: {T1_value}đ; Tháng T-2: {T2_value} đ; Tháng T-2: {T3_value} đ"""
@@ -179,7 +179,6 @@ def regist_phone_package(phone, package):
         alert = Alert(driver)
         alert.accept()
         time.sleep(3)
-        driver.close()
         if len(driver.find_elements_by_id('Content_lblError')) > 0:
             errorContent = driver.find_element_by_id('Content_lblError').text
             return {
