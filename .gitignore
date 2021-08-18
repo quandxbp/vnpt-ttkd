@@ -1,2 +1,4 @@
 **/instantclient_19_8
 *.pyc 
+config.json
+ccos_config.json
