@@ -179,13 +179,15 @@ def regist_phone_package(phone, package):
 
         package_selection = Select(driver.find_element_by_id('ddlKMCB'))
         package_selection.select_by_value(package)
-        submit_package_btn = driver.find_element_by_id("Content_btnKMCB")
+        submit_package_btn = driver.find_element_by_id("Content_btnAddDSKM_KMCB")
         submit_package_btn.click()
 
-        time.sleep(3)
+        time.sleep(2)
         alert = Alert(driver)
         alert.accept()
-        time.sleep(3)
+        time.sleep(2)
+
+        # driver.find_element_by_xpath("/html/body/form/div[3]/div[3]/div/div/div[2]/div/table/tbody/tr[2]/td")
 
         if len(driver.find_elements_by_id('Content_lblError')) > 0:
             errorContent = driver.find_element_by_id('Content_lblError').text
@@ -197,9 +199,5 @@ def regist_phone_package(phone, package):
         driver.quit()
         return {
             'success': 1,
-            'message': f"Đăng ký thành công số điện thoại {phone} với gói cước {package}"
+            'message': f"Đăng ký thành công số điện thoại {phone} với gói cước {package} vào danh sách khuyến mãi"
         }
-    # get_attribute('value')
-    # VD-149 < 120k ( TB 3 m)
-    # D60 < 100k ( TB 3 m)
-
