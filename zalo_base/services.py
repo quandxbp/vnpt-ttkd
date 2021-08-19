@@ -118,6 +118,8 @@ class ZaloService:
             message = datas['message']['text']
             info = self.z_sdk.get_user_info(user_id)
             
+            message = datas['message']['text']
+            return self.z_sdk.post_message(user_id, message=message)
             if not info:
                 title = "Cung cấp thông tin cá nhân"
                 subtitle = "Hãy cung cấp thông tin cá nhân để có thể sử dụng các dịch vụ, tiện ích của Vinaphone trên ứng dụng Zalo"
@@ -127,7 +129,7 @@ class ZaloService:
                     phone = parse_phone(info.get('phone'))
                     data = [(user_id, info.get('name', 'Chưa xác định'), phone, datetime.datetime.now())]
                     OracleService.insert_zalo_user(user_id, data)
-                    message = self._get_user_detail_message(user_info)
+                    message = self._get_user_detail_message(info)
                     return self.z_sdk.post_message(user_id, message=message)
 
                 if '#tracuucuoc' in message:
