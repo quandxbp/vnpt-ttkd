@@ -118,8 +118,6 @@ class ZaloService:
             message = datas['message']['text']
             info = self.z_sdk.get_user_info(user_id)
             
-            message = datas['message']['text']
-            return self.z_sdk.post_message(user_id, message=message)
             if not info:
                 title = "Cung cấp thông tin cá nhân"
                 subtitle = "Hãy cung cấp thông tin cá nhân để có thể sử dụng các dịch vụ, tiện ích của Vinaphone trên ứng dụng Zalo"
