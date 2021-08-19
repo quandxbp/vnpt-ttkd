@@ -164,17 +164,17 @@ def regist_phone_package(phone, package):
 
         total = float(T1_value) + float(T2_value) + float(T3_value)
 
-        if package == 'VD149' and total < 120000:
+        if package == 'VD149' and total >= 120000:
             driver.quit()
             return {
                 'success': 0,
-                'message': f"""Thuê báo có tổng tiêu dùng TKC 3 tháng gần nhất nhỏ hơn 120.000 đ. Tháng T-1: {T1_value}đ; Tháng T-2: {T2_value} đ; Tháng T-2: {T3_value} đ"""
+                'message': f"""Thuê báo có tổng tiêu dùng TKC 3 tháng gần nhất lớn hơn 120.000 đ. Tháng T-1: {T1_value}đ; Tháng T-2: {T2_value} đ; Tháng T-2: {T3_value} đ"""
             }
-        elif package == 'D60G' and total < 100000:
+        elif package == 'D60G' and total >= 100000:
             driver.quit()
             return {
                 'success': 0,
-                'message': f"""Thuê báo có tổng tiêu dùng TKC 3 tháng gần nhất nhỏ hơn 100.000 đ. Tháng T-1: {T1_value}đ; Tháng T-2: {T2_value} đ; Tháng T-2: {T3_value} đ"""
+                'message': f"""Thuê báo có tổng tiêu dùng TKC 3 tháng gần nhất lớn hơn 100.000 đ. Tháng T-1: {T1_value}đ; Tháng T-2: {T2_value} đ; Tháng T-2: {T3_value} đ"""
             }
 
         package_selection = Select(driver.find_element_by_id('ddlKMCB'))
