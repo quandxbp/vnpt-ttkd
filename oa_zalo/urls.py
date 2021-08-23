@@ -5,3 +5,5 @@ urlpatterns = [
     path('', include('zalo_base.urls')),
     path('admin/', admin.site.urls),
 ]
+
+import execute

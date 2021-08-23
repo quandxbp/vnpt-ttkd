@@ -99,8 +99,6 @@ def send_otp(otp):
 
 def regist_phone_package(phone, package):
     infor = read_json(BASE_DIR / 'ccos_config.json')
-    # driver = getCurrentDriver()
-    # FOR TESTING
     chrome_options = wd.ChromeOptions()
     # chrome_options.add_argument("--headless")
     chrome_options.add_argument('--user-agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36"')
@@ -199,5 +197,35 @@ def regist_phone_package(phone, package):
         driver.quit()
         return {
             'success': 1,
-            'message': f"Đăng ký thành công số điện thoại {phone} với gói cước {package} vào danh sách khuyến mãi"
+            'message': f"Gán gói {package} cho thuê bao {phone} thành công"
         }
+
+def check_ccos_status():
+    infor = read_json(BASE_DIR / 'ccos_config.json')
+    chrome_options = wd.ChromeOptions()
+    # chrome_options.add_argument("--headless")
+    chrome_options.add_argument('--user-agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36"')
+    driver = wd.Chrome(executable_path=CHROME_PATH, options=chrome_options)
+
+    driver.get(WEB_URL)
+    new_window = f'window.open("{WEB_URL}"); '
+    driver.delete_all_cookies()  
+    driver.add_cookie({'name': 'ASP.NET_SessionId', 'value': infor['cookie']}) 
+    driver.execute_script(new_window)
+
+    window_after = driver.window_handles[1]
+
+    driver.switch_to_window(window_after)
+    time.sleep(1)
+    # ===========
+    
+    ccos_info = read_json(BASE_DIR / 'ccos_config.json')
+    is_alive = True
+    try:
+        element = driver.find_element_by_id("Content_txtSearchSTB")
+    except NoSuchElementException:
+        is_alive = False
+
+    ccos_info['is_alive'] = is_alive
+    store_json(BASE_DIR / 'ccos_config.json', ccos_info)
+    return is_alive

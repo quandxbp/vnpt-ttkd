@@ -20,10 +20,7 @@ def process_content(state, datas):
             send_otp(otp)
             message = "Đã gửi mã OTP"
         if state == 'connection':
-            return {
-                'success': 1,
-                'is_alive': check_connection()
-            }
+            return check_ccos_status()
         return {
             'success': 1,
             'message': message

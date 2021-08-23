@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html>
     <head>
+        {% load static %}
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://zjs.zdn.vn/zalo/Zalo.Extensions.min.js" type="text/javascript"></script>
+        <link rel="icon" type="image/png" href="{% static 'images/vnpt-logo.png' %}"/>
+        <link rel="icon" type="image/png" href="{% static 'images/vnpt-logo.png' %}"/>
     </head>
 
     <body>
-        {% load static %}
+        
         <section class="container-fluid">
             <div class="row">
                 <div class="col-xs-12 col-lg-12 text-center bg-light p-5">
@@ -19,18 +22,22 @@
             </div>
         </section>
 
-        <section class="container">
-            <div class="row">
-                <div class="col-12 col-lg-12 text-center p-3">
+        <section class="container" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" >
+            <div class="row mt-3">
+                <div class="col-12 col-lg-6 text-center p-3">
                     <button type="button" id="openSystem" data-open="1" data-state="system"
-                    class="btn btn-success mr-5 requestBtn">Mở hệ thống ảo</button>
-                    <button type="button" id="closeSystem" data-open="0" data-state="system"
-                    class="btn btn-danger ml-5 requestBtn">Tắt hệ thống ảo</button>
+                    class="btn btn-success mt-3 requestBtn">Mở hệ thống ảo</button>
+                    <!-- <button type="button" id="closeSystem" data-open="0" data-state="system"
+                    class="btn btn-danger ml-5 requestBtn">Tắt hệ thống ảo</button> -->
                 </div>
 
-                <!-- <div class="col-12 col-lg-6 text-center p-3">
-                    Trạng thái hệ thống: <span class="badge badge-pill badge-info p-2 mb-1" id="systemStatus">Đang tắt</span>
-                </div> -->
+                <div class="col-12 col-lg-6 text-center p-3">
+                    <strong>Trạng thái hệ thống</strong>
+                    <br/>
+                    <span class="badge badge-pill badge-info p-2 mb-1 mt-2" id="systemStatus">Đang tắt</span>
+                </div>
+
+                <div style="border: 1px solid #c2d6d6; width: 100%;"></div>
 
                 <div class="col-12 col-lg-12">
                     <div class="p-3">
@@ -44,11 +51,14 @@
                         </div>
                         <div class="d-block text-center">
                             <button type="submit" id="signin" data-state="signin"
-                            class="btn btn-primary requestBtn">Đăng nhập</button>
+                            class="btn btn-outline-primary requestBtn">Đăng nhập</button>
                         </div>
                         
                     </div>
                 </div>
+
+                <div style="border: 1px solid #c2d6d6; width: 100%;"></div>
+
                 <div class="col-12 col-lg-12">
                     <div class="p-3">
                         <div class="form-group">
@@ -56,7 +66,7 @@
                           <input type="text" class="form-control" placeholder="OTP" id="otp">
                         </div>
                         <div class="d-block text-center">
-                            <button id="sendOtp" type="submit" class="btn btn-primary requestBtn" data-state="otp">Gửi OTP</button>
+                            <button id="sendOtp" type="submit" class="btn btn-outline-primary requestBtn" data-state="otp">Gửi OTP</button>
                         </div>
                     </div>
                 </div>
@@ -91,39 +101,44 @@
             type: 'POST',
             url: '/api/ccos',
             data: JSON.stringify(data),
+            async: TRUE,
             contentType: "application/json",
             success: function (result) {
                 $('.alert-info').text(result.message)
             },
             error: function(error) {
                 $('.alert-info').text(error)
+            },
+            complete: function(data) {
+                if (state == 'otp') checkServerStatus();
             }
         });
     });
 
-    // $(document).ready(function() {
-    //     setInterval(function() {
-    //         $.ajax({
-    //             type: "GET",
-    //             url: "/api/ccos",
-    //             data: {
-    //                 state: 'connection',
-    //             },
-    //             contentType: "application/json",
-    //             success: function(result){
-    //                 console.log(result);
-    //                 if (result.is_alive)
-    //                     $("#systemStatus").text('Đang hoạt động');
-    //                 else 
-    //                     $("#systemStatus").text('Đang tắt');
-    //             },
-    //             error: function(error) {
-    //                 console.log(error);
-    //                 $("#systemStatus").text('Đang tắt');
-    //             }
-    //         });
-    //     }, 5000);
-    // });
+    function checkServerStatus() {
+        $.ajax({
+            type: "GET",
+            url: "/api/ccos",
+            data: {
+                state: 'connection',
+            },
+            contentType: "application/json",
+            success: function(is_alive){
+                if (is_alive)
+                    $("#systemStatus").text('Đang hoạt động');
+                else 
+                    $("#systemStatus").text('Đang tắt');
+            },
+            error: function(error) {
+                console.log(error);
+                $("#systemStatus").text('Đang tắt');
+            }
+        });
+    }
+
+    $(document).ready(function() {
+        setInterval(checkServerStatus, 1000 * 60 * 60 * 3);
+    });
 
     </script>
 </html>
