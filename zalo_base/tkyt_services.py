@@ -207,7 +207,6 @@ Hãy nhấn vào nút bên dưới khi đã đến địa điểm của bạn!""
                     zalo_response = user_response.get('zalo_response')
                     shared_info = zalo_response['data'].get('shared_info')
                     if shared_info:
-                        #TODO: Send user_id and phone to server
                         res = self.send_user_info_to_tkyt(user_id, shared_info.get('phone'))
                         message = self.get_user_detail_message(shared_info)
                         return self.z_sdk.post_message(user_id, message=message)
