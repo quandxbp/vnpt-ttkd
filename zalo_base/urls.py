@@ -15,4 +15,13 @@ urlpatterns = [
     path('api/ccos', views.api_ccos, name='api_ccos'),
     path('api/message', views.message, name='message'),
     path('test', views.test, name='test'),
+
+    # ============================================================ #
+    path('message', views.message, name='message'),
+    path('site', views.site, name='site'),
+    path('location/<str:zuser_id>', views.location, name='location'),
+    path('location_confirm', views.location_confirm, name='location_confirm'),
+    path('declare_confirm', views.declare_confirm, name='declare_confirm'),
+    path('checkpoint_confirm', views.checkpoint_confirm, name='checkpoint_confirm'),
+    path('tkyt_hook', views.tkyt_hook, name='tkyt_hook')
 ]

@@ -40,7 +40,7 @@ class ORACLE_SERVICE:
     def get_client_by_payment_code(self, phone, payment_code):
         phone = f"%{phone}"
         stmt = """
-        select distinct * from misdata.vKhachhang kh
+        select distinct kh.ma_tt, kh.ten_tb, kh.diachi_ld, kh.so_dt from misdata.vKhachhang kh
             where (kh.ma_tt = :payment_code or kh.ma_tb = :payment_code)
                 and (kh.ma_tb LIKE :phone
                     or kh.dienthoai LIKE :phone

@@ -37,7 +37,22 @@ class ORACLE_DB:
         self.conn.commit()
         cursor.close()
 
-    # def search(self, table):
-    #     query = f"""SELECT * FROM {table} WHERE """
+    def exec_procedure(self, proc_name):
+        p_zalo_id = '6046163127961711684'
+        cursor = self.conn.cursor()
+        proc_name = 'TRA_CUU_THONG_TIN_NO'
+        result = ''
+        l_cur = cursor.var(cx_Oracle.CURSOR)
+        l_query = cursor.callproc(proc_name, p_zalo_id)
+
+        l_results = l_query[2]
+
+        for row in l_results:
+            print(row)
+
+        # Column Specs
+        for row in l_results.description:
+            print(row)
+
 
 
