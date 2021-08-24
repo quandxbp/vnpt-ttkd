@@ -213,12 +213,12 @@ Hãy nhấn vào nút bên dưới khi đã đến địa điểm của bạn!""
                         return self.z_sdk.post_message(user_id, message=message)
                 return self.z_sdk.request_user_info(user_id, title=title, subtitle=subtitle)
 
-        if event_name == "user_send_text":
-            user_id = datas['sender']['id']
-            message = datas['message']['text']
+        # if event_name == "user_send_text":
+        #     user_id = datas['sender']['id']
+        #     message = datas['message']['text']
             
-            if 'TKVT_' in message:
-                pass
+        #     if 'TKVT_' in message:
+        #         pass
                 # self.scan_qr_code_for_checker(message)
                 # return self.send_checker_confirm(user_id, message)
 

@@ -23,5 +23,6 @@ urlpatterns = [
     path('location_confirm', views.location_confirm, name='location_confirm'),
     path('declare_confirm', views.declare_confirm, name='declare_confirm'),
     path('checkpoint_confirm', views.checkpoint_confirm, name='checkpoint_confirm'),
+    path('tkyt/message', views.tkyt_message, name='tkyt_message'),
     path('tkyt_hook', views.tkyt_hook, name='tkyt_hook')
 ]

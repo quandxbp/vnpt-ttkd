@@ -226,6 +226,24 @@ def checkpoint_confirm(request):
         })
 
 @api_view(['POST'])
+def tkyt_message(request):
+    message = f"Request method {request.method} is not allowed!"
+    if (request.method == 'POST'):
+        datas = json.loads(request.body)
+        if datas.get('zuser_id'):
+            result = TKYT_Service().post_message(datas.get('zuser_id') ,datas.get('message', False))
+            return JsonResponse(result)
+        elif datas.get('messages'):
+            result = TKYT_Service().post_multiple_message(datas.get('messages'))
+            return JsonResponse(result)
+        message = 'Zalo User ID is not provided'
+    return JsonResponse({
+        'success': 0, 
+        'message': message
+        })
+
+
+@api_view(['POST'])
 def tkyt_hook(request):
     if (request.method == 'POST'):
         try:
