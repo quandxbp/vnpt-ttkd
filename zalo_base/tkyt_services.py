@@ -166,7 +166,7 @@ Hãy nhấn vào nút bên dưới khi đã đến địa điểm của bạn!""
             return self.z_sdk.post_message(user_id, message=message)
 
         if event_name == "user_send_text":
-            user_id = datas['recipient']['id']
+            user_id = datas['sender']['id']
             message = datas['message']['text']
 
             # Xác nhận điểm đến
