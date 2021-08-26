@@ -267,6 +267,7 @@ Hãy nhấn vào nút bên dưới khi đã đến địa điểm của bạn!""
             return phone
         
         phone = parse_phone(phone)
+        self.z_sdk.post_message(user_id, message=phone)
         # if phone and '84' in phone 
         submit_url = 'https://api.binhphuoc.gov.vn/api/van-tai/dang-ky-quan-ly-zalo'
         headers = {
@@ -280,6 +281,7 @@ Hãy nhấn vào nút bên dưới khi đã đến địa điểm của bạn!""
         print(f"INFO : {submit_url} \n - DATA: {body} ")
         response = requests.post(submit_url, json=body, headers=headers)
         if response.ok:
+            self.z_sdk.post_message(user_id, message=f"SUCCESS : {submit_url} \n {response.text}")
             json_res = response.json()
             print(f"INFO : {json_res.get('message', '')} ")
             return {
@@ -287,6 +289,7 @@ Hãy nhấn vào nút bên dưới khi đã đến địa điểm của bạn!""
                 'success': 1
             }
         else:
+            self.z_sdk.post_message(user_id, message=f"ERROR : {submit_url} \n {response.text}")
             print(f"ERROR : {submit_url} \n {response.text}" )
             return {
                 'message': response.text,
