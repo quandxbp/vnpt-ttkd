@@ -220,12 +220,17 @@ Hãy nhấn vào nút bên dưới khi đã đến địa điểm của bạn!""
                 user_response = self.z_sdk.get_profile(user_id)
 
                 if user_response['success']:
+                    self.z_sdk.post_message(user_id, message='1')
                     zalo_response = user_response.get('zalo_response')
                     shared_info = zalo_response['data'].get('shared_info')
+                    self.z_sdk.post_message(user_id, message='2')
                     if shared_info:
+                        self.z_sdk.post_message(user_id, message='3')
                         res = self.send_user_info_to_tkyt(user_id, shared_info.get('phone'))
                         message = self.get_user_detail_message(shared_info)
+                        self.z_sdk.post_message(user_id, message='4')
                         return self.z_sdk.post_message(user_id, message=message)
+                self.z_sdk.post_message(user_id, message='miss')
                 return self.z_sdk.request_user_info(user_id, title=title, subtitle=subtitle)
 
     def send_location_to_tkyt(self, user_id, location, is_checkin):
