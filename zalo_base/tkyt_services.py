@@ -217,7 +217,6 @@ Hãy nhấn vào nút bên dưới khi đã đến địa điểm của bạn!""
             if "#dangkyquanly" in message:
                 title = "Đăng ký tài khoản cấp Quản lý"
                 subtitle = "Hãy cung cấp thông tin cá nhân theo mẫu để tiến hành đăng ký cấp Quản lý"
-                return self.z_sdk.post_message(user_id, message=message)
                 user_response = self.z_sdk.get_profile(user_id)
 
                 if user_response['success']:
