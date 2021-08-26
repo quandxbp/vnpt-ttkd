@@ -279,22 +279,24 @@ Hãy nhấn vào nút bên dưới khi đã đến địa điểm của bạn!""
             'so_dien_thoai': phone,
         }
         print(f"INFO : {submit_url} \n - DATA: {body} ")
-        response = requests.post(submit_url, json=body, headers=headers)
-        if response.ok:
-            self.z_sdk.post_message(user_id, message=f"SUCCESS : {submit_url} \n {response.text}")
-            json_res = response.json()
-            print(f"INFO : {json_res.get('message', '')} ")
-            return {
-                'message': json_res.get('message', ''),
-                'success': 1
-            }
-        else:
-            self.z_sdk.post_message(user_id, message=f"ERROR : {submit_url} \n {response.text}")
-            print(f"ERROR : {submit_url} \n {response.text}" )
-            return {
-                'message': response.text,
-                'success': 0
-            }
+        try:
+            response = requests.post(submit_url, json=body, headers=headers)
+            self.z_sdk.post_message(user_id, message=str(response.text))
+            if response.ok:
+                json_res = response.json()
+                print(f"INFO : {json_res.get('message', '')} ")
+                return {
+                    'message': json_res.get('message', ''),
+                    'success': 1
+                }
+            else:
+                print(f"ERROR : {submit_url} \n {response.text}" )
+                return {
+                    'message': response.text,
+                    'success': 0
+                }
+        except Exception as err:
+            self.z_sdk.post_message(user_id, message=str(err))
 
 
         
