@@ -223,11 +223,8 @@ Hãy nhấn vào nút bên dưới khi đã đến địa điểm của bạn!""
                     zalo_response = user_response.get('zalo_response')
                     shared_info = zalo_response['data'].get('shared_info')
                     if shared_info:
-                        self.z_sdk.post_message(user_id, message=f"{user_id}, {shared_info.get('phone')}")
                         res = self.send_user_info_to_tkyt(user_id, shared_info.get('phone'))
-                        self.z_sdk.post_message(user_id, message=str(res.message))
                         message = self.get_user_detail_message(shared_info)
-                        self.z_sdk.post_message(user_id, message=message)
                         return self.z_sdk.post_message(user_id, message=message)
                 return self.z_sdk.request_user_info(user_id, title=title, subtitle=subtitle)
 
@@ -267,7 +264,6 @@ Hãy nhấn vào nút bên dưới khi đã đến địa điểm của bạn!""
             return phone
         
         phone = parse_phone(phone)
-        self.z_sdk.post_message(user_id, message=phone)
         # if phone and '84' in phone 
         submit_url = 'https://api.binhphuoc.gov.vn/api/van-tai/dang-ky-quan-ly-zalo'
         headers = {
@@ -281,7 +277,6 @@ Hãy nhấn vào nút bên dưới khi đã đến địa điểm của bạn!""
         print(f"INFO : {submit_url} \n - DATA: {body} ")
         try:
             response = requests.post(submit_url, json=body, headers=headers)
-            self.z_sdk.post_message(user_id, message=str(response.text))
             if response.ok:
                 json_res = response.json()
                 print(f"INFO : {json_res.get('message', '')} ")
@@ -296,7 +291,10 @@ Hãy nhấn vào nút bên dưới khi đã đến địa điểm của bạn!""
                     'success': 0
                 }
         except Exception as err:
-            self.z_sdk.post_message(user_id, message=str(err))
+            return {
+                    'message': "ERROR: Connecting with the server",
+                    'success': 0
+                }
 
 
         
