@@ -96,8 +96,6 @@ Hãy đưa thông báo này cho cán bộ tại chốt kiểm soát để xác n
         latitude = datas['latitude']
         location = f"https://www.google.com/maps?q={latitude},{longitude}&z=14&t=m&mapclient=embed"
         
-        print(is_checkin)
-        print(location)
         response = self.send_location_to_tkyt(user_id, location, is_checkin)
         
         message = f"""Cảm ơn đã chia sẻ vị trí hiện tại của bạn.
@@ -164,6 +162,25 @@ Hãy nhấn vào nút bên dưới khi đã đến địa điểm của bạn!""
                 message = f"Bạn chưa cung cấp đầy đủ thông tin, vui lòng thực hiện lại"
         
             return self.z_sdk.post_message(user_id, message=message)
+        
+        if event_name == "oa_send_text":
+            user_id = datas['recipient']['id']
+            message = datas['message']['text']
+            
+            # Đăng ký cấp quản lý
+            if "#dangkyquanly" in message:
+                title = "Đăng ký tài khoản cấp Quản lý"
+                subtitle = "Hãy cung cấp thông tin cá nhân theo mẫu để tiến hành đăng ký cấp Quản lý"
+                user_response = self.z_sdk.get_profile(user_id)
+
+                if user_response['success']:
+                    zalo_response = user_response.get('zalo_response')
+                    shared_info = zalo_response['data'].get('shared_info')
+                    if shared_info:
+                        res = self.send_user_info_to_tkyt(user_id, shared_info.get('phone'))
+                        message = self.get_user_detail_message(shared_info)
+                        return self.z_sdk.post_message(user_id, message=message)
+                return self.z_sdk.request_user_info(user_id, title=title, subtitle=subtitle)
 
         if event_name == "user_send_text":
             user_id = datas['sender']['id']
@@ -196,30 +213,6 @@ Hãy nhấn vào nút bên dưới khi đã đến địa điểm của bạn!""
                 url = f"https://kiemdich.binhphuoc.gov.vn/#/theo-doi-suc-khoe/khai-bao/{user_id}"
                 image_url = "https://i.imgur.com/TVVyxKY.png"
                 return self.z_sdk.post_banner_message(user_id, title=title, subtitle=subtitle, image_url=image_url, url=url)
-
-            # Đăng ký cấp quản lý
-            if "#dangkyquanly" in message:
-                title = "Đăng ký tài khoản cấp Quản lý"
-                subtitle = "Hãy cung cấp thông tin cá nhân theo mẫu để tiến hành đăng ký cấp Quản lý"
-                user_response = self.z_sdk.get_profile(user_id)
-
-                if user_response['success']:
-                    zalo_response = user_response.get('zalo_response')
-                    shared_info = zalo_response['data'].get('shared_info')
-                    if shared_info:
-                        res = self.send_user_info_to_tkyt(user_id, shared_info.get('phone'))
-                        message = self.get_user_detail_message(shared_info)
-                        return self.z_sdk.post_message(user_id, message=message)
-                return self.z_sdk.request_user_info(user_id, title=title, subtitle=subtitle)
-
-        # if event_name == "user_send_text":
-        #     user_id = datas['sender']['id']
-        #     message = datas['message']['text']
-            
-        #     if 'TKVT_' in message:
-        #         pass
-                # self.scan_qr_code_for_checker(message)
-                # return self.send_checker_confirm(user_id, message)
 
     def send_location_to_tkyt(self, user_id, location, is_checkin):
         submit_url = 'https://api.binhphuoc.gov.vn/api/xac-nhan-thong-tin/xac-nhan-checkin-checkout'
