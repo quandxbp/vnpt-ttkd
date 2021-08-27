@@ -133,8 +133,8 @@ def test(request):
     if (request.method == 'GET'):
         datas = request.GET
         OracleService = ZaloService().get_oracle_service()
-        OracleService.service.exec_procedure('ád')
-        return JsonResponse(dict(result='1'))
+        results = OracleService.get_payment_debt('6046163127961711684')
+        return JsonResponse(dict(data=results))
     return JsonResponse({
         'success': 0, 
         'message': message

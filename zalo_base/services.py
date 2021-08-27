@@ -136,42 +136,73 @@ class ZaloService:
                     return self.z_sdk.post_message(user_id, message=message)
 
                 if '#tracuucuoc' in message:
-                    if OracleService:
-                        is_existed = OracleService.get_client_regist_bill_by_user_id(user_id)
-                        if is_existed:
-                            debts = OracleService.get_payment_debt(user_id)
-                            if debts and len(debts):
-                                message = " "
-                                for idx,data in enumerate(debts):
-                                    if data and len(data):
-                                        dt = f"{data[1]}/{data[0]}"
-                                        name = data[2]
-                                        address = data[3]
-                                        money = f'{data[4]:,} đ'
-                                        qrcode_url = generate_qrcode(data[5])
-                                        payment_code = data[6]
-
-                                        message += f"""VNPT thông báo cước dịch vụ của khách hàng là:
+                    try:
+                        if OracleService:
+                            is_existed = OracleService.get_client_regist_bill_by_user_id(user_id)
+                            if is_existed:
+                                debts = OracleService.get_payment_debt(user_id)
+                                if debts and len(debts):
+                                    if len(debts) == 1:
+                                        data = debts[0]
+                                        if data and len(data):
+                                            dt = f"{data[1]}/{data[0]}"
+                                            name = data[2]
+                                            address = data[3]
+                                            money = f'{data[4]:,} đ'
+                                            qrcode_url = generate_qrcode(data[5])
+                                            payment_code = data[6]
+                                            message = f"""VNPT thông báo cước dịch vụ tháng {dt} của khách hàng là:
     • Mã thanh toán: {payment_code}
     • Tên khách hàng: {name}
     • Địa chỉ: {address}
-    • Hoá đơn tháng: {dt}
     • Tổng cộng tiền thanh toán: {money}
     Bạn có thể quét mã trực tiếp hoặc tải về máy về sử dụng chức năng quét QR code thông qua ứng dụng VNPT Pay"""
-                                        text = f"QR Code với mã thanh toán {payment_code} - tổng giá trị hoá đơn {money}"
+                                            text = f"QR Code với mã thanh toán {payment_code} - tổng giá trị hoá đơn {money}"
+                                            self.z_sdk.post_message(user_id, message=message)
+                                            self.z_sdk.send_attachment_message(
+                                                user_id,
+                                                text=text, 
+                                                url=qrcode_url
+                                            )
+                                    else:
+                                        init_data = debts[0]
+                                        dt = f"{init_data[1]}/{init_data[0]}"
+                                        name = init_data[2]
+                                        address = init_data[3]
+                                        message = f"""VNPT thông báo cước dịch vụ tháng {dt}, quý khách có tổng cộng {len(debts)} hoá đơn cần thanh toán:
+    • Tên khách hàng: {name}
+    • Địa chỉ: {address}
+    """
+                                        qr_codes = []
+                                        for idx,data in enumerate(debts):
+                                            if data and len(data):
+                                                money = f'{data[4]:,} đ'
+                                                qrcode_url = generate_qrcode(data[5])
+                                                payment_code = data[6]
+                                                qr_codes.append((qrcode_url, payment_code, money))
+                                                
+                                                message += f"""• Số tiền cần thanh toán thanh toán cho hoá đơn {payment_code}: {money}
+    """
+                                        message += "Bạn có thể quét mã trực tiếp hoặc tải về máy về sử dụng chức năng quét QR code thông qua ứng dụng VNPT Pay"
                                         self.z_sdk.post_message(user_id, message=message)
-                                        self.z_sdk.send_attachment_message(
-                                            user_id,
-                                            text=text, 
-                                            url=qrcode_url
-                                        )
-                                return {
-                                    'success': 1,
-                                    'message': 'Đã gửi thông tin'
-                                }
-                            else:
-                                message = "Không thể tìm thấy thông tin tra cứu cước"
-                                return self.z_sdk.post_message(user_id, message=message)
+                                        for qrcode_url, payment_code, money in qr_codes:
+                                            text = f"QR Code với mã thanh toán {payment_code} - tổng giá trị hoá đơn {money}"
+                                            self.z_sdk.send_attachment_message(
+                                                user_id,
+                                                text=text, 
+                                                url=qrcode_url
+                                            )
+                                        
+                                    return {
+                                        'success': 1,
+                                        'message': 'Đã gửi thông tin'
+                                    }
+                                else:
+                                    message = "Không thể tìm thấy thông tin tra cứu cước"
+                                    return self.z_sdk.post_message(user_id, message=message)
+                    except Exception as err:
+                        message = f"Phát sinh lỗi trong quá trình truy vấn: {err}"
+                        return self.z_sdk.post_message(user_id, message=message)
                     message = "Bạn chưa cung cấp thông tin để tra cứu cước, vui lòng vào mục Đăng ký mã khách hàng để khai báo thêm thông tin."
                     return self.z_sdk.post_message(user_id, message=message)
                 

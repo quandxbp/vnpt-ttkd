@@ -71,7 +71,9 @@ class ORACLE_SERVICE:
         return True
 
     def get_payment_debt(self, zuser_id):
-        stmt = """select 
+        period_stmt = """SELECT MAX(CHUKYNO) FROM QLTN_BPC.CHUKYNO@link_bpcsxkd"""
+        period = self.service.query(period_stmt, {})[0][0]
+        stmt = f"""select 
             nam,
             thang,
             ten_tt, 
@@ -79,7 +81,7 @@ class ORACLE_SERVICE:
             tong_pt,
             qrcode,
             ma_tt
-        from bcss_bpc.hddt_20210701@link_bpcsxkd
+        from bcss_bpc.hddt_{period}@link_bpcsxkd
         where ma_tt in (
             select ma_tt
             from misdata.zalo_customer_register_bill a where a.zalo_id = :zuser_id)"""
