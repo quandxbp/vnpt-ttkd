@@ -73,7 +73,7 @@ class TKYT_Service:
             {
                 "title": "Đăng ký tờ khai y tế dành cho tài xế",
                 "payload": {
-                    "url": f"{self.site}/#/to-khai-y-te/0/{user_id}"
+                    "url": f"{self.site}/#/khai-bao-van-tai/0/{user_id}/0"
                 },
                 "type": "oa.open.url"
             }
