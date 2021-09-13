@@ -38,6 +38,10 @@ def check_connection():
     except Exception:
         return False
 
+def closeDriverInstance():
+    os.system('taskkill -F -IM "chrome.exe"')
+    os.system('taskkill -F -IM "chromedriver.exe"')
+
 def store_config(driver):
     cookie = False
     for request in driver.requests:
@@ -74,9 +78,9 @@ def createDriverInstance():
 
     store_config(driver)
 
-def closeDriverInstance():
-    driver = getCurrentDriver()
-    driver.quit()
+# def closeDriverInstance():
+#     driver = getCurrentDriver()
+#     driver.quit()
 
 def signin_ccos(username, password):
     driver = getCurrentDriver()
