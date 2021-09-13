@@ -101,7 +101,7 @@
             type: 'POST',
             url: '/api/ccos',
             data: JSON.stringify(data),
-            async: TRUE,
+            async: true,
             contentType: "application/json",
             success: function (result) {
                 $('.alert-info').text(result.message)
