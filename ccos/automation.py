@@ -100,6 +100,8 @@ def send_otp(otp):
     otp_input = driver.find_element_by_id("txtOtp")
     otp_input.send_keys(otp)
     driver.find_element_by_id("btnProcess").click()
+    sleep(2)
+    closeDriverInstance()
 
 def regist_phone_package(phone, package):
     infor = read_json(BASE_DIR / 'ccos_config.json')
@@ -194,11 +196,13 @@ def regist_phone_package(phone, package):
         if len(driver.find_elements_by_id('Content_lblError')) > 0:
             errorContent = driver.find_element_by_id('Content_lblError').text
             driver.quit()
+            closeDriverInstance()
             return {
                 'success': 0,
                 'message': errorContent
             }
         driver.quit()
+        closeDriverInstance()
         return {
             'success': 1,
             'message': f"Gán gói {package} cho thuê bao {phone} thành công"
