@@ -100,7 +100,7 @@ def send_otp(otp):
     otp_input = driver.find_element_by_id("txtOtp")
     otp_input.send_keys(otp)
     driver.find_element_by_id("btnProcess").click()
-    sleep(2)
+    time.sleep(2)
     closeDriverInstance()
 
 def regist_phone_package(phone, package):
@@ -138,74 +138,79 @@ def regist_phone_package(phone, package):
             'success': 0,
             'message': f"""Gói {package} hiện tại không được hỗ trợ"""
         }
-
-    search_phone_input = driver.find_element_by_id("Content_txtSearchSTB")
-    search_phone_btn = driver.find_element_by_id("Content_btnSearch")
-
-    # Search phone input 
-    search_phone_input.clear()
-    search_phone_input.send_keys(phone)
-    search_phone_btn.click()
-
     try:
-        WebDriverWait(driver, 3).until(EC.alert_is_present(),
-                                    'Timed out waiting for PA creation ' +
-                                    'confirmation popup to appear.')
+        search_phone_input = driver.find_element_by_id("Content_txtSearchSTB")
+        search_phone_btn = driver.find_element_by_id("Content_btnSearch")
 
-        alert = Alert(driver)
-        alert_text = alert.text
-        alert.accept()
-        driver.quit()
-        return {
-            'success': 0,
-            'message': alert_text
-        }
-    except TimeoutException:
+        # Search phone input 
+        search_phone_input.clear()
+        search_phone_input.send_keys(phone)
+        search_phone_btn.click()
 
-        T1_value = driver.find_element_by_id("txtT1").get_attribute('value') or 0.0
-        T2_value = driver.find_element_by_id("txtT2").get_attribute('value') or 0.0
-        T3_value = driver.find_element_by_id("txtT2").get_attribute('value') or 0.0
+        try:
+            WebDriverWait(driver, 3).until(EC.alert_is_present(),
+                                        'Timed out waiting for PA creation ' +
+                                        'confirmation popup to appear.')
 
-        total = float(T1_value) + float(T2_value) + float(T3_value)
-
-        if package == 'VD149' and total >= 120000:
+            alert = Alert(driver)
+            alert_text = alert.text
+            alert.accept()
             driver.quit()
             return {
                 'success': 0,
-                'message': f"""Thuê báo có tổng tiêu dùng TKC 3 tháng gần nhất lớn hơn 120.000 đ. Tháng T-1: {T1_value}đ; Tháng T-2: {T2_value} đ; Tháng T-2: {T3_value} đ"""
+                'message': alert_text
             }
-        elif package == 'D60G' and total >= 100000:
-            driver.quit()
-            return {
-                'success': 0,
-                'message': f"""Thuê báo có tổng tiêu dùng TKC 3 tháng gần nhất lớn hơn 100.000 đ. Tháng T-1: {T1_value}đ; Tháng T-2: {T2_value} đ; Tháng T-2: {T3_value} đ"""
-            }
+        except TimeoutException:
 
-        package_selection = Select(driver.find_element_by_id('ddlKMCB'))
-        package_selection.select_by_value(package)
-        submit_package_btn = driver.find_element_by_id("Content_btnAddDSKM_KMCB")
-        submit_package_btn.click()
+            T1_value = driver.find_element_by_id("txtT1").get_attribute('value') or 0.0
+            T2_value = driver.find_element_by_id("txtT2").get_attribute('value') or 0.0
+            T3_value = driver.find_element_by_id("txtT2").get_attribute('value') or 0.0
 
-        time.sleep(2)
-        alert = Alert(driver)
-        alert.accept()
-        time.sleep(2)
+            total = float(T1_value) + float(T2_value) + float(T3_value)
 
-        # driver.find_element_by_xpath("/html/body/form/div[3]/div[3]/div/div/div[2]/div/table/tbody/tr[2]/td")
+            if package == 'VD149' and total >= 120000:
+                driver.quit()
+                return {
+                    'success': 0,
+                    'message': f"""Thuê báo có tổng tiêu dùng TKC 3 tháng gần nhất lớn hơn 120.000 đ. Tháng T-1: {T1_value}đ; Tháng T-2: {T2_value} đ; Tháng T-2: {T3_value} đ"""
+                }
+            elif package == 'D60G' and total >= 100000:
+                driver.quit()
+                return {
+                    'success': 0,
+                    'message': f"""Thuê báo có tổng tiêu dùng TKC 3 tháng gần nhất lớn hơn 100.000 đ. Tháng T-1: {T1_value}đ; Tháng T-2: {T2_value} đ; Tháng T-2: {T3_value} đ"""
+                }
 
-        if len(driver.find_elements_by_id('Content_lblError')) > 0:
-            errorContent = driver.find_element_by_id('Content_lblError').text
+            package_selection = Select(driver.find_element_by_id('ddlKMCB'))
+            package_selection.select_by_value(package)
+            submit_package_btn = driver.find_element_by_id("Content_btnAddDSKM_KMCB")
+            submit_package_btn.click()
+
+            time.sleep(2)
+            alert = Alert(driver)
+            alert.accept()
+            time.sleep(2)
+
+            # driver.find_element_by_xpath("/html/body/form/div[3]/div[3]/div/div/div[2]/div/table/tbody/tr[2]/td")
+
+            if len(driver.find_elements_by_id('Content_lblError')) > 0:
+                errorContent = driver.find_element_by_id('Content_lblError').text
+                driver.quit()
+                closeDriverInstance()
+                return {
+                    'success': 0,
+                    'message': errorContent
+                }
             driver.quit()
             closeDriverInstance()
             return {
-                'success': 0,
-                'message': errorContent
+                'success': 1,
+                'message': f"Gán gói {package} cho thuê bao {phone} thành công"
             }
-        driver.quit()
-        closeDriverInstance()
+    except Exception:
         return {
-            'success': 1,
-            'message': f"Gán gói {package} cho thuê bao {phone} thành công"
+            'success': 0,
+            'message': "Hệ thống đang tắt!"
         }
 
 def check_ccos_status():
@@ -227,13 +232,12 @@ def check_ccos_status():
     time.sleep(1)
     # ===========
     
-    ccos_info = read_json(BASE_DIR / 'ccos_config.json')
     is_alive = True
     try:
         element = driver.find_element_by_id("Content_txtSearchSTB")
     except NoSuchElementException:
         is_alive = False
 
-    ccos_info['is_alive'] = is_alive
-    store_json(BASE_DIR / 'ccos_config.json', ccos_info)
+    infor['is_alive'] = is_alive
+    store_json(BASE_DIR / 'ccos_config.json', infor)
     return is_alive
