@@ -18,6 +18,7 @@ import time
 
 from .utils import store_json, read_json
 from pathlib import Path
+from requests.exceptions import ConnectionError
 
 # admin_bpc_vnp2 / Vnpt@123456
 
@@ -78,30 +79,77 @@ def createDriverInstance():
 
     store_config(driver)
 
-# def closeDriverInstance():
-#     driver = getCurrentDriver()
-#     driver.quit()
-
 def signin_ccos(username, password):
-    driver = getCurrentDriver()
-    username_input = driver.find_element_by_id("txtUsername")
-    pw_input = driver.find_element_by_id("txtPassword")
-    submit_btn = driver.find_element_by_name("btnLogin")
+    try:
+        driver = getCurrentDriver()
+        username_input = driver.find_element_by_id("txtUsername")
+        pw_input = driver.find_element_by_id("txtPassword")
+        submit_btn = driver.find_element_by_name("btnLogin")
 
-    username_input.clear()
-    username_input.send_keys(username)
-    pw_input.clear()
-    pw_input.send_keys(password)
-    submit_btn.click()
+        username_input.clear()
+        username_input.send_keys(username)
+        pw_input.clear()
+        pw_input.send_keys(password)
+        submit_btn.click()
+
+        try:
+            WebDriverWait(driver, 3).until(EC.alert_is_present(),
+                                        'Timed out waiting for PA creation ' +
+                                        'confirmation popup to appear.')
+
+            alert = Alert(driver)
+            alert_text = alert.text
+            alert.accept()
+            driver.quit()
+            return {
+                'success': 0,
+                'message': alert_text
+            }
+        except TimeoutException:
+            return {
+                'success': 1,
+                'message' : "Thành công",
+            }
+    except ConnectionError as e:    # This is the correct syntax
+        return {
+            'success': 0,
+            'message' : "Lỗi kết nối, vui lòng thực tắt máy ảo và thực hiện lại thao tác",
+        }
+    
 
 def send_otp(otp):
-    driver = getCurrentDriver()
+    try:
+        driver = getCurrentDriver()
+        
+        otp_input = driver.find_element_by_id("txtOtp")
+        otp_input.send_keys(otp)
+        driver.find_element_by_id("btnProcess").click()
+        time.sleep(4)
+        
+        try:
+            WebDriverWait(driver, 3).until(EC.alert_is_present(),
+                                        'Timed out waiting for PA creation ' +
+                                        'confirmation popup to appear.')
 
-    otp_input = driver.find_element_by_id("txtOtp")
-    otp_input.send_keys(otp)
-    driver.find_element_by_id("btnProcess").click()
-    time.sleep(2)
-    closeDriverInstance()
+            alert = Alert(driver)
+            alert_text = alert.text
+            alert.accept()
+            driver.quit()
+            return {
+                'success': 0,
+                'message': alert_text
+            }
+        except TimeoutException:
+            return {
+                'success': 1,
+                'message' : "Thành công",
+            }
+        closeDriverInstance()
+    except ConnectionError as e:    # This is the correct syntax
+        return {
+            'success': 0,
+            'message' : "Lỗi kết nối, vui lòng thực tắt máy ảo và thực hiện lại thao tác",
+        }
 
 def regist_phone_package(phone, package):
     infor = read_json(BASE_DIR / 'ccos_config.json')
@@ -240,4 +288,7 @@ def check_ccos_status():
 
     infor['is_alive'] = is_alive
     store_json(BASE_DIR / 'ccos_config.json', infor)
+
+    time.sleep(4)
+    closeDriverInstance()
     return is_alive

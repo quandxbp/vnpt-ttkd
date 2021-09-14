@@ -13,12 +13,10 @@ def process_content(state, datas):
         if state == 'signin':
             username = datas.get('username')
             password = datas.get('password')
-            signin_ccos(username, password)
-            message = "Đã đăng nhập hệ thống"
+            return signin_ccos(username, password)
         if state == 'otp':
             otp = datas.get('otp')
-            send_otp(otp)
-            message = "Đã gửi mã OTP"
+            return send_otp(otp)
         if state == 'connection':
             return check_ccos_status()
         return {
