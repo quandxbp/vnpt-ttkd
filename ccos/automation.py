@@ -100,7 +100,7 @@ def signin_ccos(username, password):
             alert = Alert(driver)
             alert_text = alert.text
             alert.accept()
-            driver.quit()
+            close_driver(driver)
             return {
                 'success': 0,
                 'message': alert_text
@@ -143,7 +143,7 @@ def send_otp(otp):
                 'success': 1,
                 'message' : "Thành công",
             }
-        driver.quit()
+        close_driver(driver)
         closeDriverInstance()
     except ConnectionError as e:    # This is the correct syntax
         return {
@@ -174,14 +174,14 @@ def regist_phone_package(phone, package):
         driver.get(WEB_URL)
         time.sleep(3)
         if 'HoTroDangKY_KMCB_TT' not in driver.current_url:
-            driver.quit()
+            close_driver(driver)
             return {
                 'success': 0,
                 'message': f"""Không thành công: Hệ thống đang tắt!"""
             }
     package = package.upper()
     if package not in AVAILABLE_PACKAGES:
-        driver.quit()
+        close_driver(driver)
         return {
             'success': 0,
             'message': f"""Không thành công: Gói {package} hiện tại không được hỗ trợ"""
@@ -203,7 +203,7 @@ def regist_phone_package(phone, package):
             alert = Alert(driver)
             alert_text = alert.text
             alert.accept()
-            driver.quit()
+            close_driver(driver)
             return {
                 'success': 0,
                 'message': alert_text
@@ -217,13 +217,13 @@ def regist_phone_package(phone, package):
             total = float(T1_value) + float(T2_value) + float(T3_value)
 
             if package == 'VD149' and total >= 120000:
-                driver.quit()
+                close_driver(driver)
                 return {
                     'success': 0,
                     'message': f"""Không thành công: Thuê báo có tổng tiêu dùng TKC 3 tháng gần nhất lớn hơn 120.000 đ. Tháng T-1: {T1_value}đ; Tháng T-2: {T2_value} đ; Tháng T-2: {T3_value} đ"""
                 }
             elif package == 'D60G' and total >= 100000:
-                driver.quit()
+                close_driver(driver)
                 return {
                     'success': 0,
                     'message': f"""Không thành công: Thuê báo có tổng tiêu dùng TKC 3 tháng gần nhất lớn hơn 100.000 đ. Tháng T-1: {T1_value}đ; Tháng T-2: {T2_value} đ; Tháng T-2: {T3_value} đ"""
@@ -243,20 +243,20 @@ def regist_phone_package(phone, package):
 
             if len(driver.find_elements_by_id('Content_lblError')) > 0:
                 errorContent = driver.find_element_by_id('Content_lblError').text
-                driver.quit()
+                close_driver(driver)
                 closeDriverInstance()
                 return {
                     'success': 0,
                     'message': errorContent
                 }
-            driver.quit()
+            close_driver(driver)
             closeDriverInstance()
             return {
                 'success': 1,
                 'message': f"Thành công: Gán gói {package} cho thuê bao {phone}"
             }
     except Exception:
-        driver.quit()
+        close_driver(driver)
         return {
             'success': 0,
             'message': "Không thành công: Hệ thống đang tắt!"
@@ -291,6 +291,10 @@ def check_ccos_status():
     store_json(BASE_DIR / 'ccos_config.json', infor)
 
     time.sleep(4)
-    driver.quit()
+    close_driver(driver)
     closeDriverInstance()
     return is_alive
+
+def close_driver(driver):
+    driver.close()
+    driver.quit()
