@@ -134,7 +134,6 @@ def send_otp(otp):
             alert = Alert(driver)
             alert_text = alert.text
             alert.accept()
-            driver.quit()
             return {
                 'success': 0,
                 'message': alert_text
@@ -144,6 +143,7 @@ def send_otp(otp):
                 'success': 1,
                 'message' : "Thành công",
             }
+        driver.quit()
         closeDriverInstance()
     except ConnectionError as e:    # This is the correct syntax
         return {
@@ -177,14 +177,14 @@ def regist_phone_package(phone, package):
             driver.quit()
             return {
                 'success': 0,
-                'message': f"""Cần mở lại hệ thống ảo."""
+                'message': f"""Không thành công: Hệ thống đang tắt!"""
             }
     package = package.upper()
     if package not in AVAILABLE_PACKAGES:
         driver.quit()
         return {
             'success': 0,
-            'message': f"""Gói {package} hiện tại không được hỗ trợ"""
+            'message': f"""Không thành công: Gói {package} hiện tại không được hỗ trợ"""
         }
     try:
         search_phone_input = driver.find_element_by_id("Content_txtSearchSTB")
@@ -220,13 +220,13 @@ def regist_phone_package(phone, package):
                 driver.quit()
                 return {
                     'success': 0,
-                    'message': f"""Thuê báo có tổng tiêu dùng TKC 3 tháng gần nhất lớn hơn 120.000 đ. Tháng T-1: {T1_value}đ; Tháng T-2: {T2_value} đ; Tháng T-2: {T3_value} đ"""
+                    'message': f"""Không thành công: Thuê báo có tổng tiêu dùng TKC 3 tháng gần nhất lớn hơn 120.000 đ. Tháng T-1: {T1_value}đ; Tháng T-2: {T2_value} đ; Tháng T-2: {T3_value} đ"""
                 }
             elif package == 'D60G' and total >= 100000:
                 driver.quit()
                 return {
                     'success': 0,
-                    'message': f"""Thuê báo có tổng tiêu dùng TKC 3 tháng gần nhất lớn hơn 100.000 đ. Tháng T-1: {T1_value}đ; Tháng T-2: {T2_value} đ; Tháng T-2: {T3_value} đ"""
+                    'message': f"""Không thành công: Thuê báo có tổng tiêu dùng TKC 3 tháng gần nhất lớn hơn 100.000 đ. Tháng T-1: {T1_value}đ; Tháng T-2: {T2_value} đ; Tháng T-2: {T3_value} đ"""
                 }
 
             package_selection = Select(driver.find_element_by_id('ddlKMCB'))
@@ -253,12 +253,13 @@ def regist_phone_package(phone, package):
             closeDriverInstance()
             return {
                 'success': 1,
-                'message': f"Gán gói {package} cho thuê bao {phone} thành công"
+                'message': f"Thành công: Gán gói {package} cho thuê bao {phone}"
             }
     except Exception:
+        driver.quit()
         return {
             'success': 0,
-            'message': "Hệ thống đang tắt!"
+            'message': "Không thành công: Hệ thống đang tắt!"
         }
 
 def check_ccos_status():
@@ -290,5 +291,6 @@ def check_ccos_status():
     store_json(BASE_DIR / 'ccos_config.json', infor)
 
     time.sleep(4)
+    driver.quit()
     closeDriverInstance()
     return is_alive

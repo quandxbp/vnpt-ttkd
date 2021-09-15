@@ -25,6 +25,7 @@ class ZaloService:
 
     def __init__(self):
         self.z_sdk = ZaloSDK(self.get_access_token())
+        self.manager_user_id = '6046163127961711684'
         self.title = "Trung tâm kinh doanh - VNPT Bình Phước"
         self.default_qr = "https://4js.com/online_documentation/fjs-gst-2.50.02-manual-html/Images/grw_qr_code_example_width_3cm.jpg"
     
@@ -77,7 +78,14 @@ class ZaloService:
                 'success': 0,
                 'message': 'Không tìm thấy thông tin'
             }
-        
+
+    def send_message_to_manager(self, user_info, message, phone, package):
+        sender = user_info.get('name', 'Không xác định')
+
+        now = datetime.datetime.now().strftime('%d/%m/%Y %H:%m')
+        manager_message = f"""{now} - {sender} - {phone} - {package}
+{message}"""
+        self.z_sdk.post_message(self.manager_user_id, message=manager_message)
         
     def action_by_event(self, event_name, datas):
         # Users follow OA 
@@ -214,9 +222,11 @@ class ZaloService:
                         package = splitted_data[2]
 
                         self.z_sdk.post_message(user_id, message="Đang tiến hành đăng ký, vui lòng đợi ...")
+
                         result = regist_phone(phone, package)
-                        message = result.get('message', """Không đúng cú pháp đăng ký 
-- Liên hệ: Quân Bùi - 0835 401 439 để hỗ trợ xử lỗi""")
+
+                        message = result.get('message', "Không đúng cú pháp đăng ký")
+                        self.send_message_to_manager(info, message, phone, package)
                         return self.z_sdk.post_message(user_id, message=message)
                     except Exception as err:
                         message = f"""Không đúng cú pháp đăng ký hoặc có lỗi hệ thông khi thực thi
