@@ -293,7 +293,7 @@ def check_ccos_status():
     is_alive = True
     try:
         element = driver.find_element_by_id("Content_txtSearchSTB")
-    except NoSuchElementException:
+    except Exception:
         is_alive = False
 
     infor['is_alive'] = is_alive

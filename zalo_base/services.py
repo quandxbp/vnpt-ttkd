@@ -25,7 +25,8 @@ class ZaloService:
 
     def __init__(self):
         self.z_sdk = ZaloSDK(self.get_access_token())
-        self.manager_user_id = '6046163127961711684'
+        self.manager_user_id = '4691711065705321136'
+        # self.manager_user_id = '6046163127961711684'
         self.title = "Trung tâm kinh doanh - VNPT Bình Phước"
         self.default_qr = "https://4js.com/online_documentation/fjs-gst-2.50.02-manual-html/Images/grw_qr_code_example_width_3cm.jpg"
     
