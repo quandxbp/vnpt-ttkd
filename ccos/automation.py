@@ -43,6 +43,13 @@ def closeDriverInstance():
     os.system('taskkill -F -IM "chrome.exe"')
     os.system('taskkill -F -IM "chromedriver.exe"')
 
+def forceDelTempFolder():
+    os.system('forfiles /P C:\Windows\Temp /M * /C "cmd /c if @isdir==TRUE rmdir /S /Q @file"')
+
+def close_driver(driver):
+    driver.close()
+    driver.quit()
+
 def store_config(driver):
     cookie = False
     for request in driver.requests:
@@ -247,13 +254,11 @@ def regist_phone_package(phone, package):
             if len(driver.find_elements_by_id('Content_lblError')) > 0:
                 errorContent = driver.find_element_by_id('Content_lblError').text
                 close_driver(driver)
-                closeDriverInstance()
                 return {
                     'success': 0,
                     'message': errorContent
                 }
             close_driver(driver)
-            closeDriverInstance()
             return {
                 'success': 1,
                 'message': f"Thành công: Gán gói {package} cho thuê bao {phone}"
@@ -296,9 +301,4 @@ def check_ccos_status():
 
     time.sleep(4)
     close_driver(driver)
-    closeDriverInstance()
     return is_alive
-
-def close_driver(driver):
-    driver.close()
-    driver.quit()
