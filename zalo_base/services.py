@@ -228,7 +228,7 @@ class ZaloService:
 
                         message = result.get('message', "Không đúng cú pháp đăng ký")
 
-                        if user_id != manager_user_id:
+                        if user_id != self.manager_user_id:
                             self.send_message_to_manager(info, message, phone, package)
 
                         return self.z_sdk.post_message(user_id, message=message)
