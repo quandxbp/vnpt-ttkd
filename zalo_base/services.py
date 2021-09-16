@@ -165,7 +165,7 @@ class ZaloService:
     • Tên khách hàng: {name}
     • Địa chỉ: {address}
     • Tổng cộng tiền thanh toán: {money}
-    Bạn có thể quét mã trực tiếp hoặc tải về máy về sử dụng chức năng quét QR code thông qua ứng dụng VNPT Pay"""
+    Bạn có thể quét mã trực tiếp hoặc tải về máy và sử dụng chức năng quét QR code thông qua ứng dụng VNPT Pay"""
                                             text = f"QR Code với mã thanh toán {payment_code} - tổng giá trị hoá đơn {money}"
                                             self.z_sdk.post_message(user_id, message=message)
                                             self.z_sdk.send_attachment_message(
@@ -227,7 +227,10 @@ class ZaloService:
                         result = regist_phone(phone, package)
 
                         message = result.get('message', "Không đúng cú pháp đăng ký")
-                        self.send_message_to_manager(info, message, phone, package)
+
+                        if user_id != manager_user_id:
+                            self.send_message_to_manager(info, message, phone, package)
+
                         return self.z_sdk.post_message(user_id, message=message)
                     except Exception as err:
                         message = f"""Không đúng cú pháp đăng ký hoặc có lỗi hệ thông khi thực thi

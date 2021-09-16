@@ -222,7 +222,7 @@ def regist_phone_package(phone, package):
 
             T1_value = driver.find_element_by_id("txtT1").get_attribute('value') or 0.0
             T2_value = driver.find_element_by_id("txtT2").get_attribute('value') or 0.0
-            T3_value = driver.find_element_by_id("txtT2").get_attribute('value') or 0.0
+            T3_value = driver.find_element_by_id("txtT3").get_attribute('value') or 0.0
 
             total = float(T1_value) + float(T2_value) + float(T3_value)
 
@@ -230,13 +230,13 @@ def regist_phone_package(phone, package):
                 close_driver(driver)
                 return {
                     'success': 0,
-                    'message': f"""Không thành công: Thuê báo có tổng tiêu dùng TKC 3 tháng gần nhất lớn hơn 120.000 đ. Tháng T-1: {T1_value}đ; Tháng T-2: {T2_value} đ; Tháng T-2: {T3_value} đ"""
+                    'message': f"""Không thành công: Thuê báo có tổng tiêu dùng TKC 3 tháng gần nhất lớn hơn 120.000 đ. Tháng T-1: {T1_value}đ; Tháng T-2: {T2_value} đ; Tháng T-3: {T3_value} đ"""
                 }
             elif package == 'D60G' and total >= 100000:
                 close_driver(driver)
                 return {
                     'success': 0,
-                    'message': f"""Không thành công: Thuê báo có tổng tiêu dùng TKC 3 tháng gần nhất lớn hơn 100.000 đ. Tháng T-1: {T1_value}đ; Tháng T-2: {T2_value} đ; Tháng T-2: {T3_value} đ"""
+                    'message': f"""Không thành công: Thuê báo có tổng tiêu dùng TKC 3 tháng gần nhất lớn hơn 100.000 đ. Tháng T-1: {T1_value}đ; Tháng T-2: {T2_value} đ; Tháng T-3: {T3_value} đ"""
                 }
 
             package_selection = Select(driver.find_element_by_id('ddlKMCB'))
