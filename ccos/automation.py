@@ -224,7 +224,7 @@ def regist_phone_package(phone, package):
             T2_value = driver.find_element_by_id("txtT2").get_attribute('value') or 0.0
             T3_value = driver.find_element_by_id("txtT3").get_attribute('value') or 0.0
 
-            total = float(T1_value) + float(T2_value) + float(T3_value)
+            total = float((float(T1_value) + float(T2_value) + float(T3_value)) / 3)
 
             if package == 'VD149' and total >= 120000:
                 close_driver(driver)
