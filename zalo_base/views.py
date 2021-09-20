@@ -10,6 +10,8 @@ from .services import ZaloService
 from .tkyt_services import TKYT_Service
 from ccos.services import process_content
 
+from django.contrib.auth.decorators import login_required
+
 import json
 
 def index(request):
@@ -28,6 +30,12 @@ def regist_payment(request):
     return HttpResponse(template.render(context, request))
 
 def page_404(request):
+    template = loader.get_template('zalo_base/404.html')
+    context = {}
+    return HttpResponse(template.render(context, request))
+
+@login_required(login_url='/admin/login/')
+def my_view(request):
     template = loader.get_template('zalo_base/404.html')
     context = {}
     return HttpResponse(template.render(context, request))
