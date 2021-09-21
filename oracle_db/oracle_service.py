@@ -54,6 +54,10 @@ class ORACLE_SERVICE:
         stmt = """SELECT COUNT(*) FROM ZALO_CUSTOMER_REGISTER_BILL WHERE ZALO_ID = :zuser_id"""
         return self.service.query(stmt, {'zuser_id': zuser_id})[0][0]
     
+    def check_existed_registed_bill(self, zuser_id, payment_code):
+        stmt = """SELECT COUNT(*) FROM ZALO_CUSTOMER_REGISTER_BILL WHERE ZALO_ID = :zuser_id AND MA_TT = :payment_code"""
+        return self.service.query(stmt, {'zuser_id': zuser_id})[0][0]
+    
     def insert_zalo_user(self, zuser_id, data):
         if not self.check_existed_zalo_id(zuser_id):
             self.service.insert_multiple(
@@ -71,20 +75,20 @@ class ORACLE_SERVICE:
             )
         return True
 
-    def get_payment_debt(self, zuser_id):
-        period_stmt = """SELECT MAX(CHUKYNO) FROM QLTN_BPC.CHUKYNO@link_bpcsxkd"""
-        period = self.service.query(period_stmt, {})[0][0]
-        stmt = f"""select 
-            nam,
-            thang,
-            ten_tt, 
-            diachi_tt,
-            tong_pt,
-            qrcode,
-            ma_tt
-        from bcss_bpc.hddt_{period}@link_bpcsxkd
-        where ma_tt in (
-            select ma_tt
-            from misdata.zalo_customer_register_bill a where a.zalo_id = :zuser_id)"""
-        return self.service.query(stmt, {'zuser_id': zuser_id})
+    # def get_payment_debt(self, zuser_id):
+    #     period_stmt = """SELECT MAX(CHUKYNO) FROM QLTN_BPC.CHUKYNO@link_bpcsxkd"""
+    #     period = self.service.query(period_stmt, {})[0][0]
+    #     stmt = f"""select 
+    #         nam,
+    #         thang,
+    #         ten_tt, 
+    #         diachi_tt,
+    #         tong_pt,
+    #         qrcode,
+    #         ma_tt
+    #     from bcss_bpc.hddt_{period}@link_bpcsxkd
+    #     where ma_tt in (
+    #         select ma_tt
+    #         from misdata.zalo_customer_register_bill a where a.zalo_id = :zuser_id)"""
+    #     return self.service.query(stmt, {'zuser_id': zuser_id})
             
