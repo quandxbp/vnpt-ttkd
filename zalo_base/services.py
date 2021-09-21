@@ -65,7 +65,7 @@ class ZaloService:
         if len(clients) == 1 or (is_final and len(clients) >= 1):
             now = datetime.datetime.now()
             regist_code = clients[0][0]
-            if not OracleService.check_existed_registed_bill(user_id, regist_code)
+            if not OracleService.check_existed_registed_bill(user_id, regist_code):
                 insert_data = [(user_id, regist_code, now ,now, 0)]
                 OracleService.insert_regist_bill(user_id, insert_data)
             message = "Cảm ơn bạn đã đăng ký thông tin, bây giờ bạn có thể sử dụng các dịch vụ của VNPT trên Zalo"
