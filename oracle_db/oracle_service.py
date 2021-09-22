@@ -56,7 +56,7 @@ class ORACLE_SERVICE:
     
     def check_existed_registed_bill(self, zuser_id, payment_code):
         stmt = """SELECT COUNT(*) FROM ZALO_CUSTOMER_REGISTER_BILL WHERE ZALO_ID = :zuser_id AND MA_TT = :payment_code"""
-        return self.service.query(stmt, {'zuser_id': zuser_id})[0][0]
+        return self.service.query(stmt, {'zuser_id': zuser_id, 'payment_code': payment_code})[0][0]
     
     def insert_zalo_user(self, zuser_id, data):
         if not self.check_existed_zalo_id(zuser_id):

@@ -10,7 +10,8 @@ from .services import ZaloService
 from .tkyt_services import TKYT_Service
 from ccos.services import process_content
 
-from django.contrib.auth.decorators import login_required
+# from django.contrib.auth.decorators import login_required
+
 
 import json
 
@@ -34,18 +35,18 @@ def page_404(request):
     context = {}
     return HttpResponse(template.render(context, request))
 
-@login_required(login_url='/admin/login/')
-def my_view(request):
-    template = loader.get_template('zalo_base/404.html')
-    context = {}
-    return HttpResponse(template.render(context, request))
+# @login_required(login_url='/admin/login/')
+# def my_view(request):
+#     template = loader.get_template('zalo_base/404.html')
+#     context = {}
+#     return HttpResponse(template.render(context, request))
 
 @api_view(['POST'])
 def submit_regist_payment(request):
     message = f"Request method {request.method} is not allowed!"
     if (request.method == 'POST'):
         message = f"Data is not valid"
-        datas = json.loads(request.body)
+        datas = request.data
         if datas.get('user_id'):
             result = ZaloService().submit_regist_payment(datas)
             return JsonResponse(result)

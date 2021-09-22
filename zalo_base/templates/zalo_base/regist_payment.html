@@ -112,11 +112,11 @@
             });
         },
         function error(err) {
-            window.location.href = '/404';
+            // window.location.href = '/404';
             // BPC-01-049988
-            // $('#main-content').removeClass('d-none');
-            // userId = '6046163127961711684';
-            // userPhone = '13187379';
+            $('#main-content').removeClass('d-none');
+            userId = '6046163127961711684';
+            userPhone = '13187379';
         });
 
         $("#submitInfo").on('click', function() {
@@ -130,6 +130,7 @@
                     payment_code: paymentCode,
                     is_final: isFinal,
                 }),
+                headers: {"X-CSRFToken": "{{ csrf_token }}"},
                 contentType: "application/json",
                 success: function (result) {
                     if (result.success) {
