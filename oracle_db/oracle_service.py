@@ -39,10 +39,10 @@ class ORACLE_SERVICE:
     
     def get_client_by_payment_code(self, phone, payment_code):
         phone = f"%{phone}"
-        search_payment_code = f"%{payment_code}"
+        search_payment_code = f"%{payment_code.upper()}"
         stmt = """
         select distinct kh.ma_tt, kh.ten_tb, kh.diachi_ld, kh.so_dt from misdata.vKhachhang kh
-            where (kh.ma_tt = :payment_code or kh.ma_tb LIKE :payment_code)
+            where (UPPER(kh.ma_tt) = :payment_code or UPPER(kh.ma_tb) LIKE :payment_code)
                 and (kh.ma_tb LIKE :phone
                     or kh.dienthoai LIKE :phone
                     or kh.so_dt LIKE :phone
@@ -55,8 +55,8 @@ class ORACLE_SERVICE:
         return self.service.query(stmt, {'zuser_id': zuser_id})[0][0]
     
     def check_existed_registed_bill(self, zuser_id, payment_code):
-        stmt = """SELECT COUNT(*) FROM ZALO_CUSTOMER_REGISTER_BILL WHERE ZALO_ID = :zuser_id AND MA_TT = :payment_code"""
-        return self.service.query(stmt, {'zuser_id': zuser_id, 'payment_code': payment_code})[0][0]
+        stmt = """SELECT COUNT(*) FROM ZALO_CUSTOMER_REGISTER_BILL WHERE ZALO_ID = :zuser_id AND UPPER(MA_TT) = :payment_code"""
+        return self.service.query(stmt, {'zuser_id': zuser_id, 'payment_code': payment_code.upper()})[0][0]
     
     def insert_zalo_user(self, zuser_id, data):
         if not self.check_existed_zalo_id(zuser_id):
