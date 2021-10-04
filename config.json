@@ -4,5 +4,6 @@
     "oracle_port": 1521,
     "oracle_user": "misdata",
     "oracle_psw": "Iocbpc123",
-    "oracle_service": "pdb_ioc1"
+    "oracle_service": "pdb_ioc1",
+    "vnpt_access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IjEyMzQiLCJuYmYiOjE2MzMzNDA3NzIsImV4cCI6MTYzMzk0NTU3MiwiaWF0IjoxNjMzMzQwNzcyfQ.pUfPc6cJe6guTxyLAKxqShYzONXfjheUK8zBN99S5mU"
 }
