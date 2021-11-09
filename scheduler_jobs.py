@@ -8,7 +8,7 @@ def check_system_status():
         manager_user_id = '4691711065705321136'
         message = """Server CCOS đã tắt, vui lòng bật truy cập lại và bật thủ công:
 https://apizalo-cskh.vnptbinhphuoc.vn/ccos"""
-        ZaloService().send_message(manager_user_id, message)
+        # ZaloService().send_message(manager_user_id, message)
 
 def free_system_storage():
     closeDriverInstance()
