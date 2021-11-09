@@ -157,7 +157,7 @@ class ZaloService:
                                 name = data['ten_tt']
                                 address = data['diachi_tt']
                                 money = f"{data['tong_pt']:,} đ"
-                                qrcode_url = generate_qrcode(data['qrcode'])
+                                
                                 payment_code = data['ma_tt']
                                 message = f"""VNPT thông báo cước dịch vụ tháng {dt} của khách hàng là:
 • Mã thanh toán: {payment_code}
@@ -165,13 +165,17 @@ class ZaloService:
 • Địa chỉ: {address}
 • Tổng cộng tiền thanh toán: {money}
 Bạn có thể quét mã trực tiếp hoặc tải về máy và sử dụng chức năng quét QR code thông qua ứng dụng VNPT Pay"""
-                                text = f"QR Code với mã thanh toán {payment_code} - tổng giá trị hoá đơn {money}"
+                                # Send debt information
                                 self.z_sdk.post_message(user_id, message=message)
-                                self.z_sdk.send_attachment_message(
-                                    user_id,
-                                    text=text, 
-                                    url=qrcode_url
-                                )
+                                
+                                if data['qrcode']:
+                                    text = f"QR Code với mã thanh toán {payment_code} - tổng giá trị hoá đơn {money}"
+                                    qrcode_url = generate_qrcode(data['qrcode'])
+                                    self.z_sdk.send_attachment_message(
+                                        user_id,
+                                        text=text, 
+                                        url=qrcode_url
+                                    )
                             else:
                                 init_data = debts[0]
                                 dt = f"{int(init_data['thang'])}/{int(init_data['nam'])}"
@@ -185,9 +189,10 @@ Bạn có thể quét mã trực tiếp hoặc tải về máy và sử dụng c
                                 for idx,data in enumerate(debts):
                                     if data and len(data):
                                         money = f"{data['tong_pt']:,} đ"
-                                        qrcode_url = generate_qrcode(data['qrcode'])
                                         payment_code = data['ma_tt']
-                                        qr_codes.append((qrcode_url, payment_code, money))
+                                        if data['qrcode']:
+                                            qrcode_url = generate_qrcode(data['qrcode'])
+                                            qr_codes.append((qrcode_url, payment_code, money))
                                         
                                         message += f"""• Số tiền cần thanh toán thanh toán cho hoá đơn {payment_code}: {money}
 """
