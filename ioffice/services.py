@@ -83,11 +83,12 @@ class IofficeService():
             return result
 
         flatten_units = flatten(units)
-        flatten_units = sorted(flatten_units, key=lambda d: int(d['ma']))
-        for x in flatten_units:
+        filtered_units = list(filter(lambda u: u['cha'] == '970' , flatten_units))
+        filtered_units = sorted(filtered_units, key=lambda d: int(d['ma']))
+        for x in filtered_units:
             x['raw_name'] = no_accent_vietnamese(x['ten'].lower())
 
-        self.set_units(flatten_units)
+        self.set_units(filtered_units)
 
 
     def request_access_token(self):

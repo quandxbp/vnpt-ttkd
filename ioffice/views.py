@@ -13,9 +13,14 @@ import json
 import calendar
 from datetime import datetime
 
-def manually_update(request):
+def update_documents(request):
     Ioffice = IofficeService()
     Ioffice.set_general_information()
+    return HttpResponse("<h1>Success</h1>")
+
+def update_units(request):
+    Ioffice = IofficeService()
+    Ioffice.update_units()
     return HttpResponse("<h1>Success</h1>")
 
 def information(request):
