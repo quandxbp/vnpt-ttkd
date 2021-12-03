@@ -17,26 +17,26 @@ class IofficeService():
         self.access_token = self.get_access_token()
 
     def get_access_token(self):
-        data = read_json(BASE_DIR / 'ioffice/data/config.json')
+        data = read_json(BASE_DIR / 'ioffice'/ 'data'/ 'config.json')
         return data.get('access_token', False)
     
     def set_access_token(self, access_token):
-        data = read_json(BASE_DIR / 'ioffice/data/config.json')
+        data = read_json(BASE_DIR / 'ioffice'/ 'data'/ 'config.json')
         data['access_token'] = access_token
-        store_json(BASE_DIR / 'ioffice/data/config.json', data)
+        store_json(BASE_DIR / 'ioffice'/ 'data'/ 'config.json', data)
 
     def get_units(self, offset=0, limit=50, search_query=False):
-        data = read_json(BASE_DIR / 'ioffice/data/units.json')
+        data = read_json(BASE_DIR / 'ioffice'/ 'data'/ 'units.json')
         if search_query:
             search_query = no_accent_vietnamese(search_query.lower())
             data = list(filter(lambda x: search_query in x['raw_name'], data))
         return data[offset:limit] if limit else data
 
     def set_units(self, data):
-        store_json(BASE_DIR / 'ioffice/data/units.json', data)
+        store_json(BASE_DIR / 'ioffice'/ 'data'/ 'units.json', data)
 
     def get_general_information(self):
-        return read_json(BASE_DIR / 'ioffice/data/information.json')
+        return read_json(BASE_DIR / 'ioffice'/ 'data'/ 'information.json')
     
     def set_general_information(self):
         units = self.get_units(limit=0)
@@ -58,7 +58,7 @@ class IofficeService():
             'units': len(units),
             'write_date': datetime.now().strftime('%d/%m/%Y %H:%M')
         }
-        store_json(BASE_DIR / 'ioffice/data/information.json', data)
+        store_json(BASE_DIR / 'ioffice'/ 'data'/ 'information.json', data)
 
     def get_headers(self):
         return {
