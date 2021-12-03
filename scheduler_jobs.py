@@ -1,6 +1,8 @@
 from ccos.automation import check_ccos_status, closeDriverInstance, forceDelTempFolder
 from zalo_base.services import ZaloService
 
+from ioffice.services import IofficeService
+
 def check_system_status():
     print("====== SCHEDULER IS RUNNING ======")
     is_alive = check_ccos_status()
@@ -13,4 +15,8 @@ https://apizalo-cskh.vnptbinhphuoc.vn/ccos"""
 def free_system_storage():
     closeDriverInstance()
     forceDelTempFolder()
+
+def update_ioffice():
+    Ioffice = IofficeService()
+    Ioffice.set_general_information()
     

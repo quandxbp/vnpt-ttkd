@@ -6,6 +6,8 @@ from .utils import *
 import sys
 
 from pathlib import Path
+from datetime import datetime
+
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -35,6 +37,28 @@ class IofficeService():
 
     def get_general_information(self):
         return read_json(BASE_DIR / 'ioffice/data/information.json')
+    
+    def set_general_information(self):
+        units = self.get_units(limit=0)
+
+        from_date = datetime(datetime.now().year, 1, 1, 0, 0, 0).strftime('%d/%m/%Y')
+        end_date = datetime.now().strftime('%d/%m/%Y')
+        
+        total_documents, batch = 0, 100
+        count = int(len(units) / 100)
+        for x in range(count+1):
+            start = x * batch
+            end = (x+1) * batch if (x+1) * batch < len(units) else len(units)
+            unit_ids = ', '.join([x['ma'] for x in units[start:end]])
+            documents = self.request_documents(from_date, end_date, unit_ids)
+            total_documents += sum([int(y['tong_so_di']) + int(y['tong_so_den']) for y in documents])
+
+        data = {
+            'documents': total_documents,
+            'units': len(units),
+            'write_date': datetime.now().strftime('%d/%m/%Y %H:%M')
+        }
+        store_json(BASE_DIR / 'ioffice/data/information.json', data)
 
     def get_headers(self):
         return {

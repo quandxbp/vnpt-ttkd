@@ -13,11 +13,18 @@ import json
 import calendar
 from datetime import datetime
 
+def manually_update(request):
+    Ioffice = IofficeService()
+    Ioffice.set_general_information()
+    return HttpResponse("<h1>Success</h1>")
+
 def information(request):
     template = loader.get_template('ioffice/information.html')
     Ioffice = IofficeService()
     context = Ioffice.get_general_information()
     context['update_date'] = f"{datetime.now().month}/{datetime.now().year}"
+    context['documents'] = "{:,}".format(context['documents'])
+
     return HttpResponse(template.render(context, request))
 
 def document(request):
