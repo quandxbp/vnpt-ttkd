@@ -1,0 +1,4280 @@
+[
+    {
+        "ma": "1",
+        "ten": "Thử Nghiệm",
+        "cha": "0",
+        "raw_name": "thu nghiem"
+    },
+    {
+        "ma": "970",
+        "ten": "UBND Đồng Xoài",
+        "cha": "0",
+        "raw_name": "ubnd dong xoai"
+    },
+    {
+        "ma": "971",
+        "ten": "UBND phường Tân Bình",
+        "cha": "970",
+        "raw_name": "ubnd phuong tan binh"
+    },
+    {
+        "ma": "972",
+        "ten": "UBND phường Tân Thiện",
+        "cha": "970",
+        "raw_name": "ubnd phuong tan thien"
+    },
+    {
+        "ma": "973",
+        "ten": "UBND phường Tân Xuân",
+        "cha": "970",
+        "raw_name": "ubnd phuong tan xuan"
+    },
+    {
+        "ma": "974",
+        "ten": "UBND phường Tân Đồng",
+        "cha": "970",
+        "raw_name": "ubnd phuong tan dong"
+    },
+    {
+        "ma": "975",
+        "ten": "UBND phường Tân Phú",
+        "cha": "970",
+        "raw_name": "ubnd phuong tan phu"
+    },
+    {
+        "ma": "976",
+        "ten": "UBND xã Tân Thành",
+        "cha": "970",
+        "raw_name": "ubnd xa tan thanh"
+    },
+    {
+        "ma": "977",
+        "ten": "UBND xã Tiến Hưng",
+        "cha": "970",
+        "raw_name": "ubnd xa tien hung"
+    },
+    {
+        "ma": "978",
+        "ten": "UBND phường Tiến Thành",
+        "cha": "970",
+        "raw_name": "ubnd phuong tien thanh"
+    },
+    {
+        "ma": "1007",
+        "ten": "Sở Khoa học và Công nghệ",
+        "cha": "0",
+        "raw_name": "so khoa hoc va cong nghe"
+    },
+    {
+        "ma": "1089",
+        "ten": "Trung tâm Khoa học và Công nghệ",
+        "cha": "1007",
+        "raw_name": "trung tam khoa hoc va cong nghe"
+    },
+    {
+        "ma": "1107",
+        "ten": "Đài Phát thanh - Truyền hình và Báo Bình Phước",
+        "cha": "0",
+        "raw_name": "dai phat thanh - truyen hinh va bao binh phuoc"
+    },
+    {
+        "ma": "1147",
+        "ten": "Sở Thông tin và Truyền thông Bình Phước",
+        "cha": "0",
+        "raw_name": "so thong tin va truyen thong binh phuoc"
+    },
+    {
+        "ma": "1167",
+        "ten": "VNPT Bình Phước",
+        "cha": "0",
+        "raw_name": "vnpt binh phuoc"
+    },
+    {
+        "ma": "1168",
+        "ten": "Phòng Kế toán Kế hoạch - Bộ phận Kế hoạch",
+        "cha": "1167",
+        "raw_name": "phong ke toan ke hoach - bo phan ke hoach"
+    },
+    {
+        "ma": "1169",
+        "ten": "Phòng Kế toán Kế hoạch - Bộ phận Kế toán",
+        "cha": "1167",
+        "raw_name": "phong ke toan ke hoach - bo phan ke toan"
+    },
+    {
+        "ma": "1170",
+        "ten": "Phòng Nhân sự - Tổng hợp",
+        "cha": "1167",
+        "raw_name": "phong nhan su - tong hop"
+    },
+    {
+        "ma": "1171",
+        "ten": "Phòng Kỹ thuật Đầu tư - Bộ phận kỹ thuật",
+        "cha": "1167",
+        "raw_name": "phong ky thuat dau tu - bo phan ky thuat"
+    },
+    {
+        "ma": "1172",
+        "ten": "Phòng Kỹ thuật Đầu tư - Bộ phận đầu tư",
+        "cha": "1167",
+        "raw_name": "phong ky thuat dau tu - bo phan dau tu"
+    },
+    {
+        "ma": "1173",
+        "ten": "Trung tâm Công nghệ thông tin",
+        "cha": "1167",
+        "raw_name": "trung tam cong nghe thong tin"
+    },
+    {
+        "ma": "1174",
+        "ten": "Trung tâm Điều hành Thông tin",
+        "cha": "1167",
+        "raw_name": "trung tam dieu hanh thong tin"
+    },
+    {
+        "ma": "1175",
+        "ten": "TTVT Đồng Xoài",
+        "cha": "1167",
+        "raw_name": "ttvt dong xoai"
+    },
+    {
+        "ma": "1176",
+        "ten": "TTVT Bình Long",
+        "cha": "1167",
+        "raw_name": "ttvt binh long"
+    },
+    {
+        "ma": "1177",
+        "ten": "TTVT Phước Long",
+        "cha": "1167",
+        "raw_name": "ttvt phuoc long"
+    },
+    {
+        "ma": "1178",
+        "ten": "TTVT Lộc Ninh",
+        "cha": "1167",
+        "raw_name": "ttvt loc ninh"
+    },
+    {
+        "ma": "1179",
+        "ten": "TTVT Bù Đăng",
+        "cha": "1167",
+        "raw_name": "ttvt bu dang"
+    },
+    {
+        "ma": "1180",
+        "ten": "TTVT Chơn Thành",
+        "cha": "1167",
+        "raw_name": "ttvt chon thanh"
+    },
+    {
+        "ma": "1181",
+        "ten": "Trung tâm Kinh Doanh",
+        "cha": "1167",
+        "raw_name": "trung tam kinh doanh"
+    },
+    {
+        "ma": "1307",
+        "ten": "Trung tâm CNTT - Truyền thông",
+        "cha": "1147",
+        "raw_name": "trung tam cntt - truyen thong"
+    },
+    {
+        "ma": "1347",
+        "ten": "Trung tâm Y Tế Bình Long",
+        "cha": "0",
+        "raw_name": "trung tam y te binh long"
+    },
+    {
+        "ma": "1417",
+        "ten": "Sở Giáo dục và Đào tạo Bình Phước",
+        "cha": "0",
+        "raw_name": "so giao duc va dao tao binh phuoc"
+    },
+    {
+        "ma": "1418",
+        "ten": "Trường THPT Bình Long",
+        "cha": "1417",
+        "raw_name": "truong thpt binh long"
+    },
+    {
+        "ma": "1419",
+        "ten": "Trường THPT Bù Đăng",
+        "cha": "1417",
+        "raw_name": "truong thpt bu dang"
+    },
+    {
+        "ma": "1420",
+        "ten": "Trường THPT Chơn Thành",
+        "cha": "1417",
+        "raw_name": "truong thpt chon thanh"
+    },
+    {
+        "ma": "1421",
+        "ten": "Trường THPT Chu Văn An",
+        "cha": "1417",
+        "raw_name": "truong thpt chu van an"
+    },
+    {
+        "ma": "1422",
+        "ten": "Trường THPT Đăk Ơ",
+        "cha": "1417",
+        "raw_name": "truong thpt dak o"
+    },
+    {
+        "ma": "1423",
+        "ten": "Trường THPT Đồng Phú",
+        "cha": "1417",
+        "raw_name": "truong thpt dong phu"
+    },
+    {
+        "ma": "1424",
+        "ten": "Trường THPT Đồng Xoài",
+        "cha": "1417",
+        "raw_name": "truong thpt dong xoai"
+    },
+    {
+        "ma": "1425",
+        "ten": "Trường THPT Hùng Vương",
+        "cha": "1417",
+        "raw_name": "truong thpt hung vuong"
+    },
+    {
+        "ma": "1426",
+        "ten": "Trường THPT Lê Qúy Đôn",
+        "cha": "1417",
+        "raw_name": "truong thpt le quy don"
+    },
+    {
+        "ma": "1427",
+        "ten": "Trường THPT Lộc Hiệp",
+        "cha": "1417",
+        "raw_name": "truong thpt loc hiep"
+    },
+    {
+        "ma": "1428",
+        "ten": "Trường THPT Lộc Ninh",
+        "cha": "1417",
+        "raw_name": "truong thpt loc ninh"
+    },
+    {
+        "ma": "1429",
+        "ten": "Trường THPT Lộc Thái",
+        "cha": "1417",
+        "raw_name": "truong thpt loc thai"
+    },
+    {
+        "ma": "1430",
+        "ten": "Trường THPT Ngô Quyền",
+        "cha": "1417",
+        "raw_name": "truong thpt ngo quyen"
+    },
+    {
+        "ma": "1431",
+        "ten": "Trường THPT Nguyễn Du",
+        "cha": "1417",
+        "raw_name": "truong thpt nguyen du"
+    },
+    {
+        "ma": "1432",
+        "ten": "Trường THPT Nguyễn Huệ",
+        "cha": "1417",
+        "raw_name": "truong thpt nguyen hue"
+    },
+    {
+        "ma": "1433",
+        "ten": "Trường THPT Nguyễn Hữu Cảnh",
+        "cha": "1417",
+        "raw_name": "truong thpt nguyen huu canh"
+    },
+    {
+        "ma": "1434",
+        "ten": "Trường THPT Nguyễn Khuyến",
+        "cha": "1417",
+        "raw_name": "truong thpt nguyen khuyen"
+    },
+    {
+        "ma": "1435",
+        "ten": "Trường THPT Phú Riềng",
+        "cha": "1417",
+        "raw_name": "truong thpt phu rieng"
+    },
+    {
+        "ma": "1436",
+        "ten": "Trường THPT Phước Bình",
+        "cha": "1417",
+        "raw_name": "truong thpt phuoc binh"
+    },
+    {
+        "ma": "1437",
+        "ten": "Trường THPT Phước Long",
+        "cha": "1417",
+        "raw_name": "truong thpt phuoc long"
+    },
+    {
+        "ma": "1438",
+        "ten": "Trường THPT Thanh Hòa",
+        "cha": "1417",
+        "raw_name": "truong thpt thanh hoa"
+    },
+    {
+        "ma": "1439",
+        "ten": "Trường THPT Thống Nhất",
+        "cha": "1417",
+        "raw_name": "truong thpt thong nhat"
+    },
+    {
+        "ma": "1440",
+        "ten": "Trường THPT Trần Phú",
+        "cha": "1417",
+        "raw_name": "truong thpt tran phu"
+    },
+    {
+        "ma": "1441",
+        "ten": "Trường THPT Đa Kia",
+        "cha": "1417",
+        "raw_name": "truong thpt da kia"
+    },
+    {
+        "ma": "1442",
+        "ten": "Trường THCS&THPT Đăng Hà",
+        "cha": "1417",
+        "raw_name": "truong thcs&thpt dang ha"
+    },
+    {
+        "ma": "1443",
+        "ten": "Trường THCS&THPT Đồng Tiến",
+        "cha": "1417",
+        "raw_name": "truong thcs&thpt dong tien"
+    },
+    {
+        "ma": "1444",
+        "ten": "Trường THCS&THPT Lương Thế Vinh",
+        "cha": "1417",
+        "raw_name": "truong thcs&thpt luong the vinh"
+    },
+    {
+        "ma": "1445",
+        "ten": "Trường THCS&THPT Nguyễn Bỉnh Khiêm",
+        "cha": "1417",
+        "raw_name": "truong thcs&thpt nguyen binh khiem"
+    },
+    {
+        "ma": "1446",
+        "ten": "Trường THCS&THPT Tân Tiến",
+        "cha": "1417",
+        "raw_name": "truong thcs&thpt tan tien"
+    },
+    {
+        "ma": "1447",
+        "ten": "Trường THCS&THPT Võ Thị Sáu",
+        "cha": "1417",
+        "raw_name": "truong thcs&thpt vo thi sau"
+    },
+    {
+        "ma": "1448",
+        "ten": "Trung tâm GDNN-GDTX Bình Long",
+        "cha": "1417",
+        "raw_name": "trung tam gdnn-gdtx binh long"
+    },
+    {
+        "ma": "1449",
+        "ten": "Trung tâm GDNN-GDTX Bù Đăng",
+        "cha": "1417",
+        "raw_name": "trung tam gdnn-gdtx bu dang"
+    },
+    {
+        "ma": "1450",
+        "ten": "Trung tâm GDNN-GDTX Bù Đốp",
+        "cha": "1417",
+        "raw_name": "trung tam gdnn-gdtx bu dop"
+    },
+    {
+        "ma": "1451",
+        "ten": "Trung tâm GDNN-GDTX Chơn Thành",
+        "cha": "1417",
+        "raw_name": "trung tam gdnn-gdtx chon thanh"
+    },
+    {
+        "ma": "1452",
+        "ten": "Trung tâm GDNN-GDTX Đồng Phú",
+        "cha": "1417",
+        "raw_name": "trung tam gdnn-gdtx dong phu"
+    },
+    {
+        "ma": "1453",
+        "ten": "Trung tâm GDNN-GDTX Lộc Ninh",
+        "cha": "1417",
+        "raw_name": "trung tam gdnn-gdtx loc ninh"
+    },
+    {
+        "ma": "1454",
+        "ten": "Trung tâm GDNN-GDTX Phước Long",
+        "cha": "1417",
+        "raw_name": "trung tam gdnn-gdtx phuoc long"
+    },
+    {
+        "ma": "1455",
+        "ten": "Trung tâm GDTX tỉnh",
+        "cha": "1417",
+        "raw_name": "trung tam gdtx tinh"
+    },
+    {
+        "ma": "1457",
+        "ten": "Trường PTDTNT THCS&THPT Điểu Ong",
+        "cha": "1417",
+        "raw_name": "truong ptdtnt thcs&thpt dieu ong"
+    },
+    {
+        "ma": "1460",
+        "ten": "Trường PTDTNT THCS-THPT Bù Gia Mập",
+        "cha": "1417",
+        "raw_name": "truong ptdtnt thcs-thpt bu gia map"
+    },
+    {
+        "ma": "1461",
+        "ten": "Trường PTDTNT THPT Bình Phước",
+        "cha": "1417",
+        "raw_name": "truong ptdtnt thpt binh phuoc"
+    },
+    {
+        "ma": "1462",
+        "ten": "Trường THPT chuyên Bình Long",
+        "cha": "1417",
+        "raw_name": "truong thpt chuyen binh long"
+    },
+    {
+        "ma": "1463",
+        "ten": "Trường THPT chuyên Quang Trung",
+        "cha": "1417",
+        "raw_name": "truong thpt chuyen quang trung"
+    },
+    {
+        "ma": "1464",
+        "ten": "Trường CĐ nghề Bình Phước",
+        "cha": "1417",
+        "raw_name": "truong cd nghe binh phuoc"
+    },
+    {
+        "ma": "1465",
+        "ten": "Trường TCYT Bình Phước",
+        "cha": "1417",
+        "raw_name": "truong tcyt binh phuoc"
+    },
+    {
+        "ma": "1466",
+        "ten": "Trường Cao Đẳng Sư Phạm Bình Phước",
+        "cha": "1417",
+        "raw_name": "truong cao dang su pham binh phuoc"
+    },
+    {
+        "ma": "1467",
+        "ten": "Trường Cao Đẳng Công Nghiệp Cao Su",
+        "cha": "1417",
+        "raw_name": "truong cao dang cong nghiep cao su"
+    },
+    {
+        "ma": "1468",
+        "ten": "Trường Trung cấp Kinh tế Kỹ thuật Bình Phước",
+        "cha": "1417",
+        "raw_name": "truong trung cap kinh te ky thuat binh phuoc"
+    },
+    {
+        "ma": "1469",
+        "ten": "Trung tâm GDNN-GDTX Hớn Quản",
+        "cha": "1417",
+        "raw_name": "trung tam gdnn-gdtx hon quan"
+    },
+    {
+        "ma": "1470",
+        "ten": "Trung tâm GDNN-GDTX Bù Gia Mập",
+        "cha": "1417",
+        "raw_name": "trung tam gdnn-gdtx bu gia map"
+    },
+    {
+        "ma": "2085",
+        "ten": "Sở Lao động, Thương binh và Xã hội tỉnh Bình Phước",
+        "cha": "0",
+        "raw_name": "so lao dong, thuong binh va xa hoi tinh binh phuoc"
+    },
+    {
+        "ma": "2678",
+        "ten": "Phòng Giáo dục và Đào tạo huyện Chơn Thành",
+        "cha": "0",
+        "raw_name": "phong giao duc va dao tao huyen chon thanh"
+    },
+    {
+        "ma": "2679",
+        "ten": "Trường Mầm non Minh Hưng",
+        "cha": "2678",
+        "raw_name": "truong mam non minh hung"
+    },
+    {
+        "ma": "2680",
+        "ten": "Trường Mầm non Minh Lập",
+        "cha": "2678",
+        "raw_name": "truong mam non minh lap"
+    },
+    {
+        "ma": "2681",
+        "ten": "Trường Mầm non Minh Long",
+        "cha": "2678",
+        "raw_name": "truong mam non minh long"
+    },
+    {
+        "ma": "2682",
+        "ten": "Trường Mầm non Minh Thắng",
+        "cha": "2678",
+        "raw_name": "truong mam non minh thang"
+    },
+    {
+        "ma": "2683",
+        "ten": "Trường Mầm non Minh Thành",
+        "cha": "2678",
+        "raw_name": "truong mam non minh thanh"
+    },
+    {
+        "ma": "2684",
+        "ten": "Trường Mầm non Nha Bích",
+        "cha": "2678",
+        "raw_name": "truong mam non nha bich"
+    },
+    {
+        "ma": "2685",
+        "ten": "Trường Mầm non Quang Minh",
+        "cha": "2678",
+        "raw_name": "truong mam non quang minh"
+    },
+    {
+        "ma": "2686",
+        "ten": "Trường Mầm non Sao Mai",
+        "cha": "2678",
+        "raw_name": "truong mam non sao mai"
+    },
+    {
+        "ma": "2688",
+        "ten": "Trường TH - THCS Lương Thế Vinh",
+        "cha": "2678",
+        "raw_name": "truong th - thcs luong the vinh"
+    },
+    {
+        "ma": "2689",
+        "ten": "Trường THCS Minh Hưng",
+        "cha": "2678",
+        "raw_name": "truong thcs minh hung"
+    },
+    {
+        "ma": "2690",
+        "ten": "Trường THCS Minh Lập",
+        "cha": "2678",
+        "raw_name": "truong thcs minh lap"
+    },
+    {
+        "ma": "2691",
+        "ten": "Trường TH - THCS Minh Long",
+        "cha": "2678",
+        "raw_name": "truong th - thcs minh long"
+    },
+    {
+        "ma": "2692",
+        "ten": "Trường THCS Minh Thắng",
+        "cha": "2678",
+        "raw_name": "truong thcs minh thang"
+    },
+    {
+        "ma": "2693",
+        "ten": "Trường TH - THCS Minh Thành",
+        "cha": "2678",
+        "raw_name": "truong th - thcs minh thanh"
+    },
+    {
+        "ma": "2694",
+        "ten": "Trường TH - THCS Lê Văn Tám",
+        "cha": "2678",
+        "raw_name": "truong th - thcs le van tam"
+    },
+    {
+        "ma": "2695",
+        "ten": "Trường Tiểu học Chơn Thành A",
+        "cha": "2678",
+        "raw_name": "truong tieu hoc chon thanh a"
+    },
+    {
+        "ma": "2697",
+        "ten": "Trường Tiểu học Minh Hưng A",
+        "cha": "2678",
+        "raw_name": "truong tieu hoc minh hung a"
+    },
+    {
+        "ma": "2698",
+        "ten": "Trường Tiểu học Minh Hưng B",
+        "cha": "2678",
+        "raw_name": "truong tieu hoc minh hung b"
+    },
+    {
+        "ma": "2699",
+        "ten": "Trường Tiểu học Minh Lập",
+        "cha": "2678",
+        "raw_name": "truong tieu hoc minh lap"
+    },
+    {
+        "ma": "2701",
+        "ten": "Trường Tiểu học Minh Thắng",
+        "cha": "2678",
+        "raw_name": "truong tieu hoc minh thang"
+    },
+    {
+        "ma": "2703",
+        "ten": "Trường Tiểu học Nha Bích",
+        "cha": "2678",
+        "raw_name": "truong tieu hoc nha bich"
+    },
+    {
+        "ma": "2704",
+        "ten": "Trường Tiểu học Quang Minh",
+        "cha": "2678",
+        "raw_name": "truong tieu hoc quang minh"
+    },
+    {
+        "ma": "2796",
+        "ten": "Ban dân tộc tỉnh Bình Phước",
+        "cha": "0",
+        "raw_name": "ban dan toc tinh binh phuoc"
+    },
+    {
+        "ma": "2797",
+        "ten": "Phòng Giáo dục và Đào tạo Huyện Hớn Quản",
+        "cha": "0",
+        "raw_name": "phong giao duc va dao tao huyen hon quan"
+    },
+    {
+        "ma": "2798",
+        "ten": "Trường Mầm non An Khương",
+        "cha": "2797",
+        "raw_name": "truong mam non an khuong"
+    },
+    {
+        "ma": "2799",
+        "ten": "Trường Mầm non Đồng Nơ",
+        "cha": "2797",
+        "raw_name": "truong mam non dong no"
+    },
+    {
+        "ma": "2800",
+        "ten": "Trường Mầm non Minh Đức",
+        "cha": "2797",
+        "raw_name": "truong mam non minh duc"
+    },
+    {
+        "ma": "2801",
+        "ten": "Trường Mầm non Minh Tâm",
+        "cha": "2797",
+        "raw_name": "truong mam non minh tam"
+    },
+    {
+        "ma": "2802",
+        "ten": "Trường Mầm non Phước An",
+        "cha": "2797",
+        "raw_name": "truong mam non phuoc an"
+    },
+    {
+        "ma": "2803",
+        "ten": "Trường Mầm non Tân Hiệp",
+        "cha": "2797",
+        "raw_name": "truong mam non tan hiep"
+    },
+    {
+        "ma": "2804",
+        "ten": "Trường Mầm non Tân Hưng",
+        "cha": "2797",
+        "raw_name": "truong mam non tan hung"
+    },
+    {
+        "ma": "2805",
+        "ten": "Trường Mầm non Tân Khai",
+        "cha": "2797",
+        "raw_name": "truong mam non tan khai"
+    },
+    {
+        "ma": "2806",
+        "ten": "Trường Mầm non Tân Khai B",
+        "cha": "2797",
+        "raw_name": "truong mam non tan khai b"
+    },
+    {
+        "ma": "2807",
+        "ten": "Trường Mầm non Tân Lợi",
+        "cha": "2797",
+        "raw_name": "truong mam non tan loi"
+    },
+    {
+        "ma": "2808",
+        "ten": "Trường Mầm non Tân Quan",
+        "cha": "2797",
+        "raw_name": "truong mam non tan quan"
+    },
+    {
+        "ma": "2809",
+        "ten": "Trường Mầm non Thanh An",
+        "cha": "2797",
+        "raw_name": "truong mam non thanh an"
+    },
+    {
+        "ma": "2810",
+        "ten": "Trường Mầm non Thanh Bình",
+        "cha": "2797",
+        "raw_name": "truong mam non thanh binh"
+    },
+    {
+        "ma": "2811",
+        "ten": "Trường Mầm non Thanh Sơn",
+        "cha": "2797",
+        "raw_name": "truong mam non thanh son"
+    },
+    {
+        "ma": "2812",
+        "ten": "Trường TH&THCS Bù Dinh",
+        "cha": "2797",
+        "raw_name": "truong th&thcs bu dinh"
+    },
+    {
+        "ma": "2813",
+        "ten": "Trường THCS An Khương",
+        "cha": "2797",
+        "raw_name": "truong thcs an khuong"
+    },
+    {
+        "ma": "2814",
+        "ten": "Trường THCS An Phú",
+        "cha": "2797",
+        "raw_name": "truong thcs an phu"
+    },
+    {
+        "ma": "2815",
+        "ten": "Trường THCS Đồng Nơ",
+        "cha": "2797",
+        "raw_name": "truong thcs dong no"
+    },
+    {
+        "ma": "2816",
+        "ten": "Trường THCS Minh Đức",
+        "cha": "2797",
+        "raw_name": "truong thcs minh duc"
+    },
+    {
+        "ma": "2817",
+        "ten": "Trường THCS Minh Tâm",
+        "cha": "2797",
+        "raw_name": "truong thcs minh tam"
+    },
+    {
+        "ma": "2818",
+        "ten": "Trường THCS Phước An",
+        "cha": "2797",
+        "raw_name": "truong thcs phuoc an"
+    },
+    {
+        "ma": "2819",
+        "ten": "Trường THCS Tân Hiệp",
+        "cha": "2797",
+        "raw_name": "truong thcs tan hiep"
+    },
+    {
+        "ma": "2820",
+        "ten": "Trường THCS Tân Hưng",
+        "cha": "2797",
+        "raw_name": "truong thcs tan hung"
+    },
+    {
+        "ma": "2821",
+        "ten": "Trường THCS Tân Khai",
+        "cha": "2797",
+        "raw_name": "truong thcs tan khai"
+    },
+    {
+        "ma": "2822",
+        "ten": "Trường THCS Tân Lợi",
+        "cha": "2797",
+        "raw_name": "truong thcs tan loi"
+    },
+    {
+        "ma": "2823",
+        "ten": "Trường THCS Tân Quan",
+        "cha": "2797",
+        "raw_name": "truong thcs tan quan"
+    },
+    {
+        "ma": "2824",
+        "ten": "Trường THCS Thanh An",
+        "cha": "2797",
+        "raw_name": "truong thcs thanh an"
+    },
+    {
+        "ma": "2825",
+        "ten": "Trường THCS Thanh Bình",
+        "cha": "2797",
+        "raw_name": "truong thcs thanh binh"
+    },
+    {
+        "ma": "2826",
+        "ten": "Trường Tiểu học An Khương",
+        "cha": "2797",
+        "raw_name": "truong tieu hoc an khuong"
+    },
+    {
+        "ma": "2827",
+        "ten": "Trường Tiểu học An Phú",
+        "cha": "2797",
+        "raw_name": "truong tieu hoc an phu"
+    },
+    {
+        "ma": "2828",
+        "ten": "Trường Tiểu học Đồng Nơ",
+        "cha": "2797",
+        "raw_name": "truong tieu hoc dong no"
+    },
+    {
+        "ma": "2829",
+        "ten": "Trường Tiểu học Minh Tâm",
+        "cha": "2797",
+        "raw_name": "truong tieu hoc minh tam"
+    },
+    {
+        "ma": "2830",
+        "ten": "Trường Tiểu học Phước An A",
+        "cha": "2797",
+        "raw_name": "truong tieu hoc phuoc an a"
+    },
+    {
+        "ma": "2831",
+        "ten": "Trường Tiểu học Phước An B",
+        "cha": "2797",
+        "raw_name": "truong tieu hoc phuoc an b"
+    },
+    {
+        "ma": "2832",
+        "ten": "Trường Tiểu học Tân Hiệp",
+        "cha": "2797",
+        "raw_name": "truong tieu hoc tan hiep"
+    },
+    {
+        "ma": "2833",
+        "ten": "Trường Tiểu học Tân Hiệp B",
+        "cha": "2797",
+        "raw_name": "truong tieu hoc tan hiep b"
+    },
+    {
+        "ma": "2834",
+        "ten": "Trường Tiểu học Tân Hưng A",
+        "cha": "2797",
+        "raw_name": "truong tieu hoc tan hung a"
+    },
+    {
+        "ma": "2835",
+        "ten": "Trường Tiểu học Tân Hưng B",
+        "cha": "2797",
+        "raw_name": "truong tieu hoc tan hung b"
+    },
+    {
+        "ma": "2836",
+        "ten": "Trường Tiểu học Tân Khai A",
+        "cha": "2797",
+        "raw_name": "truong tieu hoc tan khai a"
+    },
+    {
+        "ma": "2837",
+        "ten": "Trường Tiểu học Tân Khai B",
+        "cha": "2797",
+        "raw_name": "truong tieu hoc tan khai b"
+    },
+    {
+        "ma": "2838",
+        "ten": "Trường Tiểu học Tân Lợi",
+        "cha": "2797",
+        "raw_name": "truong tieu hoc tan loi"
+    },
+    {
+        "ma": "2839",
+        "ten": "Trường Tiểu học Tân Quan",
+        "cha": "2797",
+        "raw_name": "truong tieu hoc tan quan"
+    },
+    {
+        "ma": "2840",
+        "ten": "Trường Tiểu học Thanh An",
+        "cha": "2797",
+        "raw_name": "truong tieu hoc thanh an"
+    },
+    {
+        "ma": "2841",
+        "ten": "Trường Tiểu học Thanh Bình",
+        "cha": "2797",
+        "raw_name": "truong tieu hoc thanh binh"
+    },
+    {
+        "ma": "2842",
+        "ten": "Trường Tiểu học Trà Thanh",
+        "cha": "2797",
+        "raw_name": "truong tieu hoc tra thanh"
+    },
+    {
+        "ma": "2843",
+        "ten": "Trường Tiểu học Trần Cao Vân",
+        "cha": "2797",
+        "raw_name": "truong tieu hoc tran cao van"
+    },
+    {
+        "ma": "2844",
+        "ten": "Trường Mầm non An Phú",
+        "cha": "2797",
+        "raw_name": "truong mam non an phu"
+    },
+    {
+        "ma": "3096",
+        "ten": "Ban quản lý khu kinh tế",
+        "cha": "0",
+        "raw_name": "ban quan ly khu kinh te"
+    },
+    {
+        "ma": "3103",
+        "ten": "Trung tâm Dịch vụ việc làm tỉnh Bình Phước",
+        "cha": "2085",
+        "raw_name": "trung tam dich vu viec lam tinh binh phuoc"
+    },
+    {
+        "ma": "3107",
+        "ten": "Trung tâm Bảo trợ xã hội tỉnh Bình Phước",
+        "cha": "2085",
+        "raw_name": "trung tam bao tro xa hoi tinh binh phuoc"
+    },
+    {
+        "ma": "3111",
+        "ten": "Cơ sở Cai nghiện ma túy tỉnh Bình Phước",
+        "cha": "2085",
+        "raw_name": "co so cai nghien ma tuy tinh binh phuoc"
+    },
+    {
+        "ma": "3173",
+        "ten": "Sở Y Tế tỉnh Bình Phước",
+        "cha": "0",
+        "raw_name": "so y te tinh binh phuoc"
+    },
+    {
+        "ma": "3383",
+        "ten": "Công ty Cao su Lộc Ninh",
+        "cha": "0",
+        "raw_name": "cong ty cao su loc ninh"
+    },
+    {
+        "ma": "3482",
+        "ten": "Ủy Ban Kiểm Tra",
+        "cha": "7920",
+        "raw_name": "uy ban kiem tra"
+    },
+    {
+        "ma": "3483",
+        "ten": "Ban Tổ Chức",
+        "cha": "7920",
+        "raw_name": "ban to chuc"
+    },
+    {
+        "ma": "3484",
+        "ten": "Ban Dân Vận",
+        "cha": "7920",
+        "raw_name": "ban dan van"
+    },
+    {
+        "ma": "3485",
+        "ten": "Ban Tuyên Giáo",
+        "cha": "7920",
+        "raw_name": "ban tuyen giao"
+    },
+    {
+        "ma": "3487",
+        "ten": "Phòng nội vụ",
+        "cha": "970",
+        "raw_name": "phong noi vu"
+    },
+    {
+        "ma": "3489",
+        "ten": "Phòng tư pháp",
+        "cha": "970",
+        "raw_name": "phong tu phap"
+    },
+    {
+        "ma": "3490",
+        "ten": "Phòng tài chính - kế hoạch",
+        "cha": "970",
+        "raw_name": "phong tai chinh - ke hoach"
+    },
+    {
+        "ma": "3491",
+        "ten": "Phòng tài nguyên và môi trường",
+        "cha": "970",
+        "raw_name": "phong tai nguyen va moi truong"
+    },
+    {
+        "ma": "3492",
+        "ten": "Phòng lao động - thương binh và xã hội",
+        "cha": "970",
+        "raw_name": "phong lao dong - thuong binh va xa hoi"
+    },
+    {
+        "ma": "3493",
+        "ten": "Phòng văn hóa và thông tin",
+        "cha": "970",
+        "raw_name": "phong van hoa va thong tin"
+    },
+    {
+        "ma": "3495",
+        "ten": "Thanh tra Thành phố",
+        "cha": "970",
+        "raw_name": "thanh tra thanh pho"
+    },
+    {
+        "ma": "3496",
+        "ten": "Phòng kinh tế",
+        "cha": "970",
+        "raw_name": "phong kinh te"
+    },
+    {
+        "ma": "3497",
+        "ten": "Phòng quản lý đô thị",
+        "cha": "970",
+        "raw_name": "phong quan ly do thi"
+    },
+    {
+        "ma": "3499",
+        "ten": "Ban quản lý dự án",
+        "cha": "970",
+        "raw_name": "ban quan ly du an"
+    },
+    {
+        "ma": "3500",
+        "ten": "Ban quản lý chợ",
+        "cha": "970",
+        "raw_name": "ban quan ly cho"
+    },
+    {
+        "ma": "3501",
+        "ten": "Đội quản lý trận tự đô thị",
+        "cha": "970",
+        "raw_name": "doi quan ly tran tu do thi"
+    },
+    {
+        "ma": "3502",
+        "ten": "Xí nghiệp công trình công cộng",
+        "cha": "970",
+        "raw_name": "xi nghiep cong trinh cong cong"
+    },
+    {
+        "ma": "3503",
+        "ten": "Trung tâm văn hóa - thể thao",
+        "cha": "970",
+        "raw_name": "trung tam van hoa - the thao"
+    },
+    {
+        "ma": "3504",
+        "ten": "Trung tâm dịch vụ nông nghiệp",
+        "cha": "970",
+        "raw_name": "trung tam dich vu nong nghiep"
+    },
+    {
+        "ma": "3505",
+        "ten": "Hội chữ thập đỏ",
+        "cha": "970",
+        "raw_name": "hoi chu thap do"
+    },
+    {
+        "ma": "3507",
+        "ten": "Trung tâm phát triển quỹ đất TP Đồng Xoài",
+        "cha": "970",
+        "raw_name": "trung tam phat trien quy dat tp dong xoai"
+    },
+    {
+        "ma": "3508",
+        "ten": "Công An TP Đồng Xoài",
+        "cha": "970",
+        "raw_name": "cong an tp dong xoai"
+    },
+    {
+        "ma": "3509",
+        "ten": "Ban Chỉ Huy Quân Sự",
+        "cha": "970",
+        "raw_name": "ban chi huy quan su"
+    },
+    {
+        "ma": "3510",
+        "ten": "Chi Cục Thi Hành Án Dân Sự",
+        "cha": "970",
+        "raw_name": "chi cuc thi hanh an dan su"
+    },
+    {
+        "ma": "3512",
+        "ten": "Chi Cục Thống Kê",
+        "cha": "970",
+        "raw_name": "chi cuc thong ke"
+    },
+    {
+        "ma": "3513",
+        "ten": "Đội Quản lý thị trường số 1",
+        "cha": "10160",
+        "raw_name": "doi quan ly thi truong so 1"
+    },
+    {
+        "ma": "3514",
+        "ten": "Bảo Hiểm Xã Hội",
+        "cha": "970",
+        "raw_name": "bao hiem xa hoi"
+    },
+    {
+        "ma": "3515",
+        "ten": "Chi Nhánh Văn Phòng Đăng Ký Đất Đai TP Đồng Xoài",
+        "cha": "970",
+        "raw_name": "chi nhanh van phong dang ky dat dai tp dong xoai"
+    },
+    {
+        "ma": "3518",
+        "ten": "Hội LHPN TP Đồng Xoài",
+        "cha": "970",
+        "raw_name": "hoi lhpn tp dong xoai"
+    },
+    {
+        "ma": "3520",
+        "ten": "Hội Cựu Chiến Binh",
+        "cha": "970",
+        "raw_name": "hoi cuu chien binh"
+    },
+    {
+        "ma": "3522",
+        "ten": "Công ty Cao su Sông Bé",
+        "cha": "0",
+        "raw_name": "cong ty cao su song be"
+    },
+    {
+        "ma": "3534",
+        "ten": "Đài truyền thanh truyền hình TP Đồng Xoài",
+        "cha": "970",
+        "raw_name": "dai truyen thanh truyen hinh tp dong xoai"
+    },
+    {
+        "ma": "3535",
+        "ten": "Cục Thống kê",
+        "cha": "0",
+        "raw_name": "cuc thong ke"
+    },
+    {
+        "ma": "3543",
+        "ten": "Phòng Giáo dục và Đào tạo thành phố Đồng Xoài",
+        "cha": "970",
+        "raw_name": "phong giao duc va dao tao thanh pho dong xoai"
+    },
+    {
+        "ma": "3544",
+        "ten": "Trường Mầm non Hoa Cúc",
+        "cha": "970",
+        "raw_name": "truong mam non hoa cuc"
+    },
+    {
+        "ma": "3545",
+        "ten": "Trường Mầm non Hoa Đào",
+        "cha": "970",
+        "raw_name": "truong mam non hoa dao"
+    },
+    {
+        "ma": "3546",
+        "ten": "Trường Mầm non Hoa Hồng",
+        "cha": "970",
+        "raw_name": "truong mam non hoa hong"
+    },
+    {
+        "ma": "3547",
+        "ten": "Trường Mầm non Hoa Huệ",
+        "cha": "970",
+        "raw_name": "truong mam non hoa hue"
+    },
+    {
+        "ma": "3548",
+        "ten": "Trường Mầm non Hoa Lan",
+        "cha": "970",
+        "raw_name": "truong mam non hoa lan"
+    },
+    {
+        "ma": "3549",
+        "ten": "Trường Mầm non Hoa Mai",
+        "cha": "970",
+        "raw_name": "truong mam non hoa mai"
+    },
+    {
+        "ma": "3550",
+        "ten": "Trường Mầm non Họa Mi",
+        "cha": "970",
+        "raw_name": "truong mam non hoa mi"
+    },
+    {
+        "ma": "3551",
+        "ten": "Trường Mầm non Hoa Phượng",
+        "cha": "970",
+        "raw_name": "truong mam non hoa phuong"
+    },
+    {
+        "ma": "3552",
+        "ten": "Trường Mầm non Hoa Sen",
+        "cha": "970",
+        "raw_name": "truong mam non hoa sen"
+    },
+    {
+        "ma": "3553",
+        "ten": "Trường Mầm non Hướng Dương",
+        "cha": "970",
+        "raw_name": "truong mam non huong duong"
+    },
+    {
+        "ma": "3554",
+        "ten": "Trường THCS Tân Bình",
+        "cha": "970",
+        "raw_name": "truong thcs tan binh"
+    },
+    {
+        "ma": "3555",
+        "ten": "Trường THCS Tân Đồng",
+        "cha": "970",
+        "raw_name": "truong thcs tan dong"
+    },
+    {
+        "ma": "3556",
+        "ten": "Trường THCS Tân Phú",
+        "cha": "970",
+        "raw_name": "truong thcs tan phu"
+    },
+    {
+        "ma": "3557",
+        "ten": "Trường THCS Tân Thành",
+        "cha": "970",
+        "raw_name": "truong thcs tan thanh"
+    },
+    {
+        "ma": "3558",
+        "ten": "Trường THCS Tân Thiện",
+        "cha": "970",
+        "raw_name": "truong thcs tan thien"
+    },
+    {
+        "ma": "3559",
+        "ten": "Trường THCS Tân Xuân",
+        "cha": "970",
+        "raw_name": "truong thcs tan xuan"
+    },
+    {
+        "ma": "3560",
+        "ten": "Trường THCS Tiến Hưng",
+        "cha": "970",
+        "raw_name": "truong thcs tien hung"
+    },
+    {
+        "ma": "3561",
+        "ten": "Trường THCS Tiến Thành",
+        "cha": "970",
+        "raw_name": "truong thcs tien thanh"
+    },
+    {
+        "ma": "3562",
+        "ten": "Trường Tiểu học Tân Bình",
+        "cha": "970",
+        "raw_name": "truong tieu hoc tan binh"
+    },
+    {
+        "ma": "3563",
+        "ten": "Trường Tiểu học Tân Bình B",
+        "cha": "970",
+        "raw_name": "truong tieu hoc tan binh b"
+    },
+    {
+        "ma": "3564",
+        "ten": "Trường Tiểu học Tân Đồng",
+        "cha": "970",
+        "raw_name": "truong tieu hoc tan dong"
+    },
+    {
+        "ma": "3565",
+        "ten": "Trường Tiểu học Tân Phú",
+        "cha": "970",
+        "raw_name": "truong tieu hoc tan phu"
+    },
+    {
+        "ma": "3566",
+        "ten": "Trường Tiểu học Tân Phú B",
+        "cha": "970",
+        "raw_name": "truong tieu hoc tan phu b"
+    },
+    {
+        "ma": "3567",
+        "ten": "Trường Tiểu học Tân Phú C",
+        "cha": "970",
+        "raw_name": "truong tieu hoc tan phu c"
+    },
+    {
+        "ma": "3568",
+        "ten": "Trường Tiểu học Tân Thành A",
+        "cha": "970",
+        "raw_name": "truong tieu hoc tan thanh a"
+    },
+    {
+        "ma": "3569",
+        "ten": "Trường Tiểu học Tân Thành",
+        "cha": "970",
+        "raw_name": "truong tieu hoc tan thanh"
+    },
+    {
+        "ma": "3570",
+        "ten": "Trường Tiểu học Tân Thiện",
+        "cha": "970",
+        "raw_name": "truong tieu hoc tan thien"
+    },
+    {
+        "ma": "3571",
+        "ten": "Trường Tiểu học Tân Xuân B",
+        "cha": "970",
+        "raw_name": "truong tieu hoc tan xuan b"
+    },
+    {
+        "ma": "3572",
+        "ten": "Trường Tiểu học Tân Xuân C",
+        "cha": "970",
+        "raw_name": "truong tieu hoc tan xuan c"
+    },
+    {
+        "ma": "3573",
+        "ten": "Trường Tiểu học Tiến Hưng A",
+        "cha": "970",
+        "raw_name": "truong tieu hoc tien hung a"
+    },
+    {
+        "ma": "3574",
+        "ten": "Trường Tiểu học Tiến Hưng B",
+        "cha": "970",
+        "raw_name": "truong tieu hoc tien hung b"
+    },
+    {
+        "ma": "3575",
+        "ten": "Trường Tiểu học Tiến Thành",
+        "cha": "970",
+        "raw_name": "truong tieu hoc tien thanh"
+    },
+    {
+        "ma": "3576",
+        "ten": "Trường Mầm Non Vietstar",
+        "cha": "970",
+        "raw_name": "truong mam non vietstar"
+    },
+    {
+        "ma": "3577",
+        "ten": "Trường Mầm non tư thục Sơn Ca",
+        "cha": "970",
+        "raw_name": "truong mam non tu thuc son ca"
+    },
+    {
+        "ma": "3578",
+        "ten": "Trường Mầm non tư thục Thanh Tâm",
+        "cha": "970",
+        "raw_name": "truong mam non tu thuc thanh tam"
+    },
+    {
+        "ma": "3579",
+        "ten": "Trường Mầm non tư thục Thiên Thần",
+        "cha": "970",
+        "raw_name": "truong mam non tu thuc thien than"
+    },
+    {
+        "ma": "3580",
+        "ten": "Trường Mầm non tư thục Ánh Dương",
+        "cha": "970",
+        "raw_name": "truong mam non tu thuc anh duong"
+    },
+    {
+        "ma": "3581",
+        "ten": "Trường Mầm non tư thục công viên quốc tế 1",
+        "cha": "970",
+        "raw_name": "truong mam non tu thuc cong vien quoc te 1"
+    },
+    {
+        "ma": "3582",
+        "ten": "Trường Mầm non tư thục Thần Đồng",
+        "cha": "970",
+        "raw_name": "truong mam non tu thuc than dong"
+    },
+    {
+        "ma": "3761",
+        "ten": "Trung tâm Y tế huyện Phú Riềng",
+        "cha": "0",
+        "raw_name": "trung tam y te huyen phu rieng"
+    },
+    {
+        "ma": "3785",
+        "ten": "Phòng Giáo dục và Đào tạo Huyện Bù Đốp",
+        "cha": "0",
+        "raw_name": "phong giao duc va dao tao huyen bu dop"
+    },
+    {
+        "ma": "3786",
+        "ten": "Trường Mầm non Thanh Bình",
+        "cha": "3785",
+        "raw_name": "truong mam non thanh binh"
+    },
+    {
+        "ma": "3787",
+        "ten": "Trường Mẫu giáo Hưng Phước",
+        "cha": "3785",
+        "raw_name": "truong mau giao hung phuoc"
+    },
+    {
+        "ma": "3788",
+        "ten": "Trường Mẫu giáo Phước Thiện",
+        "cha": "3785",
+        "raw_name": "truong mau giao phuoc thien"
+    },
+    {
+        "ma": "3789",
+        "ten": "Trường Mẫu giáo Tân Thành",
+        "cha": "3785",
+        "raw_name": "truong mau giao tan thanh"
+    },
+    {
+        "ma": "3790",
+        "ten": "Trường Mẫu giáo Tân Tiến",
+        "cha": "3785",
+        "raw_name": "truong mau giao tan tien"
+    },
+    {
+        "ma": "3791",
+        "ten": "Trường Mẫu giáo Thanh Bình",
+        "cha": "3785",
+        "raw_name": "truong mau giao thanh binh"
+    },
+    {
+        "ma": "3792",
+        "ten": "Trường Mẫu giáo Thanh Hòa",
+        "cha": "3785",
+        "raw_name": "truong mau giao thanh hoa"
+    },
+    {
+        "ma": "3793",
+        "ten": "Trường Mẫu giáo Tuổi Thơ",
+        "cha": "3785",
+        "raw_name": "truong mau giao tuoi tho"
+    },
+    {
+        "ma": "3794",
+        "ten": "Trường THCS Bù Đốp",
+        "cha": "3785",
+        "raw_name": "truong thcs bu dop"
+    },
+    {
+        "ma": "3795",
+        "ten": "Trường TH & THCS Hưng Phước",
+        "cha": "3785",
+        "raw_name": "truong th & thcs hung phuoc"
+    },
+    {
+        "ma": "3796",
+        "ten": "Trường TH & THCS Phước Thiện",
+        "cha": "3785",
+        "raw_name": "truong th & thcs phuoc thien"
+    },
+    {
+        "ma": "3797",
+        "ten": "Trường THCS Tân Thành",
+        "cha": "3785",
+        "raw_name": "truong thcs tan thanh"
+    },
+    {
+        "ma": "3798",
+        "ten": "Trường THCS Thanh Bình",
+        "cha": "3785",
+        "raw_name": "truong thcs thanh binh"
+    },
+    {
+        "ma": "3799",
+        "ten": "Trường TH & THCS Thanh Hòa",
+        "cha": "3785",
+        "raw_name": "truong th & thcs thanh hoa"
+    },
+    {
+        "ma": "3800",
+        "ten": "Trường Tiểu học Hưng Phước",
+        "cha": "3785",
+        "raw_name": "truong tieu hoc hung phuoc"
+    },
+    {
+        "ma": "3801",
+        "ten": "Trường Tiểu học Phước Thiện",
+        "cha": "3785",
+        "raw_name": "truong tieu hoc phuoc thien"
+    },
+    {
+        "ma": "3802",
+        "ten": "Trường Tiểu học Tân Thành A",
+        "cha": "3785",
+        "raw_name": "truong tieu hoc tan thanh a"
+    },
+    {
+        "ma": "3803",
+        "ten": "Trường Tiểu học Tân Thành B",
+        "cha": "3785",
+        "raw_name": "truong tieu hoc tan thanh b"
+    },
+    {
+        "ma": "3804",
+        "ten": "Trường Tiểu học Tân Tiến",
+        "cha": "3785",
+        "raw_name": "truong tieu hoc tan tien"
+    },
+    {
+        "ma": "3805",
+        "ten": "Trường Tiểu học Thanh Bình A",
+        "cha": "3785",
+        "raw_name": "truong tieu hoc thanh binh a"
+    },
+    {
+        "ma": "3806",
+        "ten": "Trường Tiểu học Thanh Bình B",
+        "cha": "3785",
+        "raw_name": "truong tieu hoc thanh binh b"
+    },
+    {
+        "ma": "3807",
+        "ten": "Trường Tiểu học Thanh Hòa",
+        "cha": "3785",
+        "raw_name": "truong tieu hoc thanh hoa"
+    },
+    {
+        "ma": "3808",
+        "ten": "Trường Tiểu học Thiện Hưng A",
+        "cha": "3785",
+        "raw_name": "truong tieu hoc thien hung a"
+    },
+    {
+        "ma": "3809",
+        "ten": "Trường Tiểu học Thiện Hưng B",
+        "cha": "3785",
+        "raw_name": "truong tieu hoc thien hung b"
+    },
+    {
+        "ma": "3810",
+        "ten": "Trường Tiểu học Thiện Hưng C",
+        "cha": "3785",
+        "raw_name": "truong tieu hoc thien hung c"
+    },
+    {
+        "ma": "3811",
+        "ten": "Trường Mầm non Tư thục Lasan",
+        "cha": "3785",
+        "raw_name": "truong mam non tu thuc lasan"
+    },
+    {
+        "ma": "3976",
+        "ten": "Phòng Giáo dục và Đào tạo huyện Lộc Ninh",
+        "cha": "0",
+        "raw_name": "phong giao duc va dao tao huyen loc ninh"
+    },
+    {
+        "ma": "3977",
+        "ten": "Trường Mầm non Sao Mai",
+        "cha": "3976",
+        "raw_name": "truong mam non sao mai"
+    },
+    {
+        "ma": "3978",
+        "ten": "Trường Mẫu giáo Ánh Dương",
+        "cha": "3976",
+        "raw_name": "truong mau giao anh duong"
+    },
+    {
+        "ma": "3979",
+        "ten": "Trường Mẫu giáo Bình Minh",
+        "cha": "3976",
+        "raw_name": "truong mau giao binh minh"
+    },
+    {
+        "ma": "3980",
+        "ten": "Trường Mẫu giáo Hoa Cúc",
+        "cha": "3976",
+        "raw_name": "truong mau giao hoa cuc"
+    },
+    {
+        "ma": "3981",
+        "ten": "Trường Mẫu giáo Hoa Hồng",
+        "cha": "3976",
+        "raw_name": "truong mau giao hoa hong"
+    },
+    {
+        "ma": "3982",
+        "ten": "Trường mẫu giáo Hoa Mai",
+        "cha": "3976",
+        "raw_name": "truong mau giao hoa mai"
+    },
+    {
+        "ma": "3983",
+        "ten": "Trường Mẫu giáo Hoa Phượng",
+        "cha": "3976",
+        "raw_name": "truong mau giao hoa phuong"
+    },
+    {
+        "ma": "3984",
+        "ten": "Trường Mẫu giáo Hoa Sen",
+        "cha": "3976",
+        "raw_name": "truong mau giao hoa sen"
+    },
+    {
+        "ma": "3985",
+        "ten": "Trường Mẫu giáo Hướng Dương",
+        "cha": "3976",
+        "raw_name": "truong mau giao huong duong"
+    },
+    {
+        "ma": "3986",
+        "ten": "Trường Mẫu giáo Lộc Hiệp",
+        "cha": "3976",
+        "raw_name": "truong mau giao loc hiep"
+    },
+    {
+        "ma": "3987",
+        "ten": "Trường Mẫu giáo Lộc Hưng",
+        "cha": "3976",
+        "raw_name": "truong mau giao loc hung"
+    },
+    {
+        "ma": "3988",
+        "ten": "Trường Mẫu giáo Lộc Quang",
+        "cha": "3976",
+        "raw_name": "truong mau giao loc quang"
+    },
+    {
+        "ma": "3989",
+        "ten": "Trường Mẫu giáo Măng Non",
+        "cha": "3976",
+        "raw_name": "truong mau giao mang non"
+    },
+    {
+        "ma": "3990",
+        "ten": "Trường Mẫu giáo Sao Sáng",
+        "cha": "3976",
+        "raw_name": "truong mau giao sao sang"
+    },
+    {
+        "ma": "3991",
+        "ten": "Trường Mẫu giáo Sơn Ca",
+        "cha": "3976",
+        "raw_name": "truong mau giao son ca"
+    },
+    {
+        "ma": "3992",
+        "ten": "Trường Mẫu giáo Tuổi Thơ",
+        "cha": "3976",
+        "raw_name": "truong mau giao tuoi tho"
+    },
+    {
+        "ma": "3993",
+        "ten": "Trường Mẫu giáo Vàng Anh",
+        "cha": "3976",
+        "raw_name": "truong mau giao vang anh"
+    },
+    {
+        "ma": "3994",
+        "ten": "Trường Mẫu giáo Vành Khuyên",
+        "cha": "3976",
+        "raw_name": "truong mau giao vanh khuyen"
+    },
+    {
+        "ma": "3995",
+        "ten": "Trường THCS Lộc An",
+        "cha": "3976",
+        "raw_name": "truong thcs loc an"
+    },
+    {
+        "ma": "3996",
+        "ten": "Trường THCS Lộc Điền",
+        "cha": "3976",
+        "raw_name": "truong thcs loc dien"
+    },
+    {
+        "ma": "3997",
+        "ten": "Trường THCS Lộc Hiệp",
+        "cha": "3976",
+        "raw_name": "truong thcs loc hiep"
+    },
+    {
+        "ma": "3998",
+        "ten": "Trường THCS Lộc Hòa",
+        "cha": "3976",
+        "raw_name": "truong thcs loc hoa"
+    },
+    {
+        "ma": "3999",
+        "ten": "Trường THCS Lộc Hưng",
+        "cha": "3976",
+        "raw_name": "truong thcs loc hung"
+    },
+    {
+        "ma": "4000",
+        "ten": "Trường THCS Lộc Khánh",
+        "cha": "3976",
+        "raw_name": "truong thcs loc khanh"
+    },
+    {
+        "ma": "4001",
+        "ten": "Trường THCS Lộc Quang",
+        "cha": "3976",
+        "raw_name": "truong thcs loc quang"
+    },
+    {
+        "ma": "4002",
+        "ten": "Trường THCS Lộc Tấn",
+        "cha": "3976",
+        "raw_name": "truong thcs loc tan"
+    },
+    {
+        "ma": "4003",
+        "ten": "Trường THCS Lộc Thái",
+        "cha": "3976",
+        "raw_name": "truong thcs loc thai"
+    },
+    {
+        "ma": "4004",
+        "ten": "Trường THCS Lộc Thành",
+        "cha": "3976",
+        "raw_name": "truong thcs loc thanh"
+    },
+    {
+        "ma": "4005",
+        "ten": "Trường THCS Lộc Thiện",
+        "cha": "3976",
+        "raw_name": "truong thcs loc thien"
+    },
+    {
+        "ma": "4006",
+        "ten": "Trường THCS Lộc Thuận",
+        "cha": "3976",
+        "raw_name": "truong thcs loc thuan"
+    },
+    {
+        "ma": "4007",
+        "ten": "Trường THCS TT Lộc Ninh",
+        "cha": "3976",
+        "raw_name": "truong thcs tt loc ninh"
+    },
+    {
+        "ma": "4008",
+        "ten": "Trường TH-THCS Lộc Thạnh",
+        "cha": "3976",
+        "raw_name": "truong th-thcs loc thanh"
+    },
+    {
+        "ma": "4009",
+        "ten": "Trường TH-THCS Lộc Thịnh",
+        "cha": "3976",
+        "raw_name": "truong th-thcs loc thinh"
+    },
+    {
+        "ma": "4010",
+        "ten": "Trường Tiểu học Lộc An",
+        "cha": "3976",
+        "raw_name": "truong tieu hoc loc an"
+    },
+    {
+        "ma": "4011",
+        "ten": "Trường Tiểu học Lộc Điền A",
+        "cha": "3976",
+        "raw_name": "truong tieu hoc loc dien a"
+    },
+    {
+        "ma": "4012",
+        "ten": "Trường Tiểu học Lộc Điền B",
+        "cha": "3976",
+        "raw_name": "truong tieu hoc loc dien b"
+    },
+    {
+        "ma": "4013",
+        "ten": "Trường Tiểu học Lộc Hiệp",
+        "cha": "3976",
+        "raw_name": "truong tieu hoc loc hiep"
+    },
+    {
+        "ma": "4014",
+        "ten": "Trường Tiểu học Lộc Hòa",
+        "cha": "3976",
+        "raw_name": "truong tieu hoc loc hoa"
+    },
+    {
+        "ma": "4015",
+        "ten": "Trường Tiểu học Lộc Hưng",
+        "cha": "3976",
+        "raw_name": "truong tieu hoc loc hung"
+    },
+    {
+        "ma": "4016",
+        "ten": "Trường Tiểu học Lộc Khánh",
+        "cha": "3976",
+        "raw_name": "truong tieu hoc loc khanh"
+    },
+    {
+        "ma": "4017",
+        "ten": "Trường Tiểu học Lộc Ninh A",
+        "cha": "3976",
+        "raw_name": "truong tieu hoc loc ninh a"
+    },
+    {
+        "ma": "4018",
+        "ten": "Trường Tiểu học Lộc Phú",
+        "cha": "3976",
+        "raw_name": "truong tieu hoc loc phu"
+    },
+    {
+        "ma": "4019",
+        "ten": "Trường Tiểu học Lộc Quang",
+        "cha": "3976",
+        "raw_name": "truong tieu hoc loc quang"
+    },
+    {
+        "ma": "4020",
+        "ten": "Trường Tiểu học Lộc Tấn A",
+        "cha": "3976",
+        "raw_name": "truong tieu hoc loc tan a"
+    },
+    {
+        "ma": "4021",
+        "ten": "Trường Tiểu học Lộc Tấn B",
+        "cha": "3976",
+        "raw_name": "truong tieu hoc loc tan b"
+    },
+    {
+        "ma": "4022",
+        "ten": "Trường Tiểu học Lộc Thái A",
+        "cha": "3976",
+        "raw_name": "truong tieu hoc loc thai a"
+    },
+    {
+        "ma": "4023",
+        "ten": "Trường Tiểu học Lộc Thái B",
+        "cha": "3976",
+        "raw_name": "truong tieu hoc loc thai b"
+    },
+    {
+        "ma": "4024",
+        "ten": "Trường Tiểu học Lộc Thành A",
+        "cha": "3976",
+        "raw_name": "truong tieu hoc loc thanh a"
+    },
+    {
+        "ma": "4025",
+        "ten": "Trường Tiểu học Lộc Thành B",
+        "cha": "3976",
+        "raw_name": "truong tieu hoc loc thanh b"
+    },
+    {
+        "ma": "4026",
+        "ten": "Trường Tiểu học Lộc Thiện",
+        "cha": "3976",
+        "raw_name": "truong tieu hoc loc thien"
+    },
+    {
+        "ma": "4027",
+        "ten": "Trường Tiểu học Lộc Thiện B",
+        "cha": "3976",
+        "raw_name": "truong tieu hoc loc thien b"
+    },
+    {
+        "ma": "4028",
+        "ten": "Trường Tiểu học Lộc Thuận A",
+        "cha": "3976",
+        "raw_name": "truong tieu hoc loc thuan a"
+    },
+    {
+        "ma": "4029",
+        "ten": "Trường Tiểu học Lộc Thuận B",
+        "cha": "3976",
+        "raw_name": "truong tieu hoc loc thuan b"
+    },
+    {
+        "ma": "4030",
+        "ten": "Trường PTDTNT THCS Lộc Ninh",
+        "cha": "3976",
+        "raw_name": "truong ptdtnt thcs loc ninh"
+    },
+    {
+        "ma": "4167",
+        "ten": "Phòng Giáo dục và Đào tạo Thị xã Bình Long",
+        "cha": "0",
+        "raw_name": "phong giao duc va dao tao thi xa binh long"
+    },
+    {
+        "ma": "4168",
+        "ten": "Trường Mầm non Hoa Mai",
+        "cha": "4167",
+        "raw_name": "truong mam non hoa mai"
+    },
+    {
+        "ma": "4169",
+        "ten": "Trường Mầm non Họa Mi",
+        "cha": "4167",
+        "raw_name": "truong mam non hoa mi"
+    },
+    {
+        "ma": "4170",
+        "ten": "Trường Mầm non Sơn Ca",
+        "cha": "4167",
+        "raw_name": "truong mam non son ca"
+    },
+    {
+        "ma": "4171",
+        "ten": "Trường Mầm non Thanh Lương",
+        "cha": "4167",
+        "raw_name": "truong mam non thanh luong"
+    },
+    {
+        "ma": "4172",
+        "ten": "Trường Mầm non Thanh Phú",
+        "cha": "4167",
+        "raw_name": "truong mam non thanh phu"
+    },
+    {
+        "ma": "4173",
+        "ten": "Trường Mầm non Vành Khuyên",
+        "cha": "4167",
+        "raw_name": "truong mam non vanh khuyen"
+    },
+    {
+        "ma": "4174",
+        "ten": "Trường THCS An Lộc",
+        "cha": "4167",
+        "raw_name": "truong thcs an loc"
+    },
+    {
+        "ma": "4175",
+        "ten": "Trường THCS An Lộc B",
+        "cha": "4167",
+        "raw_name": "truong thcs an loc b"
+    },
+    {
+        "ma": "4176",
+        "ten": "Trường TH & THCS An Phú",
+        "cha": "4167",
+        "raw_name": "truong th & thcs an phu"
+    },
+    {
+        "ma": "4177",
+        "ten": "Trường TH & THCS Thanh Lương",
+        "cha": "4167",
+        "raw_name": "truong th & thcs thanh luong"
+    },
+    {
+        "ma": "4178",
+        "ten": "Trường THCS Thanh Phú",
+        "cha": "4167",
+        "raw_name": "truong thcs thanh phu"
+    },
+    {
+        "ma": "4179",
+        "ten": "Trường TH-THCS Kim Đồng",
+        "cha": "4167",
+        "raw_name": "truong th-thcs kim dong"
+    },
+    {
+        "ma": "4180",
+        "ten": "Trường Tiểu học An Lộc A",
+        "cha": "4167",
+        "raw_name": "truong tieu hoc an loc a"
+    },
+    {
+        "ma": "4181",
+        "ten": "Trường Tiểu học An Lộc B",
+        "cha": "4167",
+        "raw_name": "truong tieu hoc an loc b"
+    },
+    {
+        "ma": "4183",
+        "ten": "Trường Tiểu Học Lê Văn Tám",
+        "cha": "4167",
+        "raw_name": "truong tieu hoc le van tam"
+    },
+    {
+        "ma": "4184",
+        "ten": "Trường Tiểu học Nguyễn Bá ngọc",
+        "cha": "4167",
+        "raw_name": "truong tieu hoc nguyen ba ngoc"
+    },
+    {
+        "ma": "4185",
+        "ten": "Trường Tiểu học Thanh Bình",
+        "cha": "4167",
+        "raw_name": "truong tieu hoc thanh binh"
+    },
+    {
+        "ma": "4186",
+        "ten": "Trường Tiểu học Thanh Lương A",
+        "cha": "4167",
+        "raw_name": "truong tieu hoc thanh luong a"
+    },
+    {
+        "ma": "4187",
+        "ten": "Trường Tiểu học Thanh Lương B",
+        "cha": "4167",
+        "raw_name": "truong tieu hoc thanh luong b"
+    },
+    {
+        "ma": "4188",
+        "ten": "Trường Tiểu học Thanh Phú A",
+        "cha": "4167",
+        "raw_name": "truong tieu hoc thanh phu a"
+    },
+    {
+        "ma": "4189",
+        "ten": "Trường Tiểu học Thanh Phú B",
+        "cha": "4167",
+        "raw_name": "truong tieu hoc thanh phu b"
+    },
+    {
+        "ma": "4190",
+        "ten": "Trường Tiểu học Võ Thị Sáu",
+        "cha": "4167",
+        "raw_name": "truong tieu hoc vo thi sau"
+    },
+    {
+        "ma": "4191",
+        "ten": "Trường Mầm non tư thục Hoa Hướng Dương",
+        "cha": "4167",
+        "raw_name": "truong mam non tu thuc hoa huong duong"
+    },
+    {
+        "ma": "4192",
+        "ten": "Trường Mầm non Hoa hồng",
+        "cha": "4167",
+        "raw_name": "truong mam non hoa hong"
+    },
+    {
+        "ma": "4193",
+        "ten": "Trường PTDTNT THCS Bình Long",
+        "cha": "4167",
+        "raw_name": "truong ptdtnt thcs binh long"
+    },
+    {
+        "ma": "4194",
+        "ten": "Hội khuyến học Thị xã Bình Long",
+        "cha": "4167",
+        "raw_name": "hoi khuyen hoc thi xa binh long"
+    },
+    {
+        "ma": "4317",
+        "ten": "Hội người cao tuổi",
+        "cha": "970",
+        "raw_name": "hoi nguoi cao tuoi"
+    },
+    {
+        "ma": "4318",
+        "ten": "Hội Đông y",
+        "cha": "970",
+        "raw_name": "hoi dong y"
+    },
+    {
+        "ma": "4319",
+        "ten": "Hội khuyến học",
+        "cha": "970",
+        "raw_name": "hoi khuyen hoc"
+    },
+    {
+        "ma": "4320",
+        "ten": "Hội nạn nhân chất độc màu da cam - Dioxin",
+        "cha": "970",
+        "raw_name": "hoi nan nhan chat doc mau da cam - dioxin"
+    },
+    {
+        "ma": "4333",
+        "ten": "Phòng Giáo dục và Đào tạo thị xã Phước Long",
+        "cha": "4424",
+        "raw_name": "phong giao duc va dao tao thi xa phuoc long"
+    },
+    {
+        "ma": "4334",
+        "ten": "Trường Mầm non Sơn Ca",
+        "cha": "4424",
+        "raw_name": "truong mam non son ca"
+    },
+    {
+        "ma": "4335",
+        "ten": "Trường Mẫu giáo Hương Sen",
+        "cha": "4424",
+        "raw_name": "truong mau giao huong sen"
+    },
+    {
+        "ma": "4336",
+        "ten": "Trường Mẫu giáo Phước Bình",
+        "cha": "4424",
+        "raw_name": "truong mau giao phuoc binh"
+    },
+    {
+        "ma": "4337",
+        "ten": "Trường Mẫu giáo Phước Tín",
+        "cha": "4424",
+        "raw_name": "truong mau giao phuoc tin"
+    },
+    {
+        "ma": "4338",
+        "ten": "Trường Mẫu giáo Sao Mai",
+        "cha": "4424",
+        "raw_name": "truong mau giao sao mai"
+    },
+    {
+        "ma": "4339",
+        "ten": "Trường Mẫu giáo Sao Sáng",
+        "cha": "4424",
+        "raw_name": "truong mau giao sao sang"
+    },
+    {
+        "ma": "4340",
+        "ten": "Trường Mẫu giáo Sơn Giang",
+        "cha": "4424",
+        "raw_name": "truong mau giao son giang"
+    },
+    {
+        "ma": "4341",
+        "ten": "Trường THCS Nguyễn Văn Trỗi",
+        "cha": "4424",
+        "raw_name": "truong thcs nguyen van troi"
+    },
+    {
+        "ma": "4342",
+        "ten": "Trường THCS Phước Bình",
+        "cha": "4424",
+        "raw_name": "truong thcs phuoc binh"
+    },
+    {
+        "ma": "4343",
+        "ten": "Trường THCS Phước Tín",
+        "cha": "4424",
+        "raw_name": "truong thcs phuoc tin"
+    },
+    {
+        "ma": "4344",
+        "ten": "Trường THCS Thác Mơ",
+        "cha": "4424",
+        "raw_name": "truong thcs thac mo"
+    },
+    {
+        "ma": "4345",
+        "ten": "Trường Tiểu học Chu Văn An",
+        "cha": "4424",
+        "raw_name": "truong tieu hoc chu van an"
+    },
+    {
+        "ma": "4346",
+        "ten": "Trường Tiểu học Lê Hồng Phong",
+        "cha": "4424",
+        "raw_name": "truong tieu hoc le hong phong"
+    },
+    {
+        "ma": "4347",
+        "ten": "Trường Tiểu học Long Giang",
+        "cha": "4424",
+        "raw_name": "truong tieu hoc long giang"
+    },
+    {
+        "ma": "4348",
+        "ten": "Trường Tiểu học Phan Bội Châu",
+        "cha": "4424",
+        "raw_name": "truong tieu hoc phan boi chau"
+    },
+    {
+        "ma": "4349",
+        "ten": "Trường Tiểu học Phước Tín A",
+        "cha": "4424",
+        "raw_name": "truong tieu hoc phuoc tin a"
+    },
+    {
+        "ma": "4350",
+        "ten": "Trường Tiểu học Phước Tín B",
+        "cha": "4424",
+        "raw_name": "truong tieu hoc phuoc tin b"
+    },
+    {
+        "ma": "4351",
+        "ten": "Trường Tiểu học Sơn Giang",
+        "cha": "4424",
+        "raw_name": "truong tieu hoc son giang"
+    },
+    {
+        "ma": "4352",
+        "ten": "Trường Tiểu học Thác Mơ",
+        "cha": "4424",
+        "raw_name": "truong tieu hoc thac mo"
+    },
+    {
+        "ma": "4353",
+        "ten": "Trường Tiểu học Trần Hưng Đạo",
+        "cha": "4424",
+        "raw_name": "truong tieu hoc tran hung dao"
+    },
+    {
+        "ma": "4354",
+        "ten": "Trường Tiểu học Trương Vĩnh Ký",
+        "cha": "4424",
+        "raw_name": "truong tieu hoc truong vinh ky"
+    },
+    {
+        "ma": "4416",
+        "ten": "Chi cục Dân số - Kế hoạch hóa gia đình",
+        "cha": "3173",
+        "raw_name": "chi cuc dan so - ke hoach hoa gia dinh"
+    },
+    {
+        "ma": "4418",
+        "ten": "Bệnh viện Y học cổ truyền tỉnh",
+        "cha": "3173",
+        "raw_name": "benh vien y hoc co truyen tinh"
+    },
+    {
+        "ma": "4419",
+        "ten": "Trung tâm Kiểm nghiệm Dược phẩm, mỹ phẩm",
+        "cha": "3173",
+        "raw_name": "trung tam kiem nghiem duoc pham, my pham"
+    },
+    {
+        "ma": "4420",
+        "ten": "Trung tâm Kiểm soát bệnh tật",
+        "cha": "3173",
+        "raw_name": "trung tam kiem soat benh tat"
+    },
+    {
+        "ma": "4421",
+        "ten": "Trung tâm Pháp y",
+        "cha": "3173",
+        "raw_name": "trung tam phap y"
+    },
+    {
+        "ma": "4422",
+        "ten": "Bệnh viện Quân dân y Binh đoàn 16",
+        "cha": "3173",
+        "raw_name": "benh vien quan dan y binh doan 16"
+    },
+    {
+        "ma": "4423",
+        "ten": "Bệnh viện Hoàn Mỹ Bình Phước",
+        "cha": "3173",
+        "raw_name": "benh vien hoan my binh phuoc"
+    },
+    {
+        "ma": "4424",
+        "ten": "UBND thị xã Phước Long",
+        "cha": "0",
+        "raw_name": "ubnd thi xa phuoc long"
+    },
+    {
+        "ma": "4425",
+        "ten": "UBND phường Long Thủy",
+        "cha": "4424",
+        "raw_name": "ubnd phuong long thuy"
+    },
+    {
+        "ma": "4447",
+        "ten": "Viện kiểm sát nhân dân tỉnh Bình Phước",
+        "cha": "0",
+        "raw_name": "vien kiem sat nhan dan tinh binh phuoc"
+    },
+    {
+        "ma": "4448",
+        "ten": "Viện Kiểm sát nhân dân thị xã Bình Long",
+        "cha": "4447",
+        "raw_name": "vien kiem sat nhan dan thi xa binh long"
+    },
+    {
+        "ma": "4449",
+        "ten": "Viện Kiểm sát nhân dân thành phố Đồng Xoài",
+        "cha": "4447",
+        "raw_name": "vien kiem sat nhan dan thanh pho dong xoai"
+    },
+    {
+        "ma": "4450",
+        "ten": "Viện Kiểm sát nhân dân thị xã Phước Long",
+        "cha": "4447",
+        "raw_name": "vien kiem sat nhan dan thi xa phuoc long"
+    },
+    {
+        "ma": "4451",
+        "ten": "Viện Kiểm sát nhân dân huyện Bù Đăng",
+        "cha": "4447",
+        "raw_name": "vien kiem sat nhan dan huyen bu dang"
+    },
+    {
+        "ma": "4452",
+        "ten": "Viện Kiểm sát nhân dân huyện Bù Đốp",
+        "cha": "4447",
+        "raw_name": "vien kiem sat nhan dan huyen bu dop"
+    },
+    {
+        "ma": "4453",
+        "ten": "Viện Kiểm sát nhân dân huyện Bù Gia Mập",
+        "cha": "4447",
+        "raw_name": "vien kiem sat nhan dan huyen bu gia map"
+    },
+    {
+        "ma": "4454",
+        "ten": "Viện Kiểm sát nhân dân huyện Chơn Thành",
+        "cha": "4447",
+        "raw_name": "vien kiem sat nhan dan huyen chon thanh"
+    },
+    {
+        "ma": "4455",
+        "ten": "Viện Kiểm sát nhân dân huyện Đồng Phú",
+        "cha": "4447",
+        "raw_name": "vien kiem sat nhan dan huyen dong phu"
+    },
+    {
+        "ma": "4456",
+        "ten": "Viện Kiểm sát nhân dân huyện Hớn Quản",
+        "cha": "4447",
+        "raw_name": "vien kiem sat nhan dan huyen hon quan"
+    },
+    {
+        "ma": "4457",
+        "ten": "Viện Kiểm sát nhân dân huyện Lộc Ninh",
+        "cha": "4447",
+        "raw_name": "vien kiem sat nhan dan huyen loc ninh"
+    },
+    {
+        "ma": "4458",
+        "ten": "Viện Kiểm sát nhân dân huyện Phú Riềng",
+        "cha": "4447",
+        "raw_name": "vien kiem sat nhan dan huyen phu rieng"
+    },
+    {
+        "ma": "4493",
+        "ten": "Trung tâm Chính trị Thành Phố Đồng Xoài",
+        "cha": "970",
+        "raw_name": "trung tam chinh tri thanh pho dong xoai"
+    },
+    {
+        "ma": "4494",
+        "ten": "Trung tâm y tế Bù Đốp",
+        "cha": "0",
+        "raw_name": "trung tam y te bu dop"
+    },
+    {
+        "ma": "4495",
+        "ten": "Trung tâm y tế Phước Long",
+        "cha": "4424",
+        "raw_name": "trung tam y te phuoc long"
+    },
+    {
+        "ma": "4496",
+        "ten": "Phòng Giáo dục và Đào tạo huyện Bù Gia Mập",
+        "cha": "0",
+        "raw_name": "phong giao duc va dao tao huyen bu gia map"
+    },
+    {
+        "ma": "4497",
+        "ten": "Trường Mẫu Giáo Phú Nghĩa",
+        "cha": "4496",
+        "raw_name": "truong mau giao phu nghia"
+    },
+    {
+        "ma": "4498",
+        "ten": "Trường Mẫu giáo Đăk Ơ",
+        "cha": "4496",
+        "raw_name": "truong mau giao dak o"
+    },
+    {
+        "ma": "4499",
+        "ten": "Trường Mẫu giáo Đức Hạnh",
+        "cha": "4496",
+        "raw_name": "truong mau giao duc hanh"
+    },
+    {
+        "ma": "4500",
+        "ten": "Trường Mẫu giáo Măng non",
+        "cha": "4496",
+        "raw_name": "truong mau giao mang non"
+    },
+    {
+        "ma": "4501",
+        "ten": "Trường Mẫu giáo Bình Thắng",
+        "cha": "4496",
+        "raw_name": "truong mau giao binh thang"
+    },
+    {
+        "ma": "4502",
+        "ten": "Trường Mẫu giáo Hoa Hồng",
+        "cha": "4496",
+        "raw_name": "truong mau giao hoa hong"
+    },
+    {
+        "ma": "4503",
+        "ten": "Trường Mẫu giáo Bông Sen",
+        "cha": "4496",
+        "raw_name": "truong mau giao bong sen"
+    },
+    {
+        "ma": "4504",
+        "ten": "Trường Mẫu Giáo Họa Mi",
+        "cha": "4496",
+        "raw_name": "truong mau giao hoa mi"
+    },
+    {
+        "ma": "4505",
+        "ten": "Trường Tiểu học Đa Kia A",
+        "cha": "4496",
+        "raw_name": "truong tieu hoc da kia a"
+    },
+    {
+        "ma": "4506",
+        "ten": "Trường Tiểu học Đa Kia B",
+        "cha": "4496",
+        "raw_name": "truong tieu hoc da kia b"
+    },
+    {
+        "ma": "4507",
+        "ten": "Trường Tiểu học Đa Kia C",
+        "cha": "4496",
+        "raw_name": "truong tieu hoc da kia c"
+    },
+    {
+        "ma": "4508",
+        "ten": " Trường Tiểu học Bình Thắng A",
+        "cha": "4496",
+        "raw_name": " truong tieu hoc binh thang a"
+    },
+    {
+        "ma": "4509",
+        "ten": "Trường Tiểu học Bình Thắng B",
+        "cha": "4496",
+        "raw_name": "truong tieu hoc binh thang b"
+    },
+    {
+        "ma": "4510",
+        "ten": " Trường  Tiểu học Lê Lợi",
+        "cha": "4496",
+        "raw_name": " truong  tieu hoc le loi"
+    },
+    {
+        "ma": "4511",
+        "ten": "Trường  Tiểu học Trương Định",
+        "cha": "4496",
+        "raw_name": "truong  tieu hoc truong dinh"
+    },
+    {
+        "ma": "4512",
+        "ten": "Trường  Tiểu học Đăk Ơ",
+        "cha": "4496",
+        "raw_name": "truong  tieu hoc dak o"
+    },
+    {
+        "ma": "4513",
+        "ten": " Trường Tiểu học Đinh Bộ Lĩnh",
+        "cha": "4496",
+        "raw_name": " truong tieu hoc dinh bo linh"
+    },
+    {
+        "ma": "4514",
+        "ten": "Trường Tiểu học Bù Gia Mập",
+        "cha": "4496",
+        "raw_name": "truong tieu hoc bu gia map"
+    },
+    {
+        "ma": "4515",
+        "ten": "Trường Tiểu học Đăk Á",
+        "cha": "4496",
+        "raw_name": "truong tieu hoc dak a"
+    },
+    {
+        "ma": "4516",
+        "ten": " Trường Tiểu học Hai Bà Trưng",
+        "cha": "4496",
+        "raw_name": " truong tieu hoc hai ba trung"
+    },
+    {
+        "ma": "4517",
+        "ten": "Trường Tiểu học Ngô Quyền",
+        "cha": "4496",
+        "raw_name": "truong tieu hoc ngo quyen"
+    },
+    {
+        "ma": "4518",
+        "ten": "Trường Tiểu học Nguyễn Huệ",
+        "cha": "4496",
+        "raw_name": "truong tieu hoc nguyen hue"
+    },
+    {
+        "ma": "4519",
+        "ten": " Trường Tiểu học Kim Đồng ",
+        "cha": "4496",
+        "raw_name": " truong tieu hoc kim dong "
+    },
+    {
+        "ma": "4520",
+        "ten": " Trường Tiểu học Phú Nghĩa",
+        "cha": "4496",
+        "raw_name": " truong tieu hoc phu nghia"
+    },
+    {
+        "ma": "4521",
+        "ten": " Trường Tiểu học Hoàng Diệu",
+        "cha": "4496",
+        "raw_name": " truong tieu hoc hoang dieu"
+    },
+    {
+        "ma": "4522",
+        "ten": "Trường THCS Phước Minh ",
+        "cha": "4496",
+        "raw_name": "truong thcs phuoc minh "
+    },
+    {
+        "ma": "4523",
+        "ten": "Trường THCS Lý Thường Kiệt ",
+        "cha": "4496",
+        "raw_name": "truong thcs ly thuong kiet "
+    },
+    {
+        "ma": "4524",
+        "ten": "Trường THCS Đăk Ơ",
+        "cha": "4496",
+        "raw_name": "truong thcs dak o"
+    },
+    {
+        "ma": "4525",
+        "ten": "Trường THCS Phú Nghĩa",
+        "cha": "4496",
+        "raw_name": "truong thcs phu nghia"
+    },
+    {
+        "ma": "4526",
+        "ten": "Trường THCS & THPT Đăk Mai",
+        "cha": "1417",
+        "raw_name": "truong thcs & thpt dak mai"
+    },
+    {
+        "ma": "4527",
+        "ten": "Trường THCS Bình Thắng",
+        "cha": "4496",
+        "raw_name": "truong thcs binh thang"
+    },
+    {
+        "ma": "4528",
+        "ten": "Trường THCS Đa Kia",
+        "cha": "4496",
+        "raw_name": "truong thcs da kia"
+    },
+    {
+        "ma": "4529",
+        "ten": " Trường THCS Nguyễn Trãi",
+        "cha": "4496",
+        "raw_name": " truong thcs nguyen trai"
+    },
+    {
+        "ma": "4530",
+        "ten": "Trường mẫu giáo Ánh Dương",
+        "cha": "4496",
+        "raw_name": "truòng mãu giáo ánh duong"
+    },
+    {
+        "ma": "4691",
+        "ten": "Phòng Giáo dục và Đào tạo Huyện Bù Đăng",
+        "cha": "0",
+        "raw_name": "phong giao duc va dao tao huyen bu dang"
+    },
+    {
+        "ma": "4692",
+        "ten": "Trường Mầm non Họa Mi",
+        "cha": "4691",
+        "raw_name": "truong mam non hoa mi"
+    },
+    {
+        "ma": "4693",
+        "ten": "Trường Mầm non Hoa Sen",
+        "cha": "4691",
+        "raw_name": "truong mam non hoa sen"
+    },
+    {
+        "ma": "4694",
+        "ten": "Trường Mầm non Minh Hưng",
+        "cha": "4691",
+        "raw_name": "truong mam non minh hung"
+    },
+    {
+        "ma": "4695",
+        "ten": "Trường Mầm non TT Hoa Lan",
+        "cha": "4691",
+        "raw_name": "truong mam non tt hoa lan"
+    },
+    {
+        "ma": "4696",
+        "ten": "Trường Mầm non TT Hoa Ngọc Lan",
+        "cha": "4691",
+        "raw_name": "truong mam non tt hoa ngoc lan"
+    },
+    {
+        "ma": "4697",
+        "ten": "Trường Mẫu giáo Bình Minh",
+        "cha": "4691",
+        "raw_name": "truong mau giao binh minh"
+    },
+    {
+        "ma": "4698",
+        "ten": "Trường Mẫu giáo Đức Liễu",
+        "cha": "4691",
+        "raw_name": "truong mau giao duc lieu"
+    },
+    {
+        "ma": "4699",
+        "ten": "Trường Mầm non Đăng Hà",
+        "cha": "4691",
+        "raw_name": "truong mam non dang ha"
+    },
+    {
+        "ma": "4700",
+        "ten": "Trường Mẫu giáo Hoa Hồng",
+        "cha": "4691",
+        "raw_name": "truong mau giao hoa hong"
+    },
+    {
+        "ma": "4701",
+        "ten": "Trường Mẫu giáo Hoa Lan",
+        "cha": "4691",
+        "raw_name": "truong mau giao hoa lan"
+    },
+    {
+        "ma": "4702",
+        "ten": "Trường Mẫu giáo Hoa Mai",
+        "cha": "4691",
+        "raw_name": "truong mau giao hoa mai"
+    },
+    {
+        "ma": "4703",
+        "ten": "Trường Mẫu giáo Hoa Phượng",
+        "cha": "4691",
+        "raw_name": "truong mau giao hoa phuong"
+    },
+    {
+        "ma": "4704",
+        "ten": "Trường Mầm non Hướng Dương",
+        "cha": "4691",
+        "raw_name": "truong mam non huong duong"
+    },
+    {
+        "ma": "4705",
+        "ten": "Trường Mẫu giáo Phước Sơn",
+        "cha": "4691",
+        "raw_name": "truong mau giao phuoc son"
+    },
+    {
+        "ma": "4706",
+        "ten": "Trường Mẫu giáo Sao Mai",
+        "cha": "4691",
+        "raw_name": "truong mau giao sao mai"
+    },
+    {
+        "ma": "4707",
+        "ten": "Trường Mẫu giáo Sơn Ca",
+        "cha": "4691",
+        "raw_name": "truong mau giao son ca"
+    },
+    {
+        "ma": "4708",
+        "ten": "Trường Mẫu giáo Thanh Bình",
+        "cha": "4691",
+        "raw_name": "truong mau giao thanh binh"
+    },
+    {
+        "ma": "4709",
+        "ten": "Trường Mẫu giáo Tuổi Hồng",
+        "cha": "4691",
+        "raw_name": "truong mau giao tuoi hong"
+    },
+    {
+        "ma": "4710",
+        "ten": "Trường Mẫu giáo Tuổi Thơ",
+        "cha": "4691",
+        "raw_name": "truong mau giao tuoi tho"
+    },
+    {
+        "ma": "4711",
+        "ten": "Trường Mẫu giáo Vành Khuyên",
+        "cha": "4691",
+        "raw_name": "truong mau giao vanh khuyen"
+    },
+    {
+        "ma": "4712",
+        "ten": "Trường THCS Bình Minh",
+        "cha": "4691",
+        "raw_name": "truong thcs binh minh"
+    },
+    {
+        "ma": "4713",
+        "ten": "Trường THCS Chu Văn An",
+        "cha": "4691",
+        "raw_name": "truong thcs chu van an"
+    },
+    {
+        "ma": "4714",
+        "ten": "Trường TH&THCS Đoàn Đức Thái",
+        "cha": "4691",
+        "raw_name": "truong th&thcs doan duc thai"
+    },
+    {
+        "ma": "4715",
+        "ten": "Trường THCS Đức Liễu",
+        "cha": "4691",
+        "raw_name": "truong thcs duc lieu"
+    },
+    {
+        "ma": "4716",
+        "ten": "Trường THCS Minh Hưng",
+        "cha": "4691",
+        "raw_name": "truong thcs minh hung"
+    },
+    {
+        "ma": "4717",
+        "ten": "Trường TH&THCS Nghĩa Bình",
+        "cha": "4691",
+        "raw_name": "truong th&thcs nghia binh"
+    },
+    {
+        "ma": "4718",
+        "ten": "Trường THCS NGhĩa Trung",
+        "cha": "4691",
+        "raw_name": "truong thcs nghia trung"
+    },
+    {
+        "ma": "4719",
+        "ten": "Trường THCS Nguyễn Khuyến",
+        "cha": "4691",
+        "raw_name": "truong thcs nguyen khuyen"
+    },
+    {
+        "ma": "4720",
+        "ten": "Trường THCS Nguyễn Trường Tộ",
+        "cha": "4691",
+        "raw_name": "truong thcs nguyen truong to"
+    },
+    {
+        "ma": "4721",
+        "ten": "Trường THCS Phan Bội Châu",
+        "cha": "4691",
+        "raw_name": "truong thcs phan boi chau"
+    },
+    {
+        "ma": "4722",
+        "ten": "Trường THCS Quang Trung",
+        "cha": "4691",
+        "raw_name": "truong thcs quang trung"
+    },
+    {
+        "ma": "4723",
+        "ten": "Trường THCS Thọ Sơn",
+        "cha": "4691",
+        "raw_name": "truong thcs tho son"
+    },
+    {
+        "ma": "4724",
+        "ten": "Trường THCS Thống Nhất",
+        "cha": "4691",
+        "raw_name": "truong thcs thong nhat"
+    },
+    {
+        "ma": "4725",
+        "ten": "Trường THCS Võ Trường Toản",
+        "cha": "4691",
+        "raw_name": "truong thcs vo truong toan"
+    },
+    {
+        "ma": "4726",
+        "ten": "Trường TH&THCS Trần Văn Ơn",
+        "cha": "4691",
+        "raw_name": "truong th&thcs tran van on"
+    },
+    {
+        "ma": "4727",
+        "ten": "Trường Tiểu học Bom Bo",
+        "cha": "4691",
+        "raw_name": "truong tieu hoc bom bo"
+    },
+    {
+        "ma": "4728",
+        "ten": "Trường Tiểu học Đak Nhau",
+        "cha": "4691",
+        "raw_name": "truong tieu hoc dak nhau"
+    },
+    {
+        "ma": "4730",
+        "ten": "Trường Tiểu học Đoàn Kết",
+        "cha": "4691",
+        "raw_name": "truong tieu hoc doan ket"
+    },
+    {
+        "ma": "4731",
+        "ten": "Trường Tiểu học Đồng Nai",
+        "cha": "4691",
+        "raw_name": "truong tieu hoc dong nai"
+    },
+    {
+        "ma": "4732",
+        "ten": "Trường Tiểu học Đức Liễu",
+        "cha": "4691",
+        "raw_name": "truong tieu hoc duc lieu"
+    },
+    {
+        "ma": "4733",
+        "ten": "Trường Tiểu học Đức Phong",
+        "cha": "4691",
+        "raw_name": "truong tieu hoc duc phong"
+    },
+    {
+        "ma": "4734",
+        "ten": "Trường Tiểu học Kim Đồng",
+        "cha": "4691",
+        "raw_name": "truong tieu hoc kim dong"
+    },
+    {
+        "ma": "4735",
+        "ten": "Trường Tiểu học Lê Hồng Phong",
+        "cha": "4691",
+        "raw_name": "truong tieu hoc le hong phong"
+    },
+    {
+        "ma": "4736",
+        "ten": "Trường Tiểu học Lê Văn Tám",
+        "cha": "4691",
+        "raw_name": "truong tieu hoc le van tam"
+    },
+    {
+        "ma": "4737",
+        "ten": "Trường Tiểu học Đăng Hà",
+        "cha": "4691",
+        "raw_name": "truong tieu hoc dang ha"
+    },
+    {
+        "ma": "4738",
+        "ten": "Trường Tiểu học Minh Hưng",
+        "cha": "4691",
+        "raw_name": "truong tieu hoc minh hung"
+    },
+    {
+        "ma": "4739",
+        "ten": "Trường Tiểu học Nghĩa Trung",
+        "cha": "4691",
+        "raw_name": "truong tieu hoc nghia trung"
+    },
+    {
+        "ma": "4740",
+        "ten": "Trường Tiểu học Nguyễn Bá Ngọc",
+        "cha": "4691",
+        "raw_name": "truong tieu hoc nguyen ba ngoc"
+    },
+    {
+        "ma": "4741",
+        "ten": "Trường Tiểu học Nguyễn Thái Bình",
+        "cha": "4691",
+        "raw_name": "truong tieu hoc nguyen thai binh"
+    },
+    {
+        "ma": "4743",
+        "ten": "Trường Tiểu học Nguyễn Văn Trỗi",
+        "cha": "4691",
+        "raw_name": "truong tieu hoc nguyen van troi"
+    },
+    {
+        "ma": "4744",
+        "ten": "Nhóm trẻ độc lập huyện Bù đăng",
+        "cha": "4691",
+        "raw_name": "nhom tre doc lap huyen bu dang"
+    },
+    {
+        "ma": "4745",
+        "ten": "Trường Tiểu học Phú Sơn",
+        "cha": "4691",
+        "raw_name": "truong tieu hoc phu son"
+    },
+    {
+        "ma": "4746",
+        "ten": "Trường Tiểu học Phước Sơn",
+        "cha": "4691",
+        "raw_name": "truong tieu hoc phuoc son"
+    },
+    {
+        "ma": "4747",
+        "ten": "Trường Tiểu học Thọ Sơn",
+        "cha": "4691",
+        "raw_name": "truong tieu hoc tho son"
+    },
+    {
+        "ma": "4748",
+        "ten": "Trường Tiểu học Thống Nhất",
+        "cha": "4691",
+        "raw_name": "truong tieu hoc thong nhat"
+    },
+    {
+        "ma": "4749",
+        "ten": "Trường Tiểu học Tô Vĩnh Diện",
+        "cha": "4691",
+        "raw_name": "truong tieu hoc to vinh dien"
+    },
+    {
+        "ma": "4750",
+        "ten": "Trường Tiểu học Trần Phú",
+        "cha": "4691",
+        "raw_name": "truong tieu hoc tran phu"
+    },
+    {
+        "ma": "4751",
+        "ten": "Trường Tiểu học Trần Quốc Toản",
+        "cha": "4691",
+        "raw_name": "truong tieu hoc tran quoc toan"
+    },
+    {
+        "ma": "4752",
+        "ten": "Trường Tiểu học Trịnh Hoài Đức",
+        "cha": "4691",
+        "raw_name": "truong tieu hoc trinh hoai duc"
+    },
+    {
+        "ma": "4753",
+        "ten": "Trường Tiểu học Võ Thị Sáu",
+        "cha": "4691",
+        "raw_name": "truong tieu hoc vo thi sau"
+    },
+    {
+        "ma": "4754",
+        "ten": "Trường Tiểu học Xuân Hồng",
+        "cha": "4691",
+        "raw_name": "truong tieu hoc xuan hong"
+    },
+    {
+        "ma": "4755",
+        "ten": "Trường PTDTNT THCS Điểu Ong",
+        "cha": "4691",
+        "raw_name": "truong ptdtnt thcs dieu ong"
+    },
+    {
+        "ma": "4756",
+        "ten": "Trường tiểu học Lê Lợi",
+        "cha": "4691",
+        "raw_name": "truong tieu hoc le loi"
+    },
+    {
+        "ma": "4757",
+        "ten": "Trường Mẫu giáo Tư thục Thanh Tâm",
+        "cha": "4691",
+        "raw_name": "truong mau giao tu thuc thanh tam"
+    },
+    {
+        "ma": "4881",
+        "ten": "Trường Mầm non Tư thục Vip Quốc Trạng",
+        "cha": "4691",
+        "raw_name": "truong mam non tu thuc vip quoc trang"
+    },
+    {
+        "ma": "5113",
+        "ten": "Liên đoàn lao động tỉnh Bình Phước",
+        "cha": "0",
+        "raw_name": "lien doan lao dong tinh binh phuoc"
+    },
+    {
+        "ma": "5114",
+        "ten": "Liên đoàn Lao động tp Đồng Xoài",
+        "cha": "5113",
+        "raw_name": "lien doàn lao dọng tp dòng xoài"
+    },
+    {
+        "ma": "5115",
+        "ten": "Liên đoàn lao động huyện Đồng Phú",
+        "cha": "5113",
+        "raw_name": "lien doàn lao dọng huyẹn dòng phú"
+    },
+    {
+        "ma": "5116",
+        "ten": "Liên đoàn lao động huyện Chơn Thành",
+        "cha": "5113",
+        "raw_name": "lien doàn lao dọng huyẹn chon thành"
+    },
+    {
+        "ma": "5117",
+        "ten": "Liên đoàn lao động huyện Hớn Quản",
+        "cha": "5113",
+        "raw_name": "lien doàn lao dọng huyẹn hón quản"
+    },
+    {
+        "ma": "5118",
+        "ten": "Liên đoàn lao động thị xã Bình Long",
+        "cha": "5113",
+        "raw_name": "lien doàn lao dọng thị xã bình long"
+    },
+    {
+        "ma": "5119",
+        "ten": "Liên đoàn lao động huyện Lộc Ninh",
+        "cha": "5113",
+        "raw_name": "lien doàn lao dọng huyẹn lọc ninh"
+    },
+    {
+        "ma": "5120",
+        "ten": "Liên đoàn lao động huyện Bù Đốp",
+        "cha": "5113",
+        "raw_name": "lien doàn lao dọng huyẹn bù dóp"
+    },
+    {
+        "ma": "5121",
+        "ten": "Liên đoàn lao động huyện Bù Gia Mập",
+        "cha": "5113",
+        "raw_name": "lien doàn lao dọng huyẹn bù gia mạp"
+    },
+    {
+        "ma": "5122",
+        "ten": "Liên đoàn lao động thị xã Phước Long",
+        "cha": "5113",
+        "raw_name": "lien doàn lao dọng thị xã phuóc long"
+    },
+    {
+        "ma": "5123",
+        "ten": "Liên đoàn lao động huyện Phú Riềng",
+        "cha": "5113",
+        "raw_name": "lien doàn lao dọng huyẹn phú rièng"
+    },
+    {
+        "ma": "5124",
+        "ten": "Liên đoàn lao động huyện Bù Đăng",
+        "cha": "5113",
+        "raw_name": "lien doàn lao dọng huyẹn bù dang"
+    },
+    {
+        "ma": "5125",
+        "ten": "CĐ các Khu công nghiệp",
+        "cha": "5113",
+        "raw_name": "cd cac khu cong nghiep"
+    },
+    {
+        "ma": "5126",
+        "ten": "CĐ ngành Y tế ",
+        "cha": "5113",
+        "raw_name": "cd nganh y te "
+    },
+    {
+        "ma": "5127",
+        "ten": "CĐ ngành GD & ĐT",
+        "cha": "5113",
+        "raw_name": "cd nganh gd & dt"
+    },
+    {
+        "ma": "5128",
+        "ten": "CĐ ngành Nông nghiệp",
+        "cha": "5113",
+        "raw_name": "cd nganh nong nghiep"
+    },
+    {
+        "ma": "5129",
+        "ten": "CĐ CTY Cao su Bình Long",
+        "cha": "5113",
+        "raw_name": "cd cty cao su binh long"
+    },
+    {
+        "ma": "5130",
+        "ten": "CĐ CTY Cao su Lộc Ninh",
+        "cha": "5113",
+        "raw_name": "cd cty cao su loc ninh"
+    },
+    {
+        "ma": "5131",
+        "ten": "CĐ CTY Cao su Đồng Phú",
+        "cha": "5113",
+        "raw_name": "cd cty cao su dong phu"
+    },
+    {
+        "ma": "5132",
+        "ten": "CĐ CTY Cao su  Phú Riềng",
+        "cha": "5113",
+        "raw_name": "cd cty cao su  phu rieng"
+    },
+    {
+        "ma": "5133",
+        "ten": "CĐ Bưu điện tỉnh",
+        "cha": "5113",
+        "raw_name": "cd buu dien tinh"
+    },
+    {
+        "ma": "5134",
+        "ten": "CĐ Điện lực tỉnh",
+        "cha": "5113",
+        "raw_name": "cd dien luc tinh"
+    },
+    {
+        "ma": "5135",
+        "ten": "CĐ Cty Thủy điện Thác Mơ",
+        "cha": "5113",
+        "raw_name": "cd cty thuy dien thac mo"
+    },
+    {
+        "ma": "5136",
+        "ten": "CĐ Ngân hàng Công Thương",
+        "cha": "5113",
+        "raw_name": "cd ngan hang cong thuong"
+    },
+    {
+        "ma": "5137",
+        "ten": "CĐ Ngân hàng Đầu tư & PT",
+        "cha": "5113",
+        "raw_name": "cd ngan hang dau tu & pt"
+    },
+    {
+        "ma": "5138",
+        "ten": "CĐ Chính sách Xã hội",
+        "cha": "5113",
+        "raw_name": "cd chinh sach xa hoi"
+    },
+    {
+        "ma": "5139",
+        "ten": "CĐ Ngân hàng Nhà nước",
+        "cha": "5113",
+        "raw_name": "cd ngan hang nha nuoc"
+    },
+    {
+        "ma": "5140",
+        "ten": "CĐ Quỹ Đầu tư và Phát triển",
+        "cha": "5113",
+        "raw_name": "cd quy dau tu va phat trien"
+    },
+    {
+        "ma": "5141",
+        "ten": "CĐ Ngân hàng Nông nghiệp",
+        "cha": "5113",
+        "raw_name": "cd ngan hang nong nghiep"
+    },
+    {
+        "ma": "5142",
+        "ten": "CĐ Trường Cao đẳng  Nghiệp vụ cao su",
+        "cha": "5113",
+        "raw_name": "cd truong cao dang  nghiep vu cao su"
+    },
+    {
+        "ma": "5143",
+        "ten": "CĐ Viễn thông BP",
+        "cha": "5113",
+        "raw_name": "cd vien thong bp"
+    },
+    {
+        "ma": "5144",
+        "ten": "CĐ XN quản lý sửa chữa đường bộ 76",
+        "cha": "5113",
+        "raw_name": "cd xn quan ly sua chua duong bo 76"
+    },
+    {
+        "ma": "5145",
+        "ten": "CĐ Trường kỹ thuật nghiệp vụ Cao su",
+        "cha": "5113",
+        "raw_name": "cd truong ky thuat nghiep vu cao su"
+    },
+    {
+        "ma": "5146",
+        "ten": "Công đoàn Khu công nghiệp Đồng Xoài - Đồng Phú",
+        "cha": "5113",
+        "raw_name": "cong doan khu cong nghiep dong xoai - dong phu"
+    },
+    {
+        "ma": "5162",
+        "ten": "CĐ Viên chức ",
+        "cha": "5113",
+        "raw_name": "cd vien chuc "
+    },
+    {
+        "ma": "5179",
+        "ten": "CĐ Cty TNHH MTV Cao su  Bình Phước",
+        "cha": "5113",
+        "raw_name": "cd cty tnhh mtv cao su  binh phuoc"
+    },
+    {
+        "ma": "5180",
+        "ten": "CĐ Cty TNHH MTV Cao su Phước Long",
+        "cha": "5113",
+        "raw_name": "cd cty tnhh mtv cao su phuoc long"
+    },
+    {
+        "ma": "5181",
+        "ten": "CĐ Chi nhánh Bảo Minh BP",
+        "cha": "5113",
+        "raw_name": "cd chi nhanh bao minh bp"
+    },
+    {
+        "ma": "5182",
+        "ten": "CĐ Cty TNHH MTV Cao su Sông Bé",
+        "cha": "5113",
+        "raw_name": "cd cty tnhh mtv cao su song be"
+    },
+    {
+        "ma": "5183",
+        "ten": "CĐ Cty Xổ số Kiến thiết",
+        "cha": "5113",
+        "raw_name": "cd cty xo so kien thiet"
+    },
+    {
+        "ma": "5184",
+        "ten": "CĐ Cty TNHH MTV XD BP",
+        "cha": "5113",
+        "raw_name": "cd cty tnhh mtv xd bp"
+    },
+    {
+        "ma": "5185",
+        "ten": "CĐ Cty chế biến Điều và Nông sản VEGETXCO Bình Phước",
+        "cha": "5113",
+        "raw_name": "cd cty che bien dieu va nong san vegetxco binh phuoc"
+    },
+    {
+        "ma": "5186",
+        "ten": "CĐ Cty Bảo hiểm Bảo Việt BP",
+        "cha": "5113",
+        "raw_name": "cd cty bao hiem bao viet bp"
+    },
+    {
+        "ma": "5187",
+        "ten": "CĐ Cty bảo việt Nhân Thọ",
+        "cha": "5113",
+        "raw_name": "cd cty bao viet nhan tho"
+    },
+    {
+        "ma": "5188",
+        "ten": "CĐ Cty TNHH MTV Cấp thoát  nước Bình Phước",
+        "cha": "5113",
+        "raw_name": "cd cty tnhh mtv cap thoat  nuoc binh phuoc"
+    },
+    {
+        "ma": "5190",
+        "ten": "CĐ Quỹ phát triển đất",
+        "cha": "5113",
+        "raw_name": "cd quy phat trien dat"
+    },
+    {
+        "ma": "5216",
+        "ten": "Cty TM-DV-DL Công Đoàn",
+        "cha": "5113",
+        "raw_name": "cty tm-dv-dl cong doan"
+    },
+    {
+        "ma": "5387",
+        "ten": "Ủy ban Mặt trận Tổ quốc Việt Nam tỉnh Bình Phước \t",
+        "cha": "0",
+        "raw_name": "uy ban mat tran to quoc viet nam tinh binh phuoc \t"
+    },
+    {
+        "ma": "5388",
+        "ten": "Ủy ban Mặt trận Tổ quốc Việt Nam Tp Đồng Xoài",
+        "cha": "5387",
+        "raw_name": "uy ban mat tran to quoc viet nam tp dong xoai"
+    },
+    {
+        "ma": "5389",
+        "ten": "Ủy ban Mặt trận Tổ quốc Việt Nam thị xã Bình Long",
+        "cha": "5387",
+        "raw_name": "uy ban mat tran to quoc viet nam thi xa binh long"
+    },
+    {
+        "ma": "5390",
+        "ten": "Ủy ban Mặt trận Tổ quốc Việt Nam thị xã Phước Long",
+        "cha": "5387",
+        "raw_name": "uy ban mat tran to quoc viet nam thi xa phuoc long"
+    },
+    {
+        "ma": "5391",
+        "ten": "Ủy ban Mặt trận Tổ quốc Việt Nam huyện Bù Đăng",
+        "cha": "5387",
+        "raw_name": "uy ban mat tran to quoc viet nam huyen bu dang"
+    },
+    {
+        "ma": "5392",
+        "ten": "Ủy ban Mặt trận Tổ quốc Việt Nam huyện Bù Đốp",
+        "cha": "5387",
+        "raw_name": "uy ban mat tran to quoc viet nam huyen bu dop"
+    },
+    {
+        "ma": "5393",
+        "ten": "Ủy ban Mặt trận Tổ quốc Việt Nam huyện Bù Gia Mập",
+        "cha": "5387",
+        "raw_name": "uy ban mat tran to quoc viet nam huyen bu gia map"
+    },
+    {
+        "ma": "5394",
+        "ten": "Ủy ban Mặt trận Tổ quốc Việt Nam huyện Chơn Thành",
+        "cha": "5387",
+        "raw_name": "uy ban mat tran to quoc viet nam huyen chon thanh"
+    },
+    {
+        "ma": "5395",
+        "ten": "Ủy ban Mặt trận Tổ quốc Việt Nam huyện Đồng Phú",
+        "cha": "5387",
+        "raw_name": "uy ban mat tran to quoc viet nam huyen dong phu"
+    },
+    {
+        "ma": "5396",
+        "ten": "Ủy ban Mặt trận Tổ quốc Việt Nam huyện Hớn Quản",
+        "cha": "5387",
+        "raw_name": "uy ban mat tran to quoc viet nam huyen hon quan"
+    },
+    {
+        "ma": "5397",
+        "ten": "Ủy ban Mặt trận Tổ quốc Việt Nam huyện Lộc Ninh",
+        "cha": "5387",
+        "raw_name": "uy ban mat tran to quoc viet nam huyen loc ninh"
+    },
+    {
+        "ma": "5398",
+        "ten": "Ủy ban Mặt trận Tổ quốc Việt Nam huyện Phú Riềng",
+        "cha": "5387",
+        "raw_name": "uy ban mat tran to quoc viet nam huyen phu rieng"
+    },
+    {
+        "ma": "5460",
+        "ten": "Hội liên hiệp phụ nữ tỉnh",
+        "cha": "5387",
+        "raw_name": "hoi lien hiep phu nu tinh"
+    },
+    {
+        "ma": "5461",
+        "ten": "Hội Nông dân tỉnh",
+        "cha": "5387",
+        "raw_name": "hoi nong dan tinh"
+    },
+    {
+        "ma": "5463",
+        "ten": "Hội Cựu chiến binh",
+        "cha": "5387",
+        "raw_name": "hoi cuu chien binh"
+    },
+    {
+        "ma": "5575",
+        "ten": "Trung tâm y tế huyện Chơn Thành",
+        "cha": "0",
+        "raw_name": "trung tam y te huyen chon thanh"
+    },
+    {
+        "ma": "5647",
+        "ten": "Trung tâm Y tế Bù Đăng",
+        "cha": "0",
+        "raw_name": "trung tam y te bu dang"
+    },
+    {
+        "ma": "5707",
+        "ten": "Ban quản lý Vườn quốc gia Bù Gia Mập",
+        "cha": "0",
+        "raw_name": "ban quan ly vuon quoc gia bu gia map"
+    },
+    {
+        "ma": "5727",
+        "ten": "Trung tâm y tế Hớn Quản",
+        "cha": "0",
+        "raw_name": "trung tam y te hon quan"
+    },
+    {
+        "ma": "5728",
+        "ten": "TYT Minh Tâm",
+        "cha": "5727",
+        "raw_name": "tyt minh tam"
+    },
+    {
+        "ma": "5729",
+        "ten": "TYT Tân Quan\t",
+        "cha": "5727",
+        "raw_name": "tyt tan quan\t"
+    },
+    {
+        "ma": "5730",
+        "ten": "TYT Phước An\t",
+        "cha": "5727",
+        "raw_name": "tyt phuoc an\t"
+    },
+    {
+        "ma": "5731",
+        "ten": "TYT Thanh An\t",
+        "cha": "5727",
+        "raw_name": "tyt thanh an\t"
+    },
+    {
+        "ma": "5732",
+        "ten": "TYT Đồng Nơ\t",
+        "cha": "5727",
+        "raw_name": "tyt dong no\t"
+    },
+    {
+        "ma": "5733",
+        "ten": "TYT An Phú",
+        "cha": "5727",
+        "raw_name": "tyt an phu"
+    },
+    {
+        "ma": "5734",
+        "ten": "TYT Thanh Bình",
+        "cha": "5727",
+        "raw_name": "tyt thanh binh"
+    },
+    {
+        "ma": "5735",
+        "ten": "TYT Tân Lợi",
+        "cha": "5727",
+        "raw_name": "tyt tan loi"
+    },
+    {
+        "ma": "5736",
+        "ten": "TYT Tân Hiệp",
+        "cha": "5727",
+        "raw_name": "tyt tan hiep"
+    },
+    {
+        "ma": "5737",
+        "ten": "TYT Minh Đức",
+        "cha": "5727",
+        "raw_name": "tyt minh duc"
+    },
+    {
+        "ma": "5738",
+        "ten": "TYT An Khương",
+        "cha": "5727",
+        "raw_name": "tyt an khuong"
+    },
+    {
+        "ma": "5739",
+        "ten": "TYT Tân Hưng",
+        "cha": "5727",
+        "raw_name": "tyt tan hung"
+    },
+    {
+        "ma": "5740",
+        "ten": "TYT Tân Khai",
+        "cha": "5727",
+        "raw_name": "tyt tan khai"
+    },
+    {
+        "ma": "5797",
+        "ten": "Trung tâm Y tế Đồng Xoài",
+        "cha": "970",
+        "raw_name": "trung tam y te dong xoai"
+    },
+    {
+        "ma": "5827",
+        "ten": "Công ty Cổ phần Xây dựng Bình Phước",
+        "cha": "0",
+        "raw_name": "cong ty co phan xay dung binh phuoc"
+    },
+    {
+        "ma": "5867",
+        "ten": "Trung tâm Y Tế Bù Gia Mập",
+        "cha": "0",
+        "raw_name": "trung tam y te bu gia map"
+    },
+    {
+        "ma": "5947",
+        "ten": "UBND phường Long Phước",
+        "cha": "4424",
+        "raw_name": "ubnd phuong long phuoc"
+    },
+    {
+        "ma": "5949",
+        "ten": "UBND phường Phước Bình",
+        "cha": "4424",
+        "raw_name": "ubnd phuong phuoc binh"
+    },
+    {
+        "ma": "5950",
+        "ten": "UBND phường Sơn Giang",
+        "cha": "4424",
+        "raw_name": "ubnd phuong son giang"
+    },
+    {
+        "ma": "5951",
+        "ten": "UBND phường Thác Mơ",
+        "cha": "4424",
+        "raw_name": "ubnd phuong thac mo"
+    },
+    {
+        "ma": "5953",
+        "ten": "UBND xã Long Giang",
+        "cha": "4424",
+        "raw_name": "ubnd xa long giang"
+    },
+    {
+        "ma": "5955",
+        "ten": "UBND xã Phước Tín",
+        "cha": "4424",
+        "raw_name": "ubnd xa phuoc tin"
+    },
+    {
+        "ma": "5966",
+        "ten": "Phòng Quản Lý Đô Thị",
+        "cha": "4424",
+        "raw_name": "phong quan ly do thi"
+    },
+    {
+        "ma": "5967",
+        "ten": "Phòng Tài Nguyên Môi Trường",
+        "cha": "4424",
+        "raw_name": "phong tai nguyen moi truong"
+    },
+    {
+        "ma": "5968",
+        "ten": "Phòng Tài Chính Kế Hoạch",
+        "cha": "4424",
+        "raw_name": "phong tai chinh ke hoach"
+    },
+    {
+        "ma": "5969",
+        "ten": "Phòng Kinh Tế",
+        "cha": "4424",
+        "raw_name": "phong kinh te"
+    },
+    {
+        "ma": "5970",
+        "ten": "Phòng Nội vụ - Lao Động Thương Binh Xã Hội",
+        "cha": "4424",
+        "raw_name": "phong noi vu - lao dong thuong binh xa hoi"
+    },
+    {
+        "ma": "5971",
+        "ten": "Phòng Tư Pháp",
+        "cha": "4424",
+        "raw_name": "phong tu phap"
+    },
+    {
+        "ma": "5972",
+        "ten": "Thanh Tra Thị xã",
+        "cha": "4424",
+        "raw_name": "thanh tra thi xa"
+    },
+    {
+        "ma": "5973",
+        "ten": "Phòng Văn Hóa Thông Tin",
+        "cha": "4424",
+        "raw_name": "phong van hoa thong tin"
+    },
+    {
+        "ma": "5974",
+        "ten": "Ban quản lý dự án trung tâm hành chính và khu đô thị mới",
+        "cha": "4424",
+        "raw_name": "ban quan ly du an trung tam hanh chinh va khu do thi moi"
+    },
+    {
+        "ma": "5975",
+        "ten": "Ban quản lý dự án đầu tư xây dựng",
+        "cha": "4424",
+        "raw_name": "ban quan ly du an dau tu xay dung"
+    },
+    {
+        "ma": "5987",
+        "ten": "Đội trật tự đô thị thị xã Phước Long",
+        "cha": "4424",
+        "raw_name": "doi trat tu do thi thi xa phuoc long"
+    },
+    {
+        "ma": "6007",
+        "ten": "Trung tâm y tế Đồng Phú",
+        "cha": "0",
+        "raw_name": "trung tam y te dong phu"
+    },
+    {
+        "ma": "6047",
+        "ten": "Tỉnh Đoàn Bình Phước",
+        "cha": "5387",
+        "raw_name": "tinh doan binh phuoc"
+    },
+    {
+        "ma": "6049",
+        "ten": "Thị Đoàn Phước Long",
+        "cha": "6047",
+        "raw_name": "thi doan phuoc long"
+    },
+    {
+        "ma": "6054",
+        "ten": "Huyện Đoàn Bù Đăng",
+        "cha": "6047",
+        "raw_name": "huyen doan bu dang"
+    },
+    {
+        "ma": "6055",
+        "ten": "Huyện Đoàn Bù Gia Mập",
+        "cha": "6047",
+        "raw_name": "huyen doan bu gia map"
+    },
+    {
+        "ma": "6057",
+        "ten": "Huyện Đoàn Đồng Phú",
+        "cha": "6047",
+        "raw_name": "huyen doan dong phu"
+    },
+    {
+        "ma": "6187",
+        "ten": "Xổ Số Kiến Thiết Bình Phước",
+        "cha": "0",
+        "raw_name": "xo so kien thiet binh phuoc"
+    },
+    {
+        "ma": "6209",
+        "ten": "Đảng Ủy khối Cơ quan và Doanh nghiệp tỉnh Bình Phước",
+        "cha": "0",
+        "raw_name": "dang uy khoi co quan va doanh nghiep tinh binh phuoc"
+    },
+    {
+        "ma": "6210",
+        "ten": "Viễn thông Bình Phước",
+        "cha": "6209",
+        "raw_name": "vien thong binh phuoc"
+    },
+    {
+        "ma": "6211",
+        "ten": "Đảng bộ Ban Quản lý Khu kinh tế tỉnh",
+        "cha": "6209",
+        "raw_name": "dang bo ban quan ly khu kinh te tinh"
+    },
+    {
+        "ma": "6212",
+        "ten": "Bảo Việt Bình Phước",
+        "cha": "6209",
+        "raw_name": "bao viet binh phuoc"
+    },
+    {
+        "ma": "6213",
+        "ten": "Công ty CP Kinh doanh BOT – ĐT 741",
+        "cha": "6209",
+        "raw_name": "cong ty cp kinh doanh bot – dt 741"
+    },
+    {
+        "ma": "6214",
+        "ten": "Bảo việt Nhân thọ Bình Phước",
+        "cha": "6209",
+        "raw_name": "bao viet nhan tho binh phuoc"
+    },
+    {
+        "ma": "6215",
+        "ten": "Bưu điện Tỉnh",
+        "cha": "6209",
+        "raw_name": "buu dien tinh"
+    },
+    {
+        "ma": "6216",
+        "ten": "Ngân hàng TMCP Công thương Bình Phước",
+        "cha": "6209",
+        "raw_name": "ngan hang tmcp cong thuong binh phuoc"
+    },
+    {
+        "ma": "6218",
+        "ten": "Bảo Minh Bình Phước",
+        "cha": "6209",
+        "raw_name": "bao minh binh phuoc"
+    },
+    {
+        "ma": "6219",
+        "ten": "Ngân hàng TMCP Đầu tư & phát triển BP",
+        "cha": "6209",
+        "raw_name": "ngan hang tmcp dau tu & phat trien bp"
+    },
+    {
+        "ma": "6221",
+        "ten": "Ngân hàng Nông nghiệp và PTNT BP",
+        "cha": "6209",
+        "raw_name": "ngan hang nong nghiep va ptnt bp"
+    },
+    {
+        "ma": "6222",
+        "ten": "Cty Xuất nhập khẩu tổng hợp BP",
+        "cha": "6209",
+        "raw_name": "cty xuat nhap khau tong hop bp"
+    },
+    {
+        "ma": "6223",
+        "ten": "Cty CP Xây dựng BP",
+        "cha": "6209",
+        "raw_name": "cty cp xay dung bp"
+    },
+    {
+        "ma": "6224",
+        "ten": "Cty Điện lực BP",
+        "cha": "6209",
+        "raw_name": "cty dien luc bp"
+    },
+    {
+        "ma": "6225",
+        "ten": "Cty TNHH MTV Xổ số KT & DVTH BP",
+        "cha": "6209",
+        "raw_name": "cty tnhh mtv xo so kt & dvth bp"
+    },
+    {
+        "ma": "6226",
+        "ten": "Cty CP Cấp thoát nước BP",
+        "cha": "6209",
+        "raw_name": "cty cp cap thoat nuoc bp"
+    },
+    {
+        "ma": "6227",
+        "ten": "Chi nhánh Xăng dầu BP",
+        "cha": "6209",
+        "raw_name": "chi nhanh xang dau bp"
+    },
+    {
+        "ma": "6328",
+        "ten": "Nhà thiếu nhi TP Đồng Xoài",
+        "cha": "970",
+        "raw_name": "nha thieu nhi tp dong xoai"
+    },
+    {
+        "ma": "6330",
+        "ten": "Công ty Cổ phần Cấp thoát nước Bình Phước",
+        "cha": "0",
+        "raw_name": "cong ty co phan cap thoat nuoc binh phuoc"
+    },
+    {
+        "ma": "6347",
+        "ten": "Bệnh viện đa khoa tỉnh Bình Phước",
+        "cha": "3173",
+        "raw_name": "benh vien da khoa tinh binh phuoc"
+    },
+    {
+        "ma": "6407",
+        "ten": "Huyện Đoàn Lộc Ninh",
+        "cha": "6047",
+        "raw_name": "huyen doan loc ninh"
+    },
+    {
+        "ma": "6498",
+        "ten": "Cục Thuế Tỉnh Bình Phước",
+        "cha": "0",
+        "raw_name": "cuc thue tinh binh phuoc"
+    },
+    {
+        "ma": "6499",
+        "ten": "CCT Thành phố Đồng xoài (đơn vị đóng)",
+        "cha": "0",
+        "raw_name": "cct thanh pho dong xoai (don vi dong)"
+    },
+    {
+        "ma": "6500",
+        "ten": "CCT Thị Xã Phước Long (đơn vị đóng)",
+        "cha": "0",
+        "raw_name": "cct thị xã phuóc long (don vi dong)"
+    },
+    {
+        "ma": "6501",
+        "ten": "CCT TX Bình Long (đơn vị đóng)",
+        "cha": "0",
+        "raw_name": "cct tx bình long (don vi dong)"
+    },
+    {
+        "ma": "6502",
+        "ten": "CCT huyện Đồng Phú (đơn vị đóng)",
+        "cha": "0",
+        "raw_name": "cct huyẹn dòng phú (don vi dong)"
+    },
+    {
+        "ma": "6503",
+        "ten": "CCT huyện Bù Đăng",
+        "cha": "6498",
+        "raw_name": "cct huyẹn bù dang"
+    },
+    {
+        "ma": "6504",
+        "ten": "CCT huyện Bù Gia Mập (đơn vị đóng)",
+        "cha": "0",
+        "raw_name": "cct huyẹn bù gia mạp (don vi dong)"
+    },
+    {
+        "ma": "6505",
+        "ten": "CCT huyện Bù Đốp (đơn vị đóng)",
+        "cha": "0",
+        "raw_name": "cct huyẹn bù dóp (don vi dong)"
+    },
+    {
+        "ma": "6506",
+        "ten": "CCT huyện Phú Riềng (đơn vị đóng)",
+        "cha": "0",
+        "raw_name": "cct huyẹn phú rièng (don vi dong)"
+    },
+    {
+        "ma": "6507",
+        "ten": "CCT huyện Lộc Ninh (đơn vị đóng)",
+        "cha": "0",
+        "raw_name": "cct huyẹn lọc ninh (don vi dong)"
+    },
+    {
+        "ma": "6508",
+        "ten": "CCT huyện Hớn Quản (đơn vị đóng)",
+        "cha": "0",
+        "raw_name": "cct huyẹn hón quản (don vi dong)"
+    },
+    {
+        "ma": "6509",
+        "ten": "CCT huyện Chơn Thành",
+        "cha": "6498",
+        "raw_name": "cct huyẹn chon thành"
+    },
+    {
+        "ma": "6667",
+        "ten": "Trung tâm Y tế Lộc Ninh",
+        "cha": "0",
+        "raw_name": "trung tam y te loc ninh"
+    },
+    {
+        "ma": "6706",
+        "ten": "Huyện Đoàn Phú Riềng",
+        "cha": "6047",
+        "raw_name": "huyen doan phu rieng"
+    },
+    {
+        "ma": "6802",
+        "ten": "Trung tâm hỗ trợ nông dân",
+        "cha": "0",
+        "raw_name": "trung tam ho tro nong dan"
+    },
+    {
+        "ma": "6827",
+        "ten": "Thị Đoàn Bình Long",
+        "cha": "6047",
+        "raw_name": "thi doan binh long"
+    },
+    {
+        "ma": "6867",
+        "ten": "Thành Đoàn Đồng Xoài",
+        "cha": "6047",
+        "raw_name": "thanh doan dong xoai"
+    },
+    {
+        "ma": "6881",
+        "ten": "Xí nghiệp công trình đô thị thị xã Phước Long",
+        "cha": "4424",
+        "raw_name": "xi nghiep cong trinh do thi thi xa phuoc long"
+    },
+    {
+        "ma": "6884",
+        "ten": "Đội Quản lý thị trường số 2",
+        "cha": "10160",
+        "raw_name": "doi quan ly thi truong so 2"
+    },
+    {
+        "ma": "6919",
+        "ten": "Trung tâm dịch vụ nông nghiệp",
+        "cha": "4424",
+        "raw_name": "trung tam dịch vụ nong nghiẹp"
+    },
+    {
+        "ma": "6921",
+        "ten": "Bảo hiểm xã hội",
+        "cha": "4424",
+        "raw_name": "bảo hiẻm xã họi"
+    },
+    {
+        "ma": "6922",
+        "ten": "Kho bạc Thị Xã Phước Long",
+        "cha": "4424",
+        "raw_name": "kho bạc thi xa phuoc long"
+    },
+    {
+        "ma": "6930",
+        "ten": "Tòa án nhân dân thị xã Phước Long",
+        "cha": "4424",
+        "raw_name": "tòa án nhan dan thi xa phuoc long"
+    },
+    {
+        "ma": "6933",
+        "ten": "Điện lực thị xã Phước Long",
+        "cha": "4424",
+        "raw_name": "dien luc thi xa phuoc long"
+    },
+    {
+        "ma": "6934",
+        "ten": "Ban chỉ huy quân sự",
+        "cha": "4424",
+        "raw_name": "ban chỉ huy quan sụ"
+    },
+    {
+        "ma": "6936",
+        "ten": "Công an Thị xã Phước Long",
+        "cha": "4424",
+        "raw_name": "cong an thi xa phuoc long"
+    },
+    {
+        "ma": "6937",
+        "ten": "Chi nhánh Văn phòng đăng ký đất đai thị xã Phước Long",
+        "cha": "4424",
+        "raw_name": "chi nhanh van phong dang ky dat dai thi xa phuoc long"
+    },
+    {
+        "ma": "6947",
+        "ten": "Huyện Đoàn Chơn Thành",
+        "cha": "6047",
+        "raw_name": "huyen doan chon thanh"
+    },
+    {
+        "ma": "6994",
+        "ten": "Huyện Đoàn Huyện Hớn Quản",
+        "cha": "6047",
+        "raw_name": "huyen doan huyen hon quan"
+    },
+    {
+        "ma": "7058",
+        "ten": "Công ty TNHH MTV Dịch Vụ Thủy Lợi Bình Phước",
+        "cha": "0",
+        "raw_name": "cong ty tnhh mtv dich vu thuy loi binh phuoc"
+    },
+    {
+        "ma": "7067",
+        "ten": "Huyện Đoàn Bù Đốp",
+        "cha": "6047",
+        "raw_name": "huyen doan bu dop"
+    },
+    {
+        "ma": "7108",
+        "ten": "Đơn vị con 1",
+        "cha": "1",
+        "raw_name": "don vi con 1"
+    },
+    {
+        "ma": "7327",
+        "ten": "Chi cục an toàn vệ sinh thực phẩm tỉnh Bình Phước",
+        "cha": "3173",
+        "raw_name": "chi cuc an toan ve sinh thuc pham tinh binh phuoc"
+    },
+    {
+        "ma": "7567",
+        "ten": "Chi Cục Thống kê thị xã Phước Long",
+        "cha": "4424",
+        "raw_name": "chi cuc thong ke thi xa phuoc long"
+    },
+    {
+        "ma": "7780",
+        "ten": "Trường Mầm non Tuổi Ngọc",
+        "cha": "4691",
+        "raw_name": "truong mam non tuoi ngoc"
+    },
+    {
+        "ma": "7820",
+        "ten": "Trường Mầm non Hạnh Phúc",
+        "cha": "970",
+        "raw_name": "truong mam non hanh phuc"
+    },
+    {
+        "ma": "7920",
+        "ten": "Thành ủy Đồng Xoài",
+        "cha": "0",
+        "raw_name": "thanh uy dong xoai"
+    },
+    {
+        "ma": "8040",
+        "ten": "Đảng ủy phường Tiến Thành",
+        "cha": "7920",
+        "raw_name": "dang uy phuong tien thanh"
+    },
+    {
+        "ma": "8041",
+        "ten": "Đảng ủy phường Tân Đồng",
+        "cha": "7920",
+        "raw_name": "dang uy phuong tan dong"
+    },
+    {
+        "ma": "8042",
+        "ten": "Đảng ủy phường Tân Thiện",
+        "cha": "7920",
+        "raw_name": "dang uy phuong tan thien"
+    },
+    {
+        "ma": "8043",
+        "ten": "Đảng ủy phường Tân Phú",
+        "cha": "7920",
+        "raw_name": "dang uy phuong tan phu"
+    },
+    {
+        "ma": "8044",
+        "ten": "Đảng ủy phường Tân Bình",
+        "cha": "7920",
+        "raw_name": "dang uy phuong tan binh"
+    },
+    {
+        "ma": "8045",
+        "ten": "Đảng ủy xã Tân Thành",
+        "cha": "7920",
+        "raw_name": "dang uy xa tan thanh"
+    },
+    {
+        "ma": "8046",
+        "ten": "Đảng ủy xã Tiến Hưng",
+        "cha": "7920",
+        "raw_name": "dang uy xa tien hung"
+    },
+    {
+        "ma": "8047",
+        "ten": "Đảng ủy phường Tân Xuân",
+        "cha": "7920",
+        "raw_name": "dang uy phuong tan xuan"
+    },
+    {
+        "ma": "8060",
+        "ten": "Trung tâm Chính trị Thành Ủy Đồng Xoài",
+        "cha": "7920",
+        "raw_name": "trung tam chinh tri thanh uy dong xoai"
+    },
+    {
+        "ma": "8100",
+        "ten": "CCTKV Bình Long-Hớn Quản",
+        "cha": "6498",
+        "raw_name": "cctkv binh long-hon quan"
+    },
+    {
+        "ma": "8101",
+        "ten": "CCTKV Đồng Xoài - Đồng Phú",
+        "cha": "6498",
+        "raw_name": "cctkv dong xoai - dong phu"
+    },
+    {
+        "ma": "8102",
+        "ten": "CCTKV Lộc Ninh - Bù Đốp",
+        "cha": "6498",
+        "raw_name": "cctkv loc ninh - bu dop"
+    },
+    {
+        "ma": "8103",
+        "ten": "CCTKV Phước Long - BGM - PHR",
+        "cha": "6498",
+        "raw_name": "cctkv phuoc long - bgm - phr"
+    },
+    {
+        "ma": "8120",
+        "ten": "Tập Huấn BPC",
+        "cha": "1",
+        "raw_name": "tap huan bpc"
+    },
+    {
+        "ma": "8160",
+        "ten": "Đoàn khối cơ quan và doanh nghiệp tỉnh",
+        "cha": "6047",
+        "raw_name": "doan khoi co quan va doanh nghiep tinh"
+    },
+    {
+        "ma": "8240",
+        "ten": "Đơn vị test liên thông - TTCNTT",
+        "cha": "1",
+        "raw_name": "don vi test lien thong - ttcntt"
+    },
+    {
+        "ma": "8820",
+        "ten": "Công ty Cổ phần Cao Su Đồng Phú",
+        "cha": "0",
+        "raw_name": "cong ty co phan cao su dong phu"
+    },
+    {
+        "ma": "8824",
+        "ten": "Đơn vị test liên thông 2 - TTĐHTT",
+        "cha": "1",
+        "raw_name": "don vi test lien thong 2 - ttdhtt"
+    },
+    {
+        "ma": "8826",
+        "ten": "Nông trường An Bình",
+        "cha": "8820",
+        "raw_name": "nong truong an binh"
+    },
+    {
+        "ma": "8827",
+        "ten": "Nông trường Tân Lập",
+        "cha": "8820",
+        "raw_name": "nong truong tan lap"
+    },
+    {
+        "ma": "8828",
+        "ten": "Nông trường  Tân Lợi",
+        "cha": "8820",
+        "raw_name": "nong truong  tan loi"
+    },
+    {
+        "ma": "8829",
+        "ten": "Nông trường  Tân Thành",
+        "cha": "8820",
+        "raw_name": "nong truong  tan thanh"
+    },
+    {
+        "ma": "8830",
+        "ten": "Nông trường Thuận Phú",
+        "cha": "8820",
+        "raw_name": "nong truong thuan phu"
+    },
+    {
+        "ma": "8831",
+        "ten": "Nhà Máy Chế biến Tân Lập",
+        "cha": "8820",
+        "raw_name": "nha may che bien tan lap"
+    },
+    {
+        "ma": "8832",
+        "ten": "Xí Nghiệp Chế biến Thuận Phú",
+        "cha": "8820",
+        "raw_name": "xi nghiep che bien thuan phu"
+    },
+    {
+        "ma": "8833",
+        "ten": "Bệnh viện Đa Khoa Cao su Đồng Phú",
+        "cha": "8820",
+        "raw_name": "benh vien da khoa cao su dong phu"
+    },
+    {
+        "ma": "8834",
+        "ten": "Công ty CP Cao su Đồng Phú Đăk-Nông",
+        "cha": "8820",
+        "raw_name": "cong ty cp cao su dong phu dak-nong"
+    },
+    {
+        "ma": "8835",
+        "ten": "Công ty CP Cao su Đồng Phú - Kratie",
+        "cha": "8820",
+        "raw_name": "cong ty cp cao su dong phu - kratie"
+    },
+    {
+        "ma": "8836",
+        "ten": "Công ty CP KCN Bắc Đồng Phú",
+        "cha": "8820",
+        "raw_name": "cong ty cp kcn bac dong phu"
+    },
+    {
+        "ma": "8844",
+        "ten": "Nông trường  Tân Hưng",
+        "cha": "8820",
+        "raw_name": "nong truong  tan hung"
+    },
+    {
+        "ma": "8845",
+        "ten": "Công ty CP Cao su Kỹ thuật Đồng Phú",
+        "cha": "8820",
+        "raw_name": "cong ty cp cao su ky thuat dong phu"
+    },
+    {
+        "ma": "8846",
+        "ten": "Chi nhánh Gỗ Đồng Phú",
+        "cha": "8820",
+        "raw_name": "chi nhanh go dong phu"
+    },
+    {
+        "ma": "9740",
+        "ten": "Trường mầm non Tuổi Thơ",
+        "cha": "2678",
+        "raw_name": "truong mam non tuoi tho"
+    },
+    {
+        "ma": "9860",
+        "ten": "Trường Mầm non tư thục Khai Tâm",
+        "cha": "4167",
+        "raw_name": "truong mam non tu thuc khai tam"
+    },
+    {
+        "ma": "9960",
+        "ten": "Trường mầm non tư thục Thần Đồng Tà Bế",
+        "cha": "970",
+        "raw_name": "truong mam non tu thuc than dong ta be"
+    },
+    {
+        "ma": "10040",
+        "ten": "Trường mầm non công viên quốc tế 1",
+        "cha": "970",
+        "raw_name": "truong mam non cong vien quoc te 1"
+    },
+    {
+        "ma": "10160",
+        "ten": "Cục Quản lý thị trường tỉnh Bình Phước",
+        "cha": "0",
+        "raw_name": "cuc quan ly thi truong tinh binh phuoc"
+    },
+    {
+        "ma": "10202",
+        "ten": "Đội Quản lý thị trường số 3",
+        "cha": "10160",
+        "raw_name": "doi quan ly thi truong so 3"
+    },
+    {
+        "ma": "10220",
+        "ten": "Đội Quản lý thị trường số 4",
+        "cha": "10160",
+        "raw_name": "doi quan ly thi truong so 4"
+    },
+    {
+        "ma": "10221",
+        "ten": "Đội Quản lý thị trường số 5",
+        "cha": "10160",
+        "raw_name": "doi quan ly thi truong so 5"
+    },
+    {
+        "ma": "10222",
+        "ten": "Đội Quản lý thị trường số 6",
+        "cha": "10160",
+        "raw_name": "doi quan ly thi truong so 6"
+    },
+    {
+        "ma": "10540",
+        "ten": "UBND tỉnh Bình Phước",
+        "cha": "0",
+        "raw_name": "ubnd tinh binh phuoc"
+    },
+    {
+        "ma": "10660",
+        "ten": "Hội Cựu thanh niên xung phong tỉnh Bình Phước",
+        "cha": "1",
+        "raw_name": "hoi cuu thanh nien xung phong tinh binh phuoc"
+    },
+    {
+        "ma": "10820",
+        "ten": "Tỉnh ủy Bình Phước (không gửi )",
+        "cha": "0",
+        "raw_name": "tinh uy binh phuoc (khong gui )"
+    },
+    {
+        "ma": "10880",
+        "ten": "Cao Su Phú Riềng",
+        "cha": "10820",
+        "raw_name": "cao su phu rieng"
+    },
+    {
+        "ma": "10900",
+        "ten": "Cao Su Đồng Phú",
+        "cha": "10820",
+        "raw_name": "cao su dong phu"
+    },
+    {
+        "ma": "10901",
+        "ten": "Cao Su Bình Phước",
+        "cha": "10820",
+        "raw_name": "cao su binh phuoc"
+    },
+    {
+        "ma": "10920",
+        "ten": "Cao Su Bình Long",
+        "cha": "10820",
+        "raw_name": "cao su binh long"
+    },
+    {
+        "ma": "10921",
+        "ten": "Cao Su Phước Long",
+        "cha": "10820",
+        "raw_name": "cao su phuoc long"
+    },
+    {
+        "ma": "10922",
+        "ten": "Cao Su Lộc Ninh",
+        "cha": "10820",
+        "raw_name": "cao su loc ninh"
+    },
+    {
+        "ma": "10940",
+        "ten": "Cao su Sông bé",
+        "cha": "10820",
+        "raw_name": "cao su song be"
+    },
+    {
+        "ma": "11000",
+        "ten": "Ban Quản lý Khu nông nghiệp ứng dụng công nghệ cao",
+        "cha": "3096",
+        "raw_name": "ban quan ly khu nong nghiep ung dung cong nghe cao"
+    },
+    {
+        "ma": "11060",
+        "ten": "Trường mầm non Công Viên Quốc Tế",
+        "cha": "970",
+        "raw_name": "truong mam non cong vien quoc te"
+    },
+    {
+        "ma": "11160",
+        "ten": "Đài khí tượng thủy văn tỉnh Bình Phước",
+        "cha": "0",
+        "raw_name": "dai khi tuong thuy van tinh binh phuoc"
+    }
+]

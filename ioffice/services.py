@@ -16,9 +16,9 @@ class IofficeService():
 
     def __init__(self):
         self.root = os.path.join(BASE_DIR, 'ioffice', 'data')
-        self.unit_dir = os.path.join(self.root, 'units.json')
-        self.config_dir = os.path.join(self.root, 'config.json')
-        self.infor_dir = os.path.join(self.root, 'information.json')
+        self.unit_dir = BASE_DIR / 'ioffice_units.json'
+        self.config_dir = BASE_DIR / 'ioffice_config.json'
+        self.infor_dir = BASE_DIR / 'ioffice_information.json'
         self.access_token = self.get_access_token()
 
     def get_access_token(self):
