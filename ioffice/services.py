@@ -28,7 +28,7 @@ class IofficeService():
     def set_access_token(self, access_token):
         data = read_json(self.config_dir)
         data['access_token'] = access_token
-        store_json(self.root / 'config.json', data)
+        store_json(self.config_dir, data)
 
     def get_units(self, offset=0, limit=50, search_query=False):
         data = read_json(self.unit_dir)
