@@ -5,6 +5,8 @@ from django.http.response import JsonResponse
 from rest_framework.parsers import JSONParser 
 from rest_framework import status
 from rest_framework.decorators import api_view
+from django.views.decorators.clickjacking import xframe_options_exempt
+
  
 # from django.contrib.auth.decorators import login_required
 from .services import IofficeService
@@ -23,6 +25,7 @@ def update_units(request):
     Ioffice.update_units()
     return HttpResponse("<h1>Success</h1>")
 
+@xframe_options_exempt
 def information(request):
     template = loader.get_template('ioffice/information.html')
     Ioffice = IofficeService()
@@ -32,6 +35,7 @@ def information(request):
 
     return HttpResponse(template.render(context, request))
 
+@xframe_options_exempt
 def document(request):
     template = loader.get_template('ioffice/document.html')
 
