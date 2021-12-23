@@ -48,7 +48,6 @@ class IofficeService():
 
         from_date = datetime(datetime.now().year, 1, 1, 0, 0, 0).strftime('%d/%m/%Y')
         end_date = datetime.now().strftime('%d/%m/%Y')
-        
         total_documents, batch = 0, 100
         count = int(len(units) / 100)
         for x in range(count+1):
