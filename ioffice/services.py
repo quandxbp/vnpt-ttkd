@@ -19,6 +19,7 @@ class IofficeService():
         self.unit_dir = BASE_DIR / 'ioffice_units.json'
         self.config_dir = BASE_DIR / 'ioffice_config.json'
         self.infor_dir = BASE_DIR / 'ioffice_information.json'
+        self.logging_dir = BASE_DIR / 'logging.txt'
         self.access_token = self.get_access_token()
 
     def get_access_token(self):
@@ -42,27 +43,42 @@ class IofficeService():
 
     def get_general_information(self):
         return read_json(self.infor_dir)
+
+    def log(self, line):
+        store_txt(self.logging_dir, line)
+
+    def get_log(self):
+        return read_txt(self.logging_dir)
     
     def set_general_information(self):
-        units = self.get_units(limit=0)
+        try:
+            print(f"START: {datetime.now().strftime('%d/%m/%Y %H:%M')}")
+            self.log(f"START: {datetime.now().strftime('%d/%m/%Y %H:%M')}")
+            units = self.get_units(limit=0)
 
-        from_date = datetime(datetime.now().year, 1, 1, 0, 0, 0).strftime('%d/%m/%Y')
-        end_date = datetime.now().strftime('%d/%m/%Y')
-        total_documents, batch = 0, 100
-        count = int(len(units) / 100)
-        for x in range(count+1):
-            start = x * batch
-            end = (x+1) * batch if (x+1) * batch < len(units) else len(units)
-            unit_ids = ', '.join([x['ma'] for x in units[start:end]])
-            documents = self.request_documents(from_date, end_date, unit_ids)
-            total_documents += sum([int(y['tong_so_di']) + int(y['tong_so_den']) for y in documents])
+            from_date = datetime(datetime.now().year, 1, 1, 0, 0, 0).strftime('%d/%m/%Y')
+            end_date = datetime.now().strftime('%d/%m/%Y')
+            total_documents, batch = 0, 100
+            count = int(len(units) / 100)
+            for x in range(count+1):
+                start = x * batch
+                end = (x+1) * batch if (x+1) * batch < len(units) else len(units)
+                unit_ids = ', '.join([x['ma'] for x in units[start:end]])
+                documents = self.request_documents(from_date, end_date, unit_ids)
+                total_documents += sum([int(y['tong_so_di']) + int(y['tong_so_den']) for y in documents])
 
-        data = {
-            'documents': total_documents,
-            'units': len(units),
-            'write_date': datetime.now().strftime('%d/%m/%Y %H:%M')
-        }
-        store_json(self.infor_dir, data)
+            data = {
+                'documents': total_documents,
+                'units': len(units),
+                'write_date': datetime.now().strftime('%d/%m/%Y %H:%M')
+            }
+            store_json(self.infor_dir, data)
+
+            print(f"FININSH: {datetime.now().strftime('%d/%m/%Y %H:%M')}")
+            self.log(f"FININSH: {datetime.now().strftime('%d/%m/%Y %H:%M')}")
+        except Exception as err:
+            print(f"ERROR: {str(err)} at {datetime.now().strftime('%d/%m/%Y %H:%M')}")
+            self.log(f"ERROR: {str(err)} at {datetime.now().strftime('%d/%m/%Y %H:%M')}" )
 
     def get_headers(self):
         return {

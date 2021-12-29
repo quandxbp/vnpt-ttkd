@@ -15,6 +15,11 @@ import json
 import calendar
 from datetime import datetime
 
+def log(request):
+    Ioffice = IofficeService()
+    logs = Ioffice.get_log()
+    return HttpResponse(logs)
+
 def update_documents(request):
     Ioffice = IofficeService()
     Ioffice.set_general_information()
