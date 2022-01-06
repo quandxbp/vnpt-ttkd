@@ -2,3 +2,7 @@
 *.pyc 
 config.json
 ccos_config.json
+tkyt_config.json
+ioffice_config.json
+ioffice_information.json
+logging.txt
