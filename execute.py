@@ -10,7 +10,7 @@ scheduler.configure(timezone=utc)
 import scheduler_jobs
 
 # scheduler.add_job(scheduler_jobs.update_ioffice, 'interval', seconds=30)
-scheduler.add_job(scheduler_jobs.update_ioffice, 'interval', minutes=10)
+scheduler.add_job(scheduler_jobs.update_ioffice, 'interval', minutes=1)
 # scheduler.add_job(scheduler_jobs.free_system_storage, 'interval', hours=3)
 
 scheduler.start()
