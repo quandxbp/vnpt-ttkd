@@ -59,7 +59,7 @@ def document(request):
     if start_date:
         start_date = datetime.strptime(start_date, '%Y-%m-%d').strftime('%d/%m/%Y')
     else:
-        start_date = datetime(current_year, current_month-1, 1, 0, 0, 0).strftime('%d/%m/%Y')
+        start_date = datetime(current_year, current_month -1 or 1, 1, 0, 0, 0).strftime('%d/%m/%Y')
 
     if end_date:
         end_date = datetime.strptime(end_date, '%Y-%m-%d').strftime('%d/%m/%Y')
@@ -75,7 +75,7 @@ def document(request):
     context = {
         'documents': documents,
         'units_count': len(Ioffice.get_units(limit=0)),
-        'start_date': datetime(current_year, current_month-1, 1, 0, 0, 0).strftime('%Y-%m-%d'),
+        'start_date': datetime(current_year, current_month -1 or 1, 1, 0, 0, 0).strftime('%Y-%m-%d'),
         'end_date': datetime.now().strftime('%Y-%m-%d'),
         'search_query': search_query
     }
